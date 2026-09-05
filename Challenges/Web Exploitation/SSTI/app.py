@@ -1,0 +1,43 @@
+from flask import Flask, request, render_template
+from jinja2.sandbox import SandboxedEnvironment
+import os
+
+app = Flask(__name__, template_folder="templates")
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+
+# Helper object intentionally exposed to Jinja
+class Helper:
+    def __init__(self, base_dir):
+        self.base_dir = base_dir
+
+    def read_flag(self):
+        try:
+            with open(os.path.join(self.base_dir, "flag.txt"), "r") as f:
+                return f.read().strip()
+        except:
+            return "Error reading flag."
+
+helper = Helper(BASE_DIR)
+
+# Create a sandboxed Jinja environment (still exploitable)
+env = SandboxedEnvironment()
+
+@app.route("/")
+def index():
+    return render_template("index.html")
+
+@app.route("/render", methods=["POST"])
+def render_user_template():
+    tpl = request.form.get("template", "")
+    
+    try:
+        template = env.from_string(tpl)
+        output = template.render(h=helper)
+    except Exception as e:
+        output = f"Template error: {e}"
+
+    return render_template("result.html", template=tpl, output=output)
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)

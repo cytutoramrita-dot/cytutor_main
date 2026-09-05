@@ -1,0 +1,14 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
+
+# Protect flag
+RUN chmod 600 /app/secret/very/hidden/flag.txt
+
+EXPOSE 5000
+CMD ["python", "app.py"]

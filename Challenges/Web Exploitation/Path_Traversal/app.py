@@ -1,0 +1,47 @@
+from flask import Flask, request, render_template
+import os
+import urllib.parse
+
+app = Flask(__name__)
+
+BASE_DIR = os.path.abspath(os.path.dirname(__file__))
+PAGES_DIR = os.path.join(BASE_DIR, "pages")
+
+@app.route("/")
+def index():
+    try:
+        files = os.listdir(PAGES_DIR)
+    except:
+        files = []
+    return render_template("index.html", files=files)
+
+@app.route("/view")
+def view():
+    filename = request.args.get("file", "")
+    if not filename:
+        return "No file selected."
+
+    # keep raw input
+    raw_input = filename
+
+    # fake sanitization on raw input only
+    blocked = ["..", "/", "\\", "flag", "etc", "proc"]
+    for b in blocked:
+        raw_input = raw_input.replace(b, "")
+
+    # decode once (double-encoding bypass)
+    decoded = urllib.parse.unquote(filename)
+
+    # build final normalized path
+    final_path = os.path.normpath(os.path.join(PAGES_DIR, decoded))
+
+    try:
+        with open(final_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        return render_template("view.html", name=raw_input, content=content)
+    except Exception:
+        return "Error opening file."
+
+# Start server
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000)

@@ -1,0 +1,105 @@
+Microsoft Windows [Version 10.0.26100.4652]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\AMRITA\FYP\Challenges\DOS1>curl -i http://localhost:8080
+HTTP/1.1 200 OK
+Date: Fri, 26 Dec 2025 21:17:58 GMT
+Content-Length: 11
+Content-Type: text/plain; charset=utf-8
+
+Service OK
+
+D:\AMRITA\FYP\Challenges\DOS1>docker exec -it goofy_hermann /bin/sh
+/app # hey -c 50 -z 30s http://host.docker.internal:8080/
+
+Summary:
+  Total:        40.0240 secs
+  Slowest:      0.0000 secs
+  Fastest:      0.0000 secs
+  Average:       NaN secs
+  Requests/sec: 2.4985
+
+
+Response time histogram:
+
+
+Latency distribution:
+
+Details (average, fastest, slowest):
+  DNS+dialup:    NaN secs, 0.0000 secs, 0.0000 secs
+  DNS-lookup:    NaN secs, 0.0000 secs, 0.0000 secs
+  req write:     NaN secs, 0.0000 secs, 0.0000 secs
+  resp wait:     NaN secs, 0.0000 secs, 0.0000 secs
+  resp read:     NaN secs, 0.0000 secs, 0.0000 secs
+
+Status code distribution:
+
+Error distribution:
+  [100] Get "http://host.docker.internal:8080/": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+
+/app # exit
+
+D:\AMRITA\FYP\Challenges\DOS1>
+D:\AMRITA\FYP\Challenges\DOS1>docker ps
+CONTAINER ID   IMAGE          COMMAND     CREATED          STATUS          PORTS                                         NAMES
+1f1520b0ed7b   dos1           "./dos1"    5 minutes ago    Up 5 minutes    0.0.0.0:8080->8080/tcp, [::]:8080->8080/tcp   dos1-server
+76670effce18   f7fd04e5809e   "/bin/sh"   14 minutes ago   Up 14 minutes   8080/tcp                                      goofy_hermann
+
+D:\AMRITA\FYP\Challenges\DOS1>docker exec -it goofy_hermann /bin/sh
+/app # hey -c 50 -z 60s http://host.docker.internal:8080/
+
+Summary:
+  Total:        60.0425 secs
+  Slowest:      0.0000 secs
+  Fastest:      0.0000 secs
+  Average:       NaN secs
+  Requests/sec: 2.4982
+
+
+Response time histogram:
+
+
+Latency distribution:
+
+Details (average, fastest, slowest):
+  DNS+dialup:    NaN secs, 0.0000 secs, 0.0000 secs
+  DNS-lookup:    NaN secs, 0.0000 secs, 0.0000 secs
+  req write:     NaN secs, 0.0000 secs, 0.0000 secs
+  resp wait:     NaN secs, 0.0000 secs, 0.0000 secs
+  resp read:     NaN secs, 0.0000 secs, 0.0000 secs
+
+Status code distribution:
+
+Error distribution:
+  [150] Get "http://host.docker.internal:8080/": context deadline exceeded (Client.Timeout exceeded while awaiting headers)
+
+/app #
+
+
+
+
+Microsoft Windows [Version 10.0.26100.4652]
+(c) Microsoft Corporation. All rights reserved.
+
+D:\AMRITA\FYP\Challenges\DOS1>curl -i http://localhost:8080
+HTTP/1.1 200 OK
+Date: Fri, 26 Dec 2025 21:19:54 GMT
+Content-Length: 11
+Content-Type: text/plain; charset=utf-8
+
+Service OK
+
+D:\AMRITA\FYP\Challenges\DOS1>curl -i http://localhost:8080
+HTTP/1.1 200 OK
+X-Access-Token: 88e174913a6ffebc5f05cbf2216083d0
+Date: Fri, 26 Dec 2025 21:21:34 GMT
+Content-Length: 34
+Content-Type: text/plain; charset=utf-8
+
+High load detected. Token issued.
+
+D:\AMRITA\FYP\Challenges\DOS1>curl http://localhost:8080/admin -H "X-Access-Token: 88e174913a6ffebc5f05cbf2216083d0"
+Cytutor{DoS_me_if_you_can_v2}
+
+D:\AMRITA\FYP\Challenges\DOS1>
+

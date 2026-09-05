@@ -1,0 +1,13 @@
+<svg width="640" height="200" viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- icon plate -->
+  <rect x="4" y="4" width="192" height="192" rx="32" fill="#050505"/>
+
+  <path d="M178,100 L139,167.5 L61,167.5 L22,100 L61,32.5 L139,32.5 Z"
+        fill="none" stroke="#22c55e" stroke-width="10" stroke-linejoin="round"/>
+
+  <text x="100" y="122" font-family="'Fira Code','Courier New',monospace" font-weight="700"
+        font-size="62" fill="#22c55e" text-anchor="middle">Cy</text>
+
+  <!-- wordmark -->
+  <text x="222" y="122" font-family="'Fira Code', 'Courier New', monospace" font-size="72" font-weight="700" fill="#f5f5f5" letter-spacing="-1">Cy<tspan fill="#22c55e">Tutor</tspan></text>
+</svg>

@@ -1,0 +1,1119 @@
+{
+  "tutorials": [
+    {
+      "id": "linux-basics-introduction",
+      "title": "Linux for Beginners - Introduction",
+      "description": "Get started with Linux! Learn what Linux is, its history, and why it's essential for cybersecurity professionals.",
+      "level": "beginner",
+      "category": "Linux Fundamentals",
+      "route": "/tutorial/linux-basics-introduction",
+      "estimatedTime": 20,
+      "prerequisites": [],
+      "learningObjectives": [
+        "Understand what Linux is and its importance",
+        "Learn about different Linux distributions",
+        "Understand the Linux philosophy and open-source concept",
+        "Know the basic components of a Linux system"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "What is Linux?",
+            "type": "text",
+            "content": "Linux is a free and open-source operating system kernel first created by Linus Torvalds in 1991. It's the foundation for many operating systems (called distributions) and powers everything from smartphones to supercomputers. For cybersecurity professionals, Linux is essential because most servers, security tools, and penetration testing environments run on Linux."
+          },
+          {
+            "title": "Popular Linux Distributions",
+            "type": "text",
+            "content": "**Ubuntu**: Beginner-friendly, great for learning\\n**Kali Linux**: Specialized for penetration testing and security\\n**CentOS/RHEL**: Enterprise-focused, stable\\n**Debian**: Stable, reliable, basis for many other distributions\\n**Arch Linux**: Advanced, customizable\\n\\nFor cybersecurity, Kali Linux is most popular as it comes pre-installed with hundreds of security tools."
+          },
+          {
+            "title": "Linux vs Windows",
+            "type": "text",
+            "content": "**Linux Advantages:**\\n- Free and open-source\\n- More secure by design\\n- Powerful command-line interface\\n- Highly customizable\\n- Better for programming and security work\\n- Lightweight and efficient\\n\\n**Key Differences:**\\n- Linux uses forward slashes (/) for paths, Windows uses backslashes (\\\\)\\n- Linux is case-sensitive, Windows is not\\n- Linux has a different file system structure\\n- Linux relies heavily on the terminal/command line"
+          },
+          {
+            "title": "The Linux Philosophy",
+            "type": "text",
+            "content": "Linux follows the Unix philosophy:\\n1. **Do one thing and do it well** - Each program should have a single, well-defined purpose\\n2. **Everything is a file** - Devices, processes, and system information are represented as files\\n3. **Small is beautiful** - Simple programs that can be combined are better than complex monolithic programs\\n4. **Choose portability over efficiency** - Code should work across different systems"
+          }
+        ]
+      },
+      "resources": [
+        "https://www.kernel.org/",
+        "https://www.linux.org/",
+        "https://distrowatch.com/"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-12-11T00:00:00Z"
+    }
+,
+    {
+      "id": "linux-file-system",
+      "title": "Linux for Beginners - File System Structure",
+      "description": "Master the Linux file system hierarchy and understand how directories are organized in Linux.",
+      "level": "beginner",
+      "category": "Linux Fundamentals",
+      "route": "/tutorial/linux-file-system",
+      "estimatedTime": 25,
+      "prerequisites": ["linux-basics-introduction"],
+      "learningObjectives": [
+        "Understand the Linux file system hierarchy",
+        "Know the purpose of important directories",
+        "Learn about absolute and relative paths",
+        "Understand file permissions and ownership"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "The Root Directory (/)",
+            "type": "text",
+            "content": "In Linux, everything starts from the root directory, represented by a single forward slash (/). Unlike Windows with multiple drive letters (C:, D:), Linux has one unified file system tree.\\n\\n**Key Directories:**\\n- **/bin** - Essential user binaries (commands like ls, cp, mv)\\n- **/sbin** - System binaries (admin commands like mount, fdisk)\\n- **/etc** - Configuration files\\n- **/home** - User home directories\\n- **/root** - Root user's home directory\\n- **/var** - Variable data (logs, databases, web files)\\n- **/tmp** - Temporary files\\n- **/usr** - User programs and data\\n- **/opt** - Optional software packages"
+          },
+          {
+            "title": "Important Directories Explained",
+            "type": "text",
+            "content": "**/etc** - System configuration files\\n- /etc/passwd - User account information\\n- /etc/shadow - Encrypted passwords\\n- /etc/hosts - Hostname to IP mappings\\n\\n**/var** - Variable data\\n- /var/log - System and application logs\\n- /var/www - Web server files\\n- /var/mail - User mailboxes\\n\\n**/home** - User directories\\n- /home/username - Each user's personal directory\\n- Contains documents, downloads, desktop files\\n\\n**/dev** - Device files\\n- /dev/sda1 - First hard drive partition\\n- /dev/null - 'Black hole' device (discards all data)"
+          },
+          {
+            "title": "Absolute vs Relative Paths",
+            "type": "text",
+            "content": "**Absolute Path**: Starts from root directory (/)\\n- /home/user/documents/file.txt\\n- /etc/passwd\\n- /var/log/syslog\\n\\n**Relative Path**: Relative to current directory\\n- documents/file.txt (if you're in /home/user)\\n- ../other_user (go up one directory, then to other_user)\\n- ./script.sh (current directory)\\n\\n**Special Symbols:**\\n- . (dot) = current directory\\n- .. (double dot) = parent directory\\n- ~ (tilde) = user's home directory\\n- / = root directory"
+          },
+          {
+            "title": "File Permissions Basics",
+            "type": "text",
+            "content": "Linux uses a permission system with three types of access:\\n- **r** (read) - Can view file contents\\n- **w** (write) - Can modify file\\n- **x** (execute) - Can run file as program\\n\\n**Three permission groups:**\\n- **Owner** - The user who owns the file\\n- **Group** - Users in the file's group\\n- **Others** - Everyone else\\n\\n**Example**: -rwxr-xr--\\n- First character: file type (- = regular file, d = directory)\\n- Next 3: owner permissions (rwx = read, write, execute)\\n- Next 3: group permissions (r-x = read, execute only)\\n- Last 3: other permissions (r-- = read only)"
+          }
+        ]
+      },
+      "resources": [
+        "https://www.pathname.com/fhs/",
+        "https://tldp.org/LDP/Linux-Filesystem-Hierarchy/html/",
+        "https://linuxcommand.org/lc3_lts0040.php"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-12-11T00:00:00Z"
+    }
+,
+    {
+      "id": "linux-basic-commands",
+      "title": "Linux for Beginners - Essential Commands",
+      "description": "Learn the most important Linux commands for navigation, file manipulation, and basic system operations.",
+      "level": "beginner",
+      "category": "Linux Fundamentals",
+      "route": "/tutorial/linux-basic-commands",
+      "estimatedTime": 35,
+      "prerequisites": ["linux-file-system"],
+      "learningObjectives": [
+        "Master basic navigation commands (ls, cd, pwd)",
+        "Learn file and directory operations (cp, mv, rm, mkdir)",
+        "Understand how to view and edit files",
+        "Use help systems and command options"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Navigation Commands",
+            "type": "text",
+            "content": "**pwd** - Print Working Directory\\nShows your current location in the file system.\\n```bash\\n$ pwd\\n/home/user/documents\\n```\\n\\n**ls** - List Directory Contents\\nShows files and directories in current or specified location.\\n```bash\\n$ ls                    # List current directory\\n$ ls -l                 # Long format (detailed)\\n$ ls -la                # Include hidden files\\n$ ls /etc               # List specific directory\\n```\\n\\n**cd** - Change Directory\\nNavigate between directories.\\n```bash\\n$ cd /home/user         # Go to specific directory\\n$ cd ..                 # Go up one directory\\n$ cd ~                  # Go to home directory\\n$ cd                    # Also goes to home directory\\n$ cd -                  # Go to previous directory\\n```"
+          },
+          {
+            "title": "File and Directory Operations",
+            "type": "text",
+            "content": "**mkdir** - Make Directory\\n```bash\\n$ mkdir new_folder\\n$ mkdir -p path/to/nested/folders    # Create parent directories\\n```\\n\\n**rmdir** - Remove Empty Directory\\n```bash\\n$ rmdir empty_folder\\n```\\n\\n**rm** - Remove Files and Directories\\n```bash\\n$ rm file.txt                        # Remove file\\n$ rm -r folder/                      # Remove directory recursively\\n$ rm -rf folder/                     # Force remove (be careful!)\\n$ rm *.txt                           # Remove all .txt files\\n```\\n\\n**cp** - Copy Files and Directories\\n```bash\\n$ cp file.txt backup.txt             # Copy file\\n$ cp -r folder/ backup_folder/       # Copy directory recursively\\n$ cp file.txt /home/user/            # Copy to different location\\n```\\n\\n**mv** - Move/Rename Files and Directories\\n```bash\\n$ mv old_name.txt new_name.txt       # Rename file\\n$ mv file.txt /home/user/            # Move file\\n$ mv folder/ /tmp/                   # Move directory\\n```"
+          },
+          {
+            "title": "Viewing and Editing Files",
+            "type": "text",
+            "content": "**cat** - Display File Contents\\n```bash\\n$ cat file.txt                       # Show entire file\\n$ cat file1.txt file2.txt            # Show multiple files\\n```\\n\\n**less/more** - View File Page by Page\\n```bash\\n$ less large_file.txt                # Navigate with arrows, q to quit\\n$ more file.txt                      # Similar to less\\n```\\n\\n**head/tail** - Show Beginning/End of File\\n```bash\\n$ head file.txt                      # First 10 lines\\n$ head -n 20 file.txt                # First 20 lines\\n$ tail file.txt                      # Last 10 lines\\n$ tail -f /var/log/syslog            # Follow file (live updates)\\n```\\n\\n**nano** - Simple Text Editor\\n```bash\\n$ nano file.txt                      # Edit file\\n# Ctrl+X to exit, Ctrl+O to save\\n```"
+          },
+          {
+            "title": "Getting Help and Information",
+            "type": "text",
+            "content": "**man** - Manual Pages\\n```bash\\n$ man ls                             # Show manual for ls command\\n$ man -k keyword                     # Search manuals for keyword\\n```\\n\\n**--help** - Quick Help\\n```bash\\n$ ls --help                          # Show command options\\n$ cp --help                          # Quick reference\\n```\\n\\n**which** - Find Command Location\\n```bash\\n$ which python                       # Shows /usr/bin/python\\n$ which ls                           # Shows /bin/ls\\n```\\n\\n**file** - Determine File Type\\n```bash\\n$ file document.pdf                  # Shows: PDF document\\n$ file script.sh                     # Shows: Bourne-Again shell script\\n```\\n\\n**wc** - Word Count\\n```bash\\n$ wc file.txt                        # Lines, words, characters\\n$ wc -l file.txt                     # Just line count\\n```"
+          },
+          {
+            "title": "Wildcards and Patterns",
+            "type": "text",
+            "content": "**Wildcards** help you work with multiple files:\\n\\n**\\*** - Matches any characters\\n```bash\\n$ ls *.txt                           # All .txt files\\n$ rm backup*                         # All files starting with 'backup'\\n```\\n\\n**?** - Matches single character\\n```bash\\n$ ls file?.txt                       # file1.txt, file2.txt, etc.\\n```\\n\\n**[ ]** - Matches character range\\n```bash\\n$ ls file[1-3].txt                   # file1.txt, file2.txt, file3.txt\\n$ ls [A-Z]*                          # Files starting with uppercase\\n```\\n\\n**Examples:**\\n```bash\\n$ cp *.jpg /home/user/pictures/      # Copy all JPG files\\n$ rm temp*                           # Remove all files starting with 'temp'\\n$ ls [abc]*                          # Files starting with a, b, or c\\n```"
+          }
+        ]
+      },
+      "resources": [
+        "https://linuxcommand.org/",
+        "https://www.gnu.org/software/coreutils/manual/",
+        "https://explainshell.com/"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-12-11T00:00:00Z"
+    }
+,
+    {
+      "id": "linux-text-processing",
+      "title": "Linux for Beginners - Text Processing & Search",
+      "description": "Master powerful Linux text processing tools like grep, sed, awk, and learn to search and manipulate text efficiently.",
+      "level": "beginner",
+      "category": "Linux Fundamentals",
+      "route": "/tutorial/linux-text-processing",
+      "estimatedTime": 30,
+      "prerequisites": ["linux-basic-commands"],
+      "learningObjectives": [
+        "Use grep to search text patterns",
+        "Learn basic sed for text replacement",
+        "Understand pipes and redirection",
+        "Master find command for file searching"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Searching with grep",
+            "type": "text",
+            "content": "**grep** - Global Regular Expression Print\\nSearches for patterns in text files.\\n\\n**Basic Usage:**\\n```bash\\n$ grep \\\"error\\\" /var/log/syslog       # Find lines containing 'error'\\n$ grep -i \\\"ERROR\\\" file.txt           # Case-insensitive search\\n$ grep -n \\\"pattern\\\" file.txt         # Show line numbers\\n$ grep -v \\\"unwanted\\\" file.txt        # Show lines NOT containing pattern\\n$ grep -r \\\"TODO\\\" /home/user/         # Recursive search in directory\\n```\\n\\n**Useful Options:**\\n- `-i` : Case-insensitive\\n- `-n` : Show line numbers\\n- `-v` : Invert match (show non-matching lines)\\n- `-r` : Recursive search\\n- `-c` : Count matches\\n- `-l` : Show only filenames with matches\\n\\n**Examples:**\\n```bash\\n$ grep -i \\\"password\\\" *.txt           # Find 'password' in all .txt files\\n$ grep -n \\\"function\\\" script.py       # Find 'function' with line numbers\\n$ grep -c \\\"error\\\" /var/log/syslog    # Count error occurrences\\n```"
+          },
+          {
+            "title": "Finding Files with find",
+            "type": "text",
+            "content": "**find** - Search for files and directories\\n\\n**Basic Syntax:**\\n```bash\\nfind [path] [criteria] [action]\\n```\\n\\n**Common Searches:**\\n```bash\\n$ find /home -name \\\"*.txt\\\"           # Find all .txt files in /home\\n$ find . -name \\\"config*\\\"             # Find files starting with 'config'\\n$ find /var -size +100M              # Find files larger than 100MB\\n$ find /tmp -mtime -7                # Files modified in last 7 days\\n$ find . -type d -name \\\"backup\\\"      # Find directories named 'backup'\\n$ find . -type f -perm 755           # Find files with 755 permissions\\n```\\n\\n**Useful Criteria:**\\n- `-name` : Search by filename\\n- `-type f` : Files only\\n- `-type d` : Directories only\\n- `-size` : File size (+100M, -1k)\\n- `-mtime` : Modification time\\n- `-perm` : Permissions\\n\\n**Actions:**\\n```bash\\n$ find . -name \\\"*.tmp\\\" -delete       # Find and delete .tmp files\\n$ find . -name \\\"*.log\\\" -exec ls -l {} \\\\;  # Execute command on results\\n```"
+          },
+          {
+            "title": "Pipes and Redirection",
+            "type": "text",
+            "content": "**Pipes (|)** - Send output of one command to another\\n```bash\\n$ ls -l | grep \\\"txt\\\"                 # List files, then filter for 'txt'\\n$ cat /var/log/syslog | grep \\\"error\\\" | wc -l  # Count error lines\\n$ ps aux | grep \\\"firefox\\\"            # Find Firefox processes\\n```\\n\\n**Redirection**\\n- `>` : Redirect output to file (overwrite)\\n- `>>` : Redirect output to file (append)\\n- `<` : Input from file\\n- `2>` : Redirect errors\\n\\n```bash\\n$ ls -l > file_list.txt              # Save directory listing to file\\n$ echo \\\"New line\\\" >> file.txt        # Append to file\\n$ grep \\\"error\\\" /var/log/syslog > errors.txt  # Save errors to file\\n$ command 2> errors.log              # Save error messages to file\\n$ command > output.txt 2>&1          # Save both output and errors\\n```\\n\\n**Useful Combinations:**\\n```bash\\n$ cat file.txt | sort | uniq         # Sort and remove duplicates\\n$ history | grep \\\"ssh\\\"               # Find SSH commands in history\\n$ du -h | sort -hr | head -10        # Top 10 largest directories\\n```"
+          },
+          {
+            "title": "Basic Text Manipulation",
+            "type": "text",
+            "content": "**sort** - Sort lines in text\\n```bash\\n$ sort file.txt                      # Sort alphabetically\\n$ sort -n numbers.txt                # Sort numerically\\n$ sort -r file.txt                   # Reverse sort\\n$ sort -u file.txt                   # Sort and remove duplicates\\n```\\n\\n**uniq** - Remove duplicate lines\\n```bash\\n$ uniq file.txt                      # Remove consecutive duplicates\\n$ sort file.txt | uniq               # Remove all duplicates\\n$ uniq -c file.txt                   # Count occurrences\\n```\\n\\n**cut** - Extract columns from text\\n```bash\\n$ cut -d: -f1 /etc/passwd            # Extract usernames (1st field)\\n$ cut -c1-10 file.txt                # Extract characters 1-10\\n$ ls -l | cut -d' ' -f1              # Extract permissions column\\n```\\n\\n**tr** - Translate or delete characters\\n```bash\\n$ echo \\\"hello\\\" | tr 'a-z' 'A-Z'      # Convert to uppercase\\n$ cat file.txt | tr -d ' '           # Remove all spaces\\n$ echo \\\"hello world\\\" | tr ' ' '_'    # Replace spaces with underscores\\n```\\n\\n**wc** - Count lines, words, characters\\n```bash\\n$ wc file.txt                        # Lines, words, characters\\n$ wc -l file.txt                     # Just line count\\n$ ls | wc -l                         # Count files in directory\\n```"
+          }
+        ]
+      },
+      "resources": [
+        "https://www.gnu.org/software/grep/manual/",
+        "https://www.gnu.org/software/findutils/",
+        "https://regexr.com/"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-12-11T00:00:00Z"
+    }
+,
+    {
+      "id": "linux-permissions-users",
+      "title": "Linux for Beginners - Users, Groups & Permissions",
+      "description": "Understand Linux user management, file permissions, and security fundamentals essential for system administration.",
+      "level": "beginner",
+      "category": "Linux Fundamentals",
+      "route": "/tutorial/linux-permissions-users",
+      "estimatedTime": 40,
+      "prerequisites": ["linux-text-processing"],
+      "learningObjectives": [
+        "Understand Linux user and group concepts",
+        "Master file permission system (rwx)",
+        "Learn to change permissions with chmod",
+        "Understand ownership with chown and chgrp",
+        "Learn about sudo and root access"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Users and Groups",
+            "type": "text",
+            "content": "**Linux User System:**\\nEvery file and process in Linux belongs to a user and group. This provides security and organization.\\n\\n**Types of Users:**\\n- **Root (UID 0)**: Superuser with unlimited privileges\\n- **System users (UID 1-999)**: For system services and daemons\\n- **Regular users (UID 1000+)**: Normal user accounts\\n\\n**User Information Files:**\\n- `/etc/passwd` - User account information\\n- `/etc/shadow` - Encrypted passwords (root only)\\n- `/etc/group` - Group information\\n\\n**Viewing User Information:**\\n```bash\\n$ whoami                             # Current username\\n$ id                                 # User ID, group IDs\\n$ id username                        # Info for specific user\\n$ groups                             # Groups you belong to\\n$ cat /etc/passwd | grep username    # User account details\\n```\\n\\n**Example /etc/passwd entry:**\\n```\\nuser:x:1000:1000:Full Name:/home/user:/bin/bash\\n```\\nFields: username:password:UID:GID:comment:home:shell"
+          },
+          {
+            "title": "Understanding File Permissions",
+            "type": "text",
+            "content": "**Permission Types:**\\n- **r (read)**: View file contents or list directory\\n- **w (write)**: Modify file or create/delete files in directory\\n- **x (execute)**: Run file as program or enter directory\\n\\n**Permission Groups:**\\n- **Owner (u)**: The user who owns the file\\n- **Group (g)**: Users in the file's group\\n- **Others (o)**: Everyone else\\n\\n**Reading Permissions:**\\n```bash\\n$ ls -l file.txt\\n-rwxr-xr-- 1 user group 1024 Dec 11 10:30 file.txt\\n```\\n\\nBreaking down `-rwxr-xr--`:\\n- First character: File type (- = file, d = directory, l = link)\\n- Characters 2-4: Owner permissions (rwx)\\n- Characters 5-7: Group permissions (r-x)\\n- Characters 8-10: Other permissions (r--)\\n\\n**Numeric Representation:**\\n- r = 4, w = 2, x = 1\\n- rwx = 4+2+1 = 7\\n- r-x = 4+0+1 = 5\\n- r-- = 4+0+0 = 4\\n- So rwxr-xr-- = 754"
+          },
+          {
+            "title": "Changing Permissions with chmod",
+            "type": "text",
+            "content": "**chmod** - Change file permissions\\n\\n**Symbolic Method:**\\n```bash\\n$ chmod u+x file.txt                 # Add execute for owner\\n$ chmod g-w file.txt                 # Remove write for group\\n$ chmod o+r file.txt                 # Add read for others\\n$ chmod a+x script.sh                # Add execute for all (a=all)\\n$ chmod u+rw,g+r,o-rwx file.txt      # Multiple changes\\n```\\n\\n**Numeric Method:**\\n```bash\\n$ chmod 755 script.sh                # rwxr-xr-x\\n$ chmod 644 document.txt             # rw-r--r--\\n$ chmod 600 private.txt              # rw-------\\n$ chmod 777 shared_file              # rwxrwxrwx (dangerous!)\\n```\\n\\n**Common Permission Patterns:**\\n- **755**: Executable files (rwxr-xr-x)\\n- **644**: Regular files (rw-r--r--)\\n- **600**: Private files (rw-------)\\n- **700**: Private directories (rwx------)\\n- **755**: Public directories (rwxr-xr-x)\\n\\n**Recursive Changes:**\\n```bash\\n$ chmod -R 755 /path/to/directory    # Apply to all files/subdirs\\n```"
+          },
+          {
+            "title": "Changing Ownership",
+            "type": "text",
+            "content": "**chown** - Change file ownership\\n```bash\\n$ chown user file.txt                # Change owner to 'user'\\n$ chown user:group file.txt          # Change owner and group\\n$ chown :group file.txt              # Change group only\\n$ chown -R user:group directory/     # Recursive change\\n```\\n\\n**chgrp** - Change group ownership\\n```bash\\n$ chgrp group file.txt               # Change group to 'group'\\n$ chgrp -R group directory/          # Recursive group change\\n```\\n\\n**Examples:**\\n```bash\\n$ sudo chown root:root /etc/passwd   # System file ownership\\n$ chown www-data:www-data /var/www/  # Web server files\\n$ chown user:users ~/documents/      # User documents\\n```\\n\\n**Note:** You can only change ownership of files you own, or use sudo for system files."
+          },
+          {
+            "title": "Sudo and Root Access",
+            "type": "text",
+            "content": "**sudo** - Execute commands as another user (usually root)\\n\\n**Basic Usage:**\\n```bash\\n$ sudo command                       # Run command as root\\n$ sudo -u username command           # Run as specific user\\n$ sudo -i                            # Interactive root shell\\n$ sudo su -                          # Switch to root user\\n```\\n\\n**Sudo Configuration:**\\n- Configuration file: `/etc/sudoers`\\n- Edit with: `sudo visudo` (never edit directly!)\\n- User sudo permissions: `/etc/sudoers.d/`\\n\\n**Common Sudo Tasks:**\\n```bash\\n$ sudo apt update                    # Update package lists\\n$ sudo systemctl restart apache2    # Restart services\\n$ sudo mount /dev/sdb1 /mnt         # Mount filesystems\\n$ sudo passwd username               # Change user passwords\\n$ sudo chown root:root /etc/hosts   # Change system file ownership\\n```\\n\\n**Security Best Practices:**\\n- Never run GUI applications with sudo\\n- Use sudo for specific commands, not permanent root access\\n- Regularly audit sudo permissions\\n- Use strong passwords for sudo-enabled accounts\\n\\n**Checking Sudo Access:**\\n```bash\\n$ sudo -l                            # List your sudo permissions\\n$ groups                             # Check if you're in sudo group\\n```"
+          }
+        ]
+      },
+      "resources": [
+        "https://www.gnu.org/software/coreutils/manual/html_node/File-permissions.html",
+        "https://www.sudo.ws/",
+        "https://linuxcommand.org/lc3_lts0090.php"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-12-11T00:00:00Z"
+    }
+,
+    {
+      "id": "linux-processes-services",
+      "title": "Linux for Beginners - Processes & System Management",
+      "description": "Learn to manage processes, services, and system resources in Linux. Essential skills for system administration and troubleshooting.",
+      "level": "beginner",
+      "category": "Linux Fundamentals",
+      "route": "/tutorial/linux-processes-services",
+      "estimatedTime": 35,
+      "prerequisites": ["linux-permissions-users"],
+      "learningObjectives": [
+        "Understand Linux processes and how to manage them",
+        "Learn to monitor system resources",
+        "Master process control (kill, jobs, nohup)",
+        "Understand services and systemctl",
+        "Learn basic system monitoring tools"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Understanding Processes",
+            "type": "text",
+            "content": "**What is a Process?**\\nA process is a running instance of a program. Every command you run creates a process.\\n\\n**Process Information:**\\n- **PID**: Process ID (unique number)\\n- **PPID**: Parent Process ID\\n- **UID**: User ID of process owner\\n- **CPU**: CPU usage percentage\\n- **Memory**: RAM usage\\n- **State**: Running, sleeping, stopped, zombie\\n\\n**Viewing Processes:**\\n```bash\\n$ ps                                 # Show your processes\\n$ ps aux                             # Show all processes (detailed)\\n$ ps -ef                             # Show all processes (different format)\\n$ ps -u username                     # Show processes for specific user\\n```\\n\\n**Process States:**\\n- **R**: Running or runnable\\n- **S**: Sleeping (waiting for event)\\n- **D**: Uninterruptible sleep\\n- **T**: Stopped\\n- **Z**: Zombie (finished but not cleaned up)\\n\\n**Example ps aux output:**\\n```\\nUSER  PID %CPU %MEM    VSZ   RSS TTY STAT START   TIME COMMAND\\nroot    1  0.0  0.1  19696  1234 ?   Ss   10:00   0:01 /sbin/init\\nuser 1234  2.5  5.2 123456 12345 pts/0 R+ 10:30   0:05 firefox\\n```"
+          },
+          {
+            "title": "Process Monitoring Tools",
+            "type": "text",
+            "content": "**top** - Real-time process viewer\\n```bash\\n$ top                                # Interactive process monitor\\n# Press 'q' to quit, 'k' to kill process, 'M' to sort by memory\\n```\\n\\n**htop** - Enhanced version of top (if installed)\\n```bash\\n$ htop                               # More user-friendly interface\\n```\\n\\n**pgrep** - Find processes by name\\n```bash\\n$ pgrep firefox                      # Find Firefox process IDs\\n$ pgrep -u username                  # Find processes by user\\n$ pgrep -f \\\"python script.py\\\"        # Find by full command line\\n```\\n\\n**pstree** - Show process tree\\n```bash\\n$ pstree                             # Show process hierarchy\\n$ pstree username                    # Show tree for specific user\\n```\\n\\n**System Resource Monitoring:**\\n```bash\\n$ free -h                            # Memory usage (human readable)\\n$ df -h                              # Disk space usage\\n$ du -h /path                        # Directory size\\n$ uptime                             # System load and uptime\\n$ lscpu                              # CPU information\\n```"
+          },
+          {
+            "title": "Process Control",
+            "type": "text",
+            "content": "**Killing Processes:**\\n```bash\\n$ kill PID                           # Terminate process (SIGTERM)\\n$ kill -9 PID                        # Force kill (SIGKILL)\\n$ kill -15 PID                       # Graceful termination (SIGTERM)\\n$ killall firefox                    # Kill all Firefox processes\\n$ pkill -f \\\"python script\\\"           # Kill by pattern match\\n```\\n\\n**Common Signals:**\\n- **SIGTERM (15)**: Polite termination request\\n- **SIGKILL (9)**: Force kill (cannot be ignored)\\n- **SIGHUP (1)**: Hang up (reload configuration)\\n- **SIGSTOP (19)**: Pause process\\n- **SIGCONT (18)**: Continue paused process\\n\\n**Background and Foreground:**\\n```bash\\n$ command &                          # Run in background\\n$ nohup command &                    # Run in background, ignore hangup\\n$ jobs                               # List background jobs\\n$ fg %1                              # Bring job 1 to foreground\\n$ bg %1                              # Send job 1 to background\\n$ disown %1                          # Remove job from shell's job table\\n```\\n\\n**Process Control Keys:**\\n- **Ctrl+C**: Interrupt (SIGINT)\\n- **Ctrl+Z**: Suspend (SIGTSTP)\\n- **Ctrl+\\\\**: Quit (SIGQUIT)\\n\\n**Examples:**\\n```bash\\n$ firefox &                          # Start Firefox in background\\n$ nohup ./long_script.sh > output.log 2>&1 &  # Run script, save output\\n$ kill -9 $(pgrep firefox)           # Force kill all Firefox processes\\n```"
+          },
+          {
+            "title": "Services and Systemctl",
+            "type": "text",
+            "content": "**systemctl** - Control systemd services\\n\\n**Service Management:**\\n```bash\\n$ systemctl status apache2           # Check service status\\n$ sudo systemctl start apache2      # Start service\\n$ sudo systemctl stop apache2       # Stop service\\n$ sudo systemctl restart apache2    # Restart service\\n$ sudo systemctl reload apache2     # Reload configuration\\n```\\n\\n**Enable/Disable Services:**\\n```bash\\n$ sudo systemctl enable apache2     # Start at boot\\n$ sudo systemctl disable apache2    # Don't start at boot\\n$ systemctl is-enabled apache2      # Check if enabled\\n```\\n\\n**Listing Services:**\\n```bash\\n$ systemctl list-units --type=service           # All services\\n$ systemctl list-units --type=service --state=running  # Running services\\n$ systemctl list-units --type=service --state=failed   # Failed services\\n```\\n\\n**Service Logs:**\\n```bash\\n$ journalctl -u apache2              # View service logs\\n$ journalctl -u apache2 -f           # Follow logs in real-time\\n$ journalctl -u apache2 --since today # Today's logs\\n```\\n\\n**Common Services:**\\n- **ssh**: SSH server\\n- **apache2/httpd**: Web server\\n- **mysql/mariadb**: Database server\\n- **networking**: Network configuration\\n- **cron**: Task scheduler"
+          },
+          {
+            "title": "System Monitoring and Performance",
+            "type": "text",
+            "content": "**System Load:**\\n```bash\\n$ uptime                             # Load average\\n$ w                                  # Who's logged in and system load\\n```\\nLoad average shows system activity over 1, 5, and 15 minutes.\\n- Load of 1.0 = 100% CPU utilization\\n- Load > number of CPU cores = system overloaded\\n\\n**Memory Usage:**\\n```bash\\n$ free -h                            # Memory usage summary\\n$ cat /proc/meminfo                  # Detailed memory info\\n$ vmstat 1                           # Virtual memory statistics\\n```\\n\\n**Disk Usage:**\\n```bash\\n$ df -h                              # Filesystem usage\\n$ du -sh /path/*                     # Directory sizes\\n$ iostat                             # I/O statistics (if installed)\\n$ lsblk                              # List block devices\\n```\\n\\n**Network Monitoring:**\\n```bash\\n$ netstat -tuln                      # Network connections\\n$ ss -tuln                           # Modern replacement for netstat\\n$ iftop                              # Network traffic monitor (if installed)\\n```\\n\\n**Log Files:**\\n```bash\\n$ tail -f /var/log/syslog            # System log\\n$ tail -f /var/log/auth.log          # Authentication log\\n$ journalctl -f                      # Systemd journal\\n$ dmesg                              # Kernel messages\\n```\\n\\n**Performance Monitoring:**\\n```bash\\n$ sar -u 1 5                        # CPU usage (5 samples, 1 sec apart)\\n$ sar -r 1 5                        # Memory usage\\n$ sar -d 1 5                        # Disk I/O\\n```"
+          }
+        ]
+      },
+      "resources": [
+        "https://www.freedesktop.org/software/systemd/man/systemctl.html",
+        "https://man7.org/linux/man-pages/man1/ps.1.html",
+        "https://www.kernel.org/doc/Documentation/filesystems/proc.txt"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-12-11T00:00:00Z"
+    }
+,
+    {
+      "id": "linux-networking-basics",
+      "title": "Linux for Beginners - Networking Fundamentals",
+      "description": "Master Linux networking basics including network configuration, troubleshooting tools, and security fundamentals.",
+      "level": "beginner",
+      "category": "Linux Fundamentals",
+      "route": "/tutorial/linux-networking-basics",
+      "estimatedTime": 30,
+      "prerequisites": ["linux-processes-services"],
+      "learningObjectives": [
+        "Understand basic networking concepts in Linux",
+        "Learn network configuration and troubleshooting tools",
+        "Master common networking commands",
+        "Understand firewall basics with iptables/ufw",
+        "Learn SSH and remote access fundamentals"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Network Configuration",
+            "type": "text",
+            "content": "**Viewing Network Information:**\\n```bash\\n$ ip addr show                       # Show IP addresses (modern)\\n$ ifconfig                           # Show network interfaces (legacy)\\n$ ip route show                      # Show routing table\\n$ route -n                           # Show routing table (legacy)\\n$ hostname                           # Show system hostname\\n$ hostname -I                       # Show IP addresses\\n```\\n\\n**Network Interface Management:**\\n```bash\\n$ sudo ip link set eth0 up          # Bring interface up\\n$ sudo ip link set eth0 down        # Bring interface down\\n$ sudo ip addr add 192.168.1.100/24 dev eth0  # Add IP address\\n$ sudo ip addr del 192.168.1.100/24 dev eth0  # Remove IP address\\n```\\n\\n**DNS Configuration:**\\n```bash\\n$ cat /etc/resolv.conf               # DNS servers\\n$ nslookup google.com                # DNS lookup\\n$ dig google.com                     # Detailed DNS lookup\\n$ host google.com                    # Simple DNS lookup\\n```\\n\\n**Network Configuration Files:**\\n- `/etc/network/interfaces` (Debian/Ubuntu)\\n- `/etc/netplan/` (Ubuntu 18+)\\n- `/etc/sysconfig/network-scripts/` (RHEL/CentOS)\\n- `/etc/hosts` - Local hostname resolution\\n- `/etc/resolv.conf` - DNS configuration"
+          },
+          {
+            "title": "Network Troubleshooting Tools",
+            "type": "text",
+            "content": "**Connectivity Testing:**\\n```bash\\n$ ping google.com                    # Test connectivity\\n$ ping -c 4 8.8.8.8                 # Ping 4 times to Google DNS\\n$ ping6 ipv6.google.com             # IPv6 ping\\n```\\n\\n**Traceroute:**\\n```bash\\n$ traceroute google.com              # Trace route to destination\\n$ tracepath google.com               # Alternative traceroute\\n$ mtr google.com                     # Continuous traceroute (if installed)\\n```\\n\\n**Port and Service Testing:**\\n```bash\\n$ telnet google.com 80               # Test TCP connection\\n$ nc -zv google.com 80               # Test port with netcat\\n$ nmap -p 80,443 google.com          # Port scan (if installed)\\n```\\n\\n**Network Statistics:**\\n```bash\\n$ netstat -tuln                      # Show listening ports\\n$ netstat -i                         # Interface statistics\\n$ ss -tuln                           # Modern replacement for netstat\\n$ ss -s                              # Socket statistics summary\\n```\\n\\n**Bandwidth and Traffic:**\\n```bash\\n$ iftop                              # Real-time traffic monitor\\n$ nethogs                            # Per-process network usage\\n$ vnstat                             # Network statistics\\n$ tcpdump -i eth0                    # Packet capture\\n```"
+          },
+          {
+            "title": "SSH and Remote Access",
+            "type": "text",
+            "content": "**SSH Client:**\\n```bash\\n$ ssh user@hostname                  # Connect to remote host\\n$ ssh -p 2222 user@hostname          # Connect to custom port\\n$ ssh -i ~/.ssh/key user@hostname    # Use specific private key\\n$ ssh -X user@hostname               # Enable X11 forwarding\\n```\\n\\n**SSH Key Management:**\\n```bash\\n$ ssh-keygen -t rsa -b 4096          # Generate RSA key pair\\n$ ssh-keygen -t ed25519              # Generate Ed25519 key (recommended)\\n$ ssh-copy-id user@hostname          # Copy public key to remote host\\n$ ssh-add ~/.ssh/private_key         # Add key to SSH agent\\n```\\n\\n**SSH Configuration:**\\n- Client config: `~/.ssh/config`\\n- Server config: `/etc/ssh/sshd_config`\\n\\n**Example ~/.ssh/config:**\\n```\\nHost myserver\\n    HostName 192.168.1.100\\n    User myuser\\n    Port 2222\\n    IdentityFile ~/.ssh/mykey\\n```\\n\\n**File Transfer:**\\n```bash\\n$ scp file.txt user@host:/path/      # Copy file to remote host\\n$ scp user@host:/path/file.txt .     # Copy file from remote host\\n$ scp -r directory/ user@host:/path/ # Copy directory recursively\\n$ rsync -av local/ user@host:remote/ # Sync directories\\n```\\n\\n**SSH Tunneling:**\\n```bash\\n$ ssh -L 8080:localhost:80 user@host # Local port forwarding\\n$ ssh -R 8080:localhost:80 user@host # Remote port forwarding\\n$ ssh -D 1080 user@host              # SOCKS proxy\\n```"
+          },
+          {
+            "title": "Firewall Basics",
+            "type": "text",
+            "content": "**UFW (Uncomplicated Firewall) - Ubuntu/Debian:**\\n```bash\\n$ sudo ufw status                    # Check firewall status\\n$ sudo ufw enable                    # Enable firewall\\n$ sudo ufw disable                   # Disable firewall\\n$ sudo ufw allow 22                  # Allow SSH\\n$ sudo ufw allow 80/tcp              # Allow HTTP\\n$ sudo ufw allow from 192.168.1.0/24 # Allow from subnet\\n$ sudo ufw deny 23                   # Block telnet\\n$ sudo ufw delete allow 80           # Remove rule\\n```\\n\\n**iptables (Advanced firewall):**\\n```bash\\n$ sudo iptables -L                   # List rules\\n$ sudo iptables -A INPUT -p tcp --dport 22 -j ACCEPT  # Allow SSH\\n$ sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT  # Allow HTTP\\n$ sudo iptables -P INPUT DROP        # Default deny input\\n$ sudo iptables-save > /etc/iptables/rules.v4  # Save rules\\n```\\n\\n**Common Firewall Rules:**\\n```bash\\n# Allow SSH from specific IP\\n$ sudo ufw allow from 192.168.1.100 to any port 22\\n\\n# Allow web traffic\\n$ sudo ufw allow 80/tcp\\n$ sudo ufw allow 443/tcp\\n\\n# Allow ping\\n$ sudo ufw allow in on eth0 to any port 22\\n\\n# Block specific IP\\n$ sudo ufw deny from 192.168.1.200\\n```"
+          },
+          {
+            "title": "Network Services and Security",
+            "type": "text",
+            "content": "**Common Network Services:**\\n```bash\\n$ sudo systemctl status ssh          # SSH server status\\n$ sudo systemctl status apache2      # Web server status\\n$ sudo systemctl status networking    # Network service status\\n```\\n\\n**Network Security Basics:**\\n\\n**1. Secure SSH Configuration:**\\n```bash\\n# Edit /etc/ssh/sshd_config\\nPort 2222                            # Change default port\\nPermitRootLogin no                   # Disable root login\\nPasswordAuthentication no            # Use keys only\\nAllowUsers user1 user2               # Limit users\\n```\\n\\n**2. Monitor Network Connections:**\\n```bash\\n$ sudo netstat -tulpn                # Show listening services\\n$ sudo ss -tulpn                     # Modern alternative\\n$ sudo lsof -i                       # Files/processes using network\\n```\\n\\n**3. Check for Open Ports:**\\n```bash\\n$ nmap localhost                     # Scan local ports\\n$ nmap -sS 192.168.1.1               # SYN scan\\n$ nmap -O 192.168.1.1                # OS detection\\n```\\n\\n**4. Network Logs:**\\n```bash\\n$ sudo tail -f /var/log/auth.log     # SSH login attempts\\n$ sudo journalctl -u ssh             # SSH service logs\\n$ sudo tail -f /var/log/ufw.log      # Firewall logs\\n```\\n\\n**5. Fail2ban (Intrusion Prevention):**\\n```bash\\n$ sudo apt install fail2ban          # Install fail2ban\\n$ sudo systemctl enable fail2ban     # Enable at boot\\n$ sudo fail2ban-client status        # Check status\\n$ sudo fail2ban-client status sshd   # Check SSH jail\\n```"
+          }
+        ]
+      },
+      "resources": [
+        "https://www.kernel.org/doc/Documentation/networking/",
+        "https://netfilter.org/documentation/",
+        "https://www.openssh.com/manual.html"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-12-11T00:00:00Z"
+    },
+    {
+      "id": "networks-internet-intro",
+      "title": "Computer Networks - Introduction",
+      "description": "Introduction to computer networks, Internet structure, protocols, and network performance fundamentals.",
+      "level": "intermediate",
+      "category": "Computer Networks",
+      "route": "/tutorial/networks-internet-intro",
+      "estimatedTime": 45,
+      "prerequisites": [],
+      "learningObjectives": [
+        "Understand what the Internet is and how it works",
+        "Learn about network protocols and layered architecture",
+        "Understand network performance metrics (delay, throughput, loss)",
+        "Learn about packet switching vs circuit switching",
+        "Understand network security basics"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "What is the Internet?",
+            "type": "text",
+            "content": "The Internet is a **network of networks** that interconnects billions of computing devices worldwide. These devices include traditional computers, smartphones, tablets, IoT devices, servers, and more.\\n\\n**Key Components:**\\n- **End Systems (Hosts)**: Devices that run network applications\\n- **Communication Links**: Physical media (fiber, copper, radio)\\n- **Packet Switches**: Routers and switches that forward packets\\n- **Internet Service Providers (ISPs)**: Provide Internet access\\n\\n**Internet Structure:**\\n- **Network Edge**: End systems and access networks\\n- **Network Core**: Mesh of interconnected routers\\n- **Access Networks**: Connect end systems to edge routers\\n\\n**Services View:**\\nThe Internet provides a platform for distributed applications like Web, email, games, e-commerce, social media, and streaming."
+          },
+          {
+            "title": "What is a Protocol?",
+            "type": "text",
+            "content": "A **protocol** defines the format and order of messages exchanged between network entities, and actions taken on message transmission/receipt.\\n\\n**Protocol Examples:**\\n- **HTTP**: Web protocol for requesting/serving web pages\\n- **TCP**: Reliable transport protocol\\n- **IP**: Network layer protocol for routing\\n- **Ethernet**: Link layer protocol for LANs\\n\\n**Protocol Characteristics:**\\n- **Syntax**: Message format and structure\\n- **Semantics**: Meaning of information in each field\\n- **Timing**: When and how fast messages are sent\\n\\n**Human Protocol Analogy:**\\n```\\nHuman 1: \\\"Hi\\\"\\nHuman 2: \\\"Hi\\\"\\nHuman 1: \\\"Got the time?\\\"\\nHuman 2: \\\"2:00\\\"\\n```\\n\\n**Network Protocol:**\\n```\\nClient: HTTP GET request\\nServer: HTTP response with web page\\n```"
+          },
+          {
+            "title": "Network Edge and Access Networks",
+            "type": "text",
+            "content": "**Network Edge Components:**\\n- **End Systems**: Run application programs (Web, email)\\n- **Client/Server Model**: Clients request services from servers\\n- **Peer-to-Peer Model**: Minimal use of dedicated servers\\n\\n**Access Network Types:**\\n\\n**1. Residential Access:**\\n- **DSL**: Digital Subscriber Line over telephone lines\\n- **Cable**: Shared broadcast medium, higher speeds\\n- **Fiber (FTTH)**: Fiber to the Home, highest speeds\\n- **Satellite**: For remote areas\\n\\n**2. Institutional Access:**\\n- **Ethernet**: Wired LAN, 10 Mbps to 100+ Gbps\\n- **WiFi**: Wireless LAN, 802.11 standards\\n\\n**3. Mobile Access:**\\n- **3G/4G/5G**: Cellular networks\\n- **WiFi**: Wireless hotspots\\n\\n**Physical Media:**\\n- **Guided**: Copper wire, fiber optic cable\\n- **Unguided**: Radio spectrum, satellite"
+          },
+          {
+            "title": "Network Core: Packet Switching",
+            "type": "text",
+            "content": "**Packet Switching:**\\nData is broken into packets, each packet is forwarded independently through the network.\\n\\n**Key Concepts:**\\n- **Store-and-Forward**: Entire packet must arrive before forwarding\\n- **Queuing**: Packets queue when arrival rate exceeds transmission rate\\n- **Packet Loss**: Occurs when queue buffers fill up\\n\\n**Forwarding Process:**\\n1. Packet arrives at router\\n2. Router examines packet header\\n3. Router uses forwarding table to determine output link\\n4. Packet is queued and transmitted\\n\\n**Circuit Switching vs Packet Switching:**\\n\\n**Circuit Switching:**\\n- Dedicated path reserved for entire communication\\n- Guaranteed performance but inefficient resource use\\n- Used in traditional telephone networks\\n\\n**Packet Switching:**\\n- Resources shared among all users\\n- More efficient resource utilization\\n- Variable performance due to congestion\\n- Used in Internet"
+          },
+          {
+            "title": "Performance: Delay, Loss, and Throughput",
+            "type": "text",
+            "content": "**Types of Delay:**\\n\\n**1. Processing Delay:**\\n- Time to examine packet header and determine output link\\n- Check for bit errors\\n- Typically microseconds\\n\\n**2. Queuing Delay:**\\n- Time waiting in output queue for transmission\\n- Depends on congestion level\\n- Microseconds to milliseconds\\n\\n**3. Transmission Delay:**\\n- Time to push all packet bits onto link\\n- = Packet Length (bits) / Link Bandwidth (bps)\\n\\n**4. Propagation Delay:**\\n- Time for signal to travel from source to destination\\n- = Distance / Speed of light in medium\\n\\n**Total Delay = Processing + Queuing + Transmission + Propagation**\\n\\n**Packet Loss:**\\n- Occurs when packet arrives at full queue\\n- Lost packet may be retransmitted by sender\\n\\n**Throughput:**\\n- Rate at which bits are transferred between sender/receiver\\n- **Instantaneous**: Rate at given point in time\\n- **Average**: Rate over longer period\\n- Limited by bottleneck link"
+          },
+          {
+            "title": "Protocol Layers and Service Models",
+            "type": "text",
+            "content": "**Why Layering?**\\n- **Modularity**: Each layer implements specific functionality\\n- **Flexibility**: Can change implementation without affecting other layers\\n- **Maintenance**: Easier to update and debug\\n\\n**Internet Protocol Stack:**\\n\\n**5. Application Layer:**\\n- Network applications and protocols (HTTP, SMTP, FTP)\\n- Message\\n\\n**4. Transport Layer:**\\n- Process-to-process data transfer (TCP, UDP)\\n- Segment\\n\\n**3. Network Layer:**\\n- Routing of datagrams from source to destination (IP)\\n- Datagram\\n\\n**2. Link Layer:**\\n- Data transfer between neighboring network elements (Ethernet, WiFi)\\n- Frame\\n\\n**1. Physical Layer:**\\n- Transmission of individual bits (cables, radio)\\n- Bit\\n\\n**Encapsulation:**\\nEach layer adds its own header to the data from the layer above.\\n\\n**Example:**\\nApplication data → TCP header + data → IP header + TCP header + data → Ethernet header + IP header + TCP header + data"
+          }
+        ]
+      },
+      "resources": [
+        "https://gaia.cs.umass.edu/kurose_ross/",
+        "https://www.youtube.com/watch?v=74sEFYBBRAY&list=PL1ya5dD_M8uX-BLUF1FEvUNsYWQL5_l0O",
+        "https://tools.ietf.org/rfc/",
+        "https://www.internetworldstats.com/"
+      ],
+      "author": "James F. Kurose & Keith W. Ross",
+      "createdAt": "2025-01-06T00:00:00Z"
+    },
+    {
+      "id": "application-layer",
+      "title": "Computer Networks - Application Layer",
+      "description": "Learn HTTP, DNS, SMTP, and other application layer protocols that power Internet applications.",
+      "level": "intermediate",
+      "category": "Computer Networks",
+      "route": "/tutorial/application-layer",
+      "estimatedTime": 50,
+      "prerequisites": ["networks-internet-intro"],
+      "learningObjectives": [
+        "Understand application layer protocols and services",
+        "Master HTTP protocol and web technologies",
+        "Learn DNS system and name resolution",
+        "Understand email protocols (SMTP, POP3, IMAP)",
+        "Learn socket programming concepts"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Application Layer Overview",
+            "type": "text",
+            "content": "**Application Layer Responsibilities:**\\n- Provides network services to application processes\\n- Defines protocols for specific applications\\n- Handles data representation and encryption\\n- Manages user authentication and authorization\\n\\n**Application Architectures:**\\n\\n**1. Client-Server:**\\n- **Server**: Always-on host with permanent IP address\\n- **Clients**: Communicate with server, may be intermittently connected\\n- Examples: Web, FTP, Telnet\\n\\n**2. Peer-to-Peer (P2P):**\\n- No always-on server\\n- Arbitrary end systems directly communicate\\n- Peers request service from other peers\\n- Examples: BitTorrent, Skype\\n\\n**3. Hybrid:**\\n- Combines client-server and P2P\\n- Central server for peer discovery\\n- Direct P2P communication for data transfer"
+          },
+          {
+            "title": "HTTP: HyperText Transfer Protocol",
+            "type": "text",
+            "content": "**HTTP Overview:**\\n- Web's application layer protocol\\n- Client/server model: browser requests, server responds\\n- Uses TCP as transport protocol\\n- Stateless protocol (server maintains no client state)\\n\\n**HTTP Connections:**\\n\\n**Non-persistent HTTP:**\\n- At most one object sent over TCP connection\\n- Connection closed after each object\\n- Requires 2 RTTs per object\\n\\n**Persistent HTTP:**\\n- Multiple objects sent over single TCP connection\\n- Server leaves connection open after sending response\\n- Reduces response time and server overhead\\n\\n**HTTP Message Format:**\\n\\n**Request Message:**\\n```\\nGET /index.html HTTP/1.1\\nHost: www.example.com\\nUser-Agent: Mozilla/5.0\\nConnection: close\\n\\n```\\n\\n**Response Message:**\\n```\\nHTTP/1.1 200 OK\\nDate: Sun, 26 Sep 2010 20:09:20 GMT\\nServer: Apache/2.0.52 (CentOS)\\nContent-Length: 3874\\nContent-Type: text/html\\n\\n<html>...\\n```\\n\\n**HTTP Methods:**\\n- **GET**: Request object from server\\n- **POST**: Submit form data to server\\n- **PUT**: Upload object to server\\n- **DELETE**: Remove object from server\\n- **HEAD**: Request headers only"
+          },
+          {
+            "title": "DNS: Domain Name System",
+            "type": "text",
+            "content": "**DNS Purpose:**\\n- Translate hostnames to IP addresses\\n- Distributed database implemented in hierarchy of name servers\\n- Application-layer protocol for name resolution\\n\\n**DNS Services:**\\n- **Hostname to IP address translation**\\n- **Host aliasing**: Canonical and alias names\\n- **Mail server aliasing**: MX records\\n- **Load distribution**: Multiple IP addresses for one name\\n\\n**DNS Hierarchy:**\\n\\n**Root DNS Servers:**\\n- Top of hierarchy\\n- 13 root servers worldwide\\n- Know about top-level domain servers\\n\\n**Top-Level Domain (TLD) Servers:**\\n- Responsible for .com, .org, .net, .edu, country domains\\n- Maintained by various organizations\\n\\n**Authoritative DNS Servers:**\\n- Organization's own DNS servers\\n- Provide authoritative hostname-to-IP mappings\\n\\n**Local DNS Servers:**\\n- Each ISP has local DNS server\\n- Acts as proxy, forwards queries into hierarchy\\n\\n**DNS Query Process:**\\n1. Host queries local DNS server\\n2. Local server queries root server if needed\\n3. Root server returns TLD server address\\n4. Local server queries TLD server\\n5. TLD server returns authoritative server address\\n6. Local server queries authoritative server\\n7. Authoritative server returns IP address"
+          },
+          {
+            "title": "Email Protocols",
+            "type": "text",
+            "content": "**Email System Components:**\\n- **User Agents**: Mail readers (Outlook, Gmail, Thunderbird)\\n- **Mail Servers**: Store and forward messages\\n- **SMTP**: Simple Mail Transfer Protocol\\n\\n**SMTP (Simple Mail Transfer Protocol):**\\n- Uses TCP for reliable transfer\\n- Port 25 (or 587 for submission)\\n- Three phases: handshaking, transfer, closure\\n- Command/response interaction\\n- Messages must be in 7-bit ASCII\\n\\n**SMTP Example:**\\n```\\nS: 220 hamburger.edu\\nC: HELO crepes.fr\\nS: 250 Hello crepes.fr, pleased to meet you\\nC: MAIL FROM: <alice@crepes.fr>\\nS: 250 alice@crepes.fr... Sender ok\\nC: RCPT TO: <bob@hamburger.edu>\\nS: 250 bob@hamburger.edu ... Recipient ok\\nC: DATA\\nS: 354 Enter mail, end with \\\".\\\" on a line by itself\\nC: Do you like ketchup?\\nC: How about pickles?\\nC: .\\nS: 250 Message accepted for delivery\\nC: QUIT\\nS: 221 hamburger.edu closing connection\\n```\\n\\n**Mail Access Protocols:**\\n\\n**POP3 (Post Office Protocol):**\\n- Simple protocol for retrieving email\\n- Download-and-delete or download-and-keep modes\\n- Stateless across sessions\\n\\n**IMAP (Internet Mail Access Protocol):**\\n- More features than POP3\\n- Keeps messages on server\\n- Allows organization into folders\\n- Maintains state across sessions\\n\\n**HTTP-based Email:**\\n- Gmail, Yahoo Mail, Hotmail\\n- Uses HTTP for both sending and receiving"
+          },
+          {
+            "title": "Socket Programming",
+            "type": "text",
+            "content": "**Socket Programming Basics:**\\n- Socket: Interface between application and transport layer\\n- Two socket types: TCP and UDP\\n- Socket identified by IP address and port number\\n\\n**TCP Socket Programming:**\\n\\n**Server Process:**\\n1. Create socket\\n2. Bind socket to local port\\n3. Listen for incoming connections\\n4. Accept connection from client\\n5. Communicate with client\\n6. Close connection\\n\\n**Client Process:**\\n1. Create socket\\n2. Connect to server\\n3. Communicate with server\\n4. Close connection\\n\\n**Python TCP Example:**\\n```python\\n# Server\\nimport socket\\nserverSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\\nserverSocket.bind(('', 12000))\\nserverSocket.listen(1)\\nconnectionSocket, addr = serverSocket.accept()\\nsentence = connectionSocket.recv(1024)\\ncapitalizedSentence = sentence.upper()\\nconnectionSocket.send(capitalizedSentence)\\nconnectionSocket.close()\\n\\n# Client\\nclientSocket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)\\nclientSocket.connect(('hostname', 12000))\\nsentence = input('Input lowercase sentence:')\\nclientSocket.send(sentence.encode())\\nmodifiedSentence = clientSocket.recv(1024)\\nprint(modifiedSentence.decode())\\nclientSocket.close()\\n```\\n\\n**UDP Socket Programming:**\\n- No connection establishment\\n- Each packet includes destination address\\n- Server must extract client address from packet\\n- More efficient for simple request-response"
+          }
+        ]
+      },
+      "resources": [
+        "https://tools.ietf.org/html/rfc2616",
+        "https://tools.ietf.org/html/rfc1035",
+        "https://tools.ietf.org/html/rfc5321",
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP"
+      ],
+      "author": "James F. Kurose & Keith W. Ross",
+      "createdAt": "2025-01-06T00:00:00Z"
+    }
+,
+    {
+      "id": "transport-layer",
+      "title": "Computer Networks - Transport Layer",
+      "description": "Master TCP and UDP protocols, reliable data transfer, flow control, and congestion control.",
+      "level": "intermediate",
+      "category": "Computer Networks",
+      "route": "/tutorial/transport-layer",
+      "estimatedTime": 45,
+      "prerequisites": ["application-layer"],
+      "learningObjectives": [
+        "Understand transport layer services and protocols",
+        "Master TCP reliable data transfer mechanisms",
+        "Learn UDP connectionless transport",
+        "Understand flow control and congestion control",
+        "Learn TCP connection management"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Transport Layer Services",
+            "type": "text",
+            "content": "**Transport Layer Responsibilities:**\\n- Provide logical communication between application processes\\n- Multiplexing and demultiplexing\\n- Error detection and correction\\n- Flow control and congestion control\\n\\n**Transport vs Network Layer:**\\n- **Network Layer**: Logical communication between hosts\\n- **Transport Layer**: Logical communication between processes\\n\\n**Internet Transport Protocols:**\\n- **TCP**: Transmission Control Protocol (reliable, connection-oriented)\\n- **UDP**: User Datagram Protocol (unreliable, connectionless)"
+          },
+          {
+            "title": "UDP: User Datagram Protocol",
+            "type": "text",
+            "content": "**UDP Characteristics:**\\n- Connectionless (no handshaking)\\n- Unreliable (no delivery guarantee)\\n- No flow control or congestion control\\n- Small header overhead (8 bytes)\\n\\n**UDP Header Format:**\\n```\\n0      16      32\\n+------+------+\\n| Source Port  |\\n+------+------+\\n| Dest Port    |\\n+------+------+\\n| Length       |\\n+------+------+\\n| Checksum     |\\n+------+------+\\n```\\n\\n**UDP Use Cases:**\\n- DNS queries\\n- DHCP\\n- Streaming media\\n- Online gaming\\n- Simple request-response protocols\\n\\n**Why Use UDP?**\\n- No connection establishment delay\\n- Simple protocol\\n- Small header\\n- No congestion control (can send at desired rate)"
+          },
+          {
+            "title": "TCP: Transmission Control Protocol",
+            "type": "text",
+            "content": "**TCP Characteristics:**\\n- Connection-oriented\\n- Reliable data transfer\\n- Flow control\\n- Congestion control\\n- Full-duplex communication\\n\\n**TCP Header Format:**\\n```\\n0      16      32\\n+------+------+\\n| Source Port  |\\n+------+------+\\n| Dest Port    |\\n+------+------+\\n| Sequence Number |\\n+------+------+\\n| Ack Number   |\\n+------+------+\\n|Flags | Window|\\n+------+------+\\n|Checksum|Urgent|\\n+------+------+\\n```\\n\\n**TCP Connection Management:**\\n\\n**Three-Way Handshake:**\\n1. Client sends SYN\\n2. Server responds with SYN-ACK\\n3. Client sends ACK\\n\\n**Connection Termination:**\\n1. Client sends FIN\\n2. Server sends ACK\\n3. Server sends FIN\\n4. Client sends ACK"
+          },
+          {
+            "title": "TCP Reliable Data Transfer",
+            "type": "text",
+            "content": "**TCP Reliability Mechanisms:**\\n\\n**1. Sequence Numbers:**\\n- Each byte has a sequence number\\n- Receiver can detect missing data\\n- Enables proper ordering\\n\\n**2. Acknowledgments:**\\n- Cumulative ACKs\\n- ACK number = next expected sequence number\\n- Duplicate ACKs indicate lost segments\\n\\n**3. Timeouts and Retransmission:**\\n- Sender maintains timer for each segment\\n- Retransmit if ACK not received in time\\n- Adaptive timeout calculation\\n\\n**4. Fast Retransmit:**\\n- Retransmit after 3 duplicate ACKs\\n- Don't wait for timeout\\n- Improves performance\\n\\n**TCP Segment Structure:**\\n- Header (20-60 bytes)\\n- Data (0-65,535 bytes)\\n- Maximum Segment Size (MSS) typically 1460 bytes"
+          },
+          {
+            "title": "TCP Flow and Congestion Control",
+            "type": "text",
+            "content": "**Flow Control:**\\n- Prevents sender from overwhelming receiver\\n- Receiver advertises available buffer space\\n- Sender limits unACKed data to receiver window\\n\\n**Congestion Control:**\\n- Prevents sender from overwhelming network\\n- TCP uses AIMD (Additive Increase, Multiplicative Decrease)\\n\\n**TCP Congestion Control Algorithms:**\\n\\n**1. Slow Start:**\\n- Start with small congestion window (cwnd = 1 MSS)\\n- Double cwnd every RTT until threshold\\n- Exponential growth\\n\\n**2. Congestion Avoidance:**\\n- Linear increase after slow start threshold\\n- Increase cwnd by 1 MSS every RTT\\n\\n**3. Fast Recovery:**\\n- After fast retransmit\\n- Set cwnd to half of previous value\\n- Continue with congestion avoidance\\n\\n**Congestion Detection:**\\n- Timeout: Severe congestion\\n- 3 duplicate ACKs: Mild congestion"
+          }
+        ]
+      },
+      "resources": [
+        "https://tools.ietf.org/html/rfc793",
+        "https://tools.ietf.org/html/rfc768",
+        "https://tools.ietf.org/html/rfc5681"
+      ],
+      "author": "James F. Kurose & Keith W. Ross",
+      "createdAt": "2025-01-06T00:00:00Z"
+    },
+    {
+      "id": "network-layer-data",
+      "title": "Computer Networks - Network Layer: Data Plane",
+      "description": "Understand IP addressing, routing algorithms, and packet forwarding in the network layer.",
+      "level": "intermediate",
+      "category": "Computer Networks",
+      "route": "/tutorial/network-layer-data",
+      "estimatedTime": 40,
+      "prerequisites": ["transport-layer"],
+      "learningObjectives": [
+        "Understand network layer services and functions",
+        "Master IP addressing and subnetting",
+        "Learn packet forwarding and routing tables",
+        "Understand IPv4 and IPv6 protocols",
+        "Learn NAT and DHCP mechanisms"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Network Layer Overview",
+            "type": "text",
+            "content": "**Network Layer Functions:**\\n- **Forwarding**: Move packets from input to output port\\n- **Routing**: Determine path from source to destination\\n\\n**Data Plane vs Control Plane:**\\n- **Data Plane**: Per-router functions, packet forwarding\\n- **Control Plane**: Network-wide logic, routing protocols\\n\\n**Router Architecture:**\\n- Input ports\\n- Switching fabric\\n- Output ports\\n- Routing processor\\n\\n**Packet Forwarding:**\\n1. Extract destination IP address\\n2. Look up in forwarding table\\n3. Determine output port\\n4. Forward packet"
+          },
+          {
+            "title": "IPv4 Protocol",
+            "type": "text",
+            "content": "**IPv4 Header Format:**\\n```\\n0      8     16     24     32\\n+------+------+------+------+\\n|Ver|IHL|Type |  Total Length |\\n+------+------+------+------+\\n|   Identification   |Flg|Offset|\\n+------+------+------+------+\\n| TTL  |Proto |Header Checksum|\\n+------+------+------+------+\\n|      Source IP Address     |\\n+------+------+------+------+\\n|   Destination IP Address   |\\n+------+------+------+------+\\n```\\n\\n**Key Fields:**\\n- **Version**: IP version (4)\\n- **TTL**: Time to Live (hop limit)\\n- **Protocol**: Next layer protocol (TCP=6, UDP=17)\\n- **Source/Destination**: 32-bit IP addresses\\n\\n**IPv4 Fragmentation:**\\n- Large packets fragmented at routers\\n- Reassembled at destination\\n- Identification, flags, fragment offset fields used"
+          },
+          {
+            "title": "IP Addressing and Subnetting",
+            "type": "text",
+            "content": "**IP Address Structure:**\\n- 32-bit address (IPv4)\\n- Dotted decimal notation (192.168.1.1)\\n- Network portion + Host portion\\n\\n**Address Classes (Historical):**\\n- **Class A**: 1.0.0.0 to 126.255.255.255 (/8)\\n- **Class B**: 128.0.0.0 to 191.255.255.255 (/16)\\n- **Class C**: 192.0.0.0 to 223.255.255.255 (/24)\\n\\n**CIDR (Classless Inter-Domain Routing):**\\n- Variable-length subnet masks\\n- Format: a.b.c.d/x (x = number of network bits)\\n- Example: 192.168.1.0/24\\n\\n**Subnetting Example:**\\n- Network: 192.168.1.0/24\\n- Subnet 1: 192.168.1.0/26 (192.168.1.1-62)\\n- Subnet 2: 192.168.1.64/26 (192.168.1.65-126)\\n- Subnet 3: 192.168.1.128/26 (192.168.1.129-190)\\n- Subnet 4: 192.168.1.192/26 (192.168.1.193-254)\\n\\n**Special Addresses:**\\n- **Private**: 10.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16\\n- **Loopback**: 127.0.0.0/8\\n- **Multicast**: 224.0.0.0/4"
+          },
+          {
+            "title": "DHCP and NAT",
+            "type": "text",
+            "content": "**DHCP (Dynamic Host Configuration Protocol):**\\n\\n**Purpose:**\\n- Automatically assign IP addresses\\n- Provide network configuration\\n- Reduce manual configuration\\n\\n**DHCP Process:**\\n1. **DHCP Discover**: Client broadcasts request\\n2. **DHCP Offer**: Server offers IP address\\n3. **DHCP Request**: Client requests offered address\\n4. **DHCP ACK**: Server confirms assignment\\n\\n**DHCP Information:**\\n- IP address and subnet mask\\n- Default gateway\\n- DNS servers\\n- Lease time\\n\\n**NAT (Network Address Translation):**\\n\\n**Purpose:**\\n- Allow multiple devices to share single public IP\\n- Provide security through address hiding\\n- Conserve IPv4 addresses\\n\\n**NAT Operation:**\\n1. Replace source IP/port with NAT IP/port\\n2. Record mapping in NAT table\\n3. Replace destination IP/port on return packets\\n\\n**NAT Types:**\\n- **Static NAT**: One-to-one mapping\\n- **Dynamic NAT**: Pool of public addresses\\n- **PAT**: Port Address Translation (most common)"
+          },
+          {
+            "title": "IPv6 Protocol",
+            "type": "text",
+            "content": "**Why IPv6?**\\n- IPv4 address exhaustion\\n- Larger address space (128 bits)\\n- Simplified header format\\n- Better support for mobility and security\\n\\n**IPv6 Address Format:**\\n- 128-bit addresses\\n- Hexadecimal notation\\n- Example: 2001:0db8:85a3:0000:0000:8a2e:0370:7334\\n- Compressed: 2001:db8:85a3::8a2e:370:7334\\n\\n**IPv6 Header:**\\n```\\n0      8     16     24     32\\n+------+------+------+------+\\n|Ver|Traffic Class|Flow Label|\\n+------+------+------+------+\\n|  Payload Length   |Next|Hop|\\n+------+------+------+------+\\n|                            |\\n|      Source Address        |\\n|         (128 bits)         |\\n|                            |\\n+------+------+------+------+\\n|                            |\\n|   Destination Address      |\\n|         (128 bits)         |\\n|                            |\\n+------+------+------+------+\\n```\\n\\n**IPv6 Features:**\\n- No fragmentation at routers\\n- No header checksum\\n- Extension headers for options\\n- Built-in IPSec support\\n\\n**IPv6 Transition Mechanisms:**\\n- **Dual Stack**: Run IPv4 and IPv6 simultaneously\\n- **Tunneling**: IPv6 packets in IPv4 packets\\n- **Translation**: Convert between IPv4 and IPv6"
+          }
+        ]
+      },
+      "resources": [
+        "https://tools.ietf.org/html/rfc791",
+        "https://tools.ietf.org/html/rfc2460",
+        "https://tools.ietf.org/html/rfc2131"
+      ],
+      "author": "James F. Kurose & Keith W. Ross",
+      "createdAt": "2025-01-06T00:00:00Z"
+    }
+,
+    {
+      "id": "network-layer-control",
+      "title": "Computer Networks - Network Layer: Control Plane",
+      "description": "Learn routing protocols, network management, and control plane operations.",
+      "level": "intermediate",
+      "category": "Computer Networks",
+      "route": "/tutorial/network-layer-control",
+      "estimatedTime": 35,
+      "prerequisites": ["network-layer-data"],
+      "learningObjectives": [
+        "Understand routing algorithms and protocols",
+        "Learn distance vector and link state routing",
+        "Master OSPF and BGP protocols",
+        "Understand network management with SNMP",
+        "Learn SDN and OpenFlow concepts"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Routing Algorithms",
+            "type": "text",
+            "content": "**Routing Algorithm Classification:**\\n\\n**Global vs Decentralized:**\\n- **Global**: Complete network topology known (link state)\\n- **Decentralized**: Iterative process, exchange info with neighbors (distance vector)\\n\\n**Static vs Dynamic:**\\n- **Static**: Routes change slowly over time\\n- **Dynamic**: Routes change more quickly, periodic updates\\n\\n**Link State Routing:**\\n- Each router knows complete network topology\\n- Uses Dijkstra's algorithm\\n- Examples: OSPF, IS-IS\\n\\n**Distance Vector Routing:**\\n- Each router knows distance to destinations via neighbors\\n- Uses Bellman-Ford algorithm\\n- Examples: RIP, BGP"
+          },
+          {
+            "title": "OSPF: Open Shortest Path First",
+            "type": "text",
+            "content": "**OSPF Characteristics:**\\n- Link state routing protocol\\n- Uses Dijkstra's shortest path algorithm\\n- Hierarchical routing with areas\\n- Fast convergence\\n- Load balancing support\\n\\n**OSPF Operation:**\\n1. **Hello Protocol**: Discover neighbors\\n2. **Database Synchronization**: Exchange link state info\\n3. **SPF Calculation**: Compute shortest paths\\n4. **Routing Table Update**: Install best routes\\n\\n**OSPF Areas:**\\n- **Backbone Area (Area 0)**: Central area\\n- **Regular Areas**: Connected to backbone\\n- **Stub Areas**: Limited external routes\\n- **NSSA**: Not-So-Stubby Areas\\n\\n**OSPF Packet Types:**\\n- Hello packets\\n- Database Description (DD)\\n- Link State Request (LSR)\\n- Link State Update (LSU)\\n- Link State Acknowledgment (LSAck)"
+          },
+          {
+            "title": "BGP: Border Gateway Protocol",
+            "type": "text",
+            "content": "**BGP Overview:**\\n- Inter-domain routing protocol\\n- Path vector protocol\\n- Policy-based routing\\n- Used between Autonomous Systems (AS)\\n\\n**BGP Types:**\\n- **eBGP**: External BGP (between different AS)\\n- **iBGP**: Internal BGP (within same AS)\\n\\n**BGP Attributes:**\\n- **AS_PATH**: List of AS numbers\\n- **NEXT_HOP**: Next hop IP address\\n- **LOCAL_PREF**: Local preference value\\n- **MED**: Multi-Exit Discriminator\\n\\n**BGP Route Selection:**\\n1. Highest LOCAL_PREF\\n2. Shortest AS_PATH\\n3. Lowest MED\\n4. eBGP over iBGP\\n5. Lowest IGP cost to NEXT_HOP\\n\\n**BGP Policies:**\\n- Import policies (what routes to accept)\\n- Export policies (what routes to advertise)\\n- Transit vs non-transit AS"
+          },
+          {
+            "title": "Network Management",
+            "type": "text",
+            "content": "**Network Management Functions:**\\n- **Configuration**: Set up network devices\\n- **Monitoring**: Track network performance\\n- **Fault Management**: Detect and resolve problems\\n- **Performance Management**: Optimize network performance\\n- **Security Management**: Protect network resources\\n\\n**SNMP: Simple Network Management Protocol:**\\n\\n**SNMP Components:**\\n- **Manager**: Network management station\\n- **Agent**: Software in managed device\\n- **MIB**: Management Information Base\\n\\n**SNMP Operations:**\\n- **GET**: Retrieve management information\\n- **SET**: Modify management information\\n- **TRAP**: Asynchronous notification\\n\\n**MIB Structure:**\\n- Hierarchical tree structure\\n- Object Identifier (OID)\\n- Standard and enterprise MIBs\\n\\n**SNMP Versions:**\\n- **SNMPv1**: Original version, limited security\\n- **SNMPv2**: Improved performance and error handling\\n- **SNMPv3**: Enhanced security with authentication and encryption"
+          },
+          {
+            "title": "SDN and OpenFlow",
+            "type": "text",
+            "content": "**Software-Defined Networking (SDN):**\\n\\n**SDN Principles:**\\n- **Centralized Control**: Logically centralized controller\\n- **Programmable**: Network behavior via software\\n- **Open Interfaces**: Standard APIs\\n\\n**SDN Architecture:**\\n- **Application Layer**: Network applications\\n- **Control Layer**: SDN controller\\n- **Infrastructure Layer**: Network devices\\n\\n**Benefits of SDN:**\\n- Centralized network management\\n- Programmable network behavior\\n- Vendor independence\\n- Innovation through software\\n\\n**OpenFlow Protocol:**\\n- Communication between controller and switches\\n- Flow-based forwarding\\n- Flow tables with match-action rules\\n\\n**OpenFlow Components:**\\n- **Flow Table**: Match fields and actions\\n- **Controller**: Makes routing decisions\\n- **Secure Channel**: Communication path\\n\\n**Flow Table Entries:**\\n- **Match Fields**: Packet header fields\\n- **Actions**: Forward, drop, modify\\n- **Counters**: Statistics\\n- **Priority**: Rule precedence\\n\\n**OpenFlow Actions:**\\n- Forward to port\\n- Drop packet\\n- Modify header fields\\n- Send to controller"
+          }
+        ]
+      },
+      "resources": [
+        "https://tools.ietf.org/html/rfc2328",
+        "https://tools.ietf.org/html/rfc4271",
+        "https://tools.ietf.org/html/rfc3411"
+      ],
+      "author": "James F. Kurose & Keith W. Ross",
+      "createdAt": "2025-01-06T00:00:00Z"
+    },
+    {
+      "id": "link-layer",
+      "title": "Computer Networks - Link Layer and LANs",
+      "description": "Master Ethernet, switching, VLANs, and link layer protocols for local area networks.",
+      "level": "intermediate",
+      "category": "Computer Networks",
+      "route": "/tutorial/link-layer",
+      "estimatedTime": 40,
+      "prerequisites": ["network-layer-control"],
+      "learningObjectives": [
+        "Understand link layer services and protocols",
+        "Master Ethernet and frame structure",
+        "Learn switching and MAC addresses",
+        "Understand VLANs and spanning tree",
+        "Learn wireless LAN protocols"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Link Layer Services",
+            "type": "text",
+            "content": "**Link Layer Functions:**\\n- **Framing**: Encapsulate network layer packets\\n- **Link Access**: Coordinate access to shared medium\\n- **Reliable Delivery**: Error detection and correction\\n- **Error Detection**: Detect bit errors in frames\\n- **Error Correction**: Correct detected errors\\n\\n**Link Layer Implementation:**\\n- Network Interface Card (NIC)\\n- Combination of hardware and software\\n- Adapter communicates with CPU via interrupt\\n\\n**Error Detection Techniques:**\\n\\n**Parity Bits:**\\n- Single bit parity (even/odd)\\n- Can detect single bit errors\\n- Cannot correct errors\\n\\n**Checksums:**\\n- Sum of data bytes\\n- Simple but limited error detection\\n\\n**Cyclic Redundancy Check (CRC):**\\n- Most powerful error detection\\n- Based on polynomial arithmetic\\n- Can detect burst errors"
+          },
+          {
+            "title": "Multiple Access Protocols",
+            "type": "text",
+            "content": "**Multiple Access Problem:**\\n- Multiple nodes share single broadcast channel\\n- Need coordination to avoid collisions\\n- Goal: Efficient, fair, decentralized\\n\\n**Channel Partitioning:**\\n\\n**TDMA (Time Division Multiple Access):**\\n- Divide time into slots\\n- Each node gets fixed time slot\\n- Unused slots go idle\\n\\n**FDMA (Frequency Division Multiple Access):**\\n- Divide frequency spectrum\\n- Each node gets fixed frequency band\\n- Unused bands go idle\\n\\n**Random Access:**\\n\\n**CSMA (Carrier Sense Multiple Access):**\\n- Listen before transmit\\n- If channel idle, transmit\\n- If channel busy, wait\\n\\n**CSMA/CD (Collision Detection):**\\n- Listen while transmitting\\n- If collision detected, stop and backoff\\n- Used in Ethernet\\n\\n**CSMA/CA (Collision Avoidance):**\\n- Try to avoid collisions\\n- Use RTS/CTS handshake\\n- Used in WiFi"
+          },
+          {
+            "title": "Ethernet",
+            "type": "text",
+            "content": "**Ethernet Overview:**\\n- Most popular LAN technology\\n- Originally bus topology, now star\\n- CSMA/CD for shared medium\\n- Switched Ethernet for modern networks\\n\\n**Ethernet Frame Structure:**\\n```\\n+----------+----------+----------+----------+----------+----------+\\n| Preamble |Dest MAC  |Src MAC   |Type/Len  |  Data    |   CRC    |\\n|  8 bytes | 6 bytes  | 6 bytes  | 2 bytes  |46-1500 B | 4 bytes  |\\n+----------+----------+----------+----------+----------+----------+\\n```\\n\\n**Ethernet Fields:**\\n- **Preamble**: Synchronization (10101010...)\\n- **Destination MAC**: 6-byte hardware address\\n- **Source MAC**: 6-byte hardware address\\n- **Type/Length**: Protocol type or frame length\\n- **Data**: Network layer packet (46-1500 bytes)\\n- **CRC**: 32-bit cyclic redundancy check\\n\\n**MAC Addresses:**\\n- 48-bit hardware addresses\\n- Globally unique (assigned by IEEE)\\n- Format: XX:XX:XX:XX:XX:XX\\n- First 24 bits: Organizationally Unique Identifier (OUI)\\n- Last 24 bits: Device identifier\\n\\n**Ethernet Standards:**\\n- **10BASE-T**: 10 Mbps over twisted pair\\n- **100BASE-TX**: 100 Mbps Fast Ethernet\\n- **1000BASE-T**: 1 Gbps Gigabit Ethernet\\n- **10GBASE-T**: 10 Gbps Ethernet"
+          },
+          {
+            "title": "Switches and VLANs",
+            "type": "text",
+            "content": "**Ethernet Switches:**\\n- Store-and-forward devices\\n- Learn MAC addresses\\n- Forward frames based on MAC table\\n- Eliminate collisions\\n\\n**Switch Learning:**\\n1. Examine source MAC address\\n2. Associate with incoming port\\n3. Store in MAC address table\\n4. Age out old entries\\n\\n**Switch Forwarding:**\\n1. Look up destination MAC\\n2. If found, forward to specific port\\n3. If not found, flood to all ports\\n4. Never forward back to source port\\n\\n**Spanning Tree Protocol (STP):**\\n- Prevents loops in switched networks\\n- Creates loop-free topology\\n- Blocks redundant paths\\n- Provides backup paths\\n\\n**STP Operation:**\\n1. Elect root bridge\\n2. Calculate shortest path to root\\n3. Block redundant ports\\n4. Maintain loop-free topology\\n\\n**VLANs (Virtual LANs):**\\n- Logical segmentation of switch ports\\n- Separate broadcast domains\\n- Improved security and performance\\n\\n**VLAN Benefits:**\\n- Traffic isolation\\n- Flexible network design\\n- Improved security\\n- Broadcast control\\n\\n**VLAN Trunking:**\\n- Carry multiple VLANs on single link\\n- 802.1Q standard\\n- VLAN tags in Ethernet frames"
+          },
+          {
+            "title": "Wireless LANs",
+            "type": "text",
+            "content": "**WiFi (802.11) Overview:**\\n- Wireless LAN standard\\n- Uses unlicensed spectrum\\n- CSMA/CA for medium access\\n- Infrastructure and ad-hoc modes\\n\\n**802.11 Standards:**\\n- **802.11a**: 54 Mbps, 5 GHz\\n- **802.11b**: 11 Mbps, 2.4 GHz\\n- **802.11g**: 54 Mbps, 2.4 GHz\\n- **802.11n**: 600 Mbps, MIMO\\n- **802.11ac**: Gbps speeds, 5 GHz\\n- **802.11ax**: WiFi 6, improved efficiency\\n\\n**WiFi Architecture:**\\n\\n**Infrastructure Mode:**\\n- Access Point (AP) coordinates access\\n- Stations associate with AP\\n- AP connects to wired network\\n\\n**Ad-hoc Mode:**\\n- Direct station-to-station communication\\n- No access point needed\\n- Limited range and functionality\\n\\n**CSMA/CA Operation:**\\n1. Sense channel before transmit\\n2. If busy, wait random backoff time\\n3. Use RTS/CTS for hidden terminal problem\\n4. Acknowledge successful reception\\n\\n**WiFi Frame Format:**\\n- More complex than Ethernet\\n- Multiple address fields\\n- Sequence control\\n- Frame control information\\n\\n**WiFi Security:**\\n- **WEP**: Wired Equivalent Privacy (deprecated)\\n- **WPA**: WiFi Protected Access\\n- **WPA2**: Advanced Encryption Standard (AES)\\n- **WPA3**: Latest security standard"
+          }
+        ]
+      },
+      "resources": [
+        "https://standards.ieee.org/standard/802_3-2018.html",
+        "https://standards.ieee.org/standard/802_11-2020.html",
+        "https://standards.ieee.org/standard/802_1Q-2018.html"
+      ],
+      "author": "James F. Kurose & Keith W. Ross",
+      "createdAt": "2025-01-06T00:00:00Z"
+    },
+    {
+      "id": "wireless-mobile",
+      "title": "Computer Networks - Wireless and Mobile Networks",
+      "description": "Understand WiFi, cellular networks, mobility management, and wireless security.",
+      "level": "intermediate",
+      "category": "Computer Networks",
+      "route": "/tutorial/wireless-mobile",
+      "estimatedTime": 35,
+      "prerequisites": ["link-layer"],
+      "learningObjectives": [
+        "Understand wireless network characteristics",
+        "Learn cellular network architecture",
+        "Master mobility management concepts",
+        "Understand wireless security challenges",
+        "Learn mobile IP and handoff procedures"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Wireless Network Characteristics",
+            "type": "text",
+            "content": "**Wireless vs Wired Networks:**\\n\\n**Challenges in Wireless:**\\n- **Signal Attenuation**: Signal strength decreases with distance\\n- **Interference**: Other signals cause noise\\n- **Multipath Propagation**: Signals take multiple paths\\n- **Hidden Terminal Problem**: Nodes can't hear each other\\n- **Mobility**: Nodes move between access points\\n\\n**Wireless Link Characteristics:**\\n- **Signal-to-Noise Ratio (SNR)**: Quality measure\\n- **Bit Error Rate (BER)**: Error frequency\\n- **Path Loss**: Signal weakening over distance\\n- **Fading**: Signal variation due to obstacles\\n\\n**Wireless Network Types:**\\n\\n**Single-hop, Infrastructure:**\\n- WiFi, cellular networks\\n- Base station connects to wired network\\n\\n**Single-hop, No Infrastructure:**\\n- Bluetooth, ad-hoc networks\\n- Direct device-to-device communication\\n\\n**Multi-hop, Infrastructure:**\\n- Wireless mesh networks\\n- Some nodes act as relays\\n\\n**Multi-hop, No Infrastructure:**\\n- Mobile ad-hoc networks (MANETs)\\n- Vehicular networks (VANETs)"
+          },
+          {
+            "title": "Cellular Networks",
+            "type": "text",
+            "content": "**Cellular Network Architecture:**\\n\\n**Cell Structure:**\\n- Geographic area divided into cells\\n- Each cell served by base station\\n- Frequency reuse across non-adjacent cells\\n- Handoff between cells for mobility\\n\\n**Cellular Generations:**\\n\\n**1G (Analog):**\\n- Voice only\\n- Frequency Division Multiple Access (FDMA)\\n- Limited capacity\\n\\n**2G (Digital):**\\n- Digital voice and SMS\\n- Time Division Multiple Access (TDMA)\\n- Code Division Multiple Access (CDMA)\\n- GSM standard\\n\\n**3G (Data):**\\n- Mobile internet access\\n- UMTS, CDMA2000\\n- Packet-switched data\\n- Video calling\\n\\n**4G (LTE):**\\n- All-IP network\\n- High-speed data (100+ Mbps)\\n- OFDMA technology\\n- VoLTE (Voice over LTE)\\n\\n**5G (Ultra-fast):**\\n- Gbps speeds\\n- Ultra-low latency\\n- Massive IoT support\\n- Network slicing\\n\\n**Cellular Network Components:**\\n- **Mobile Station (MS)**: User device\\n- **Base Station (BS)**: Cell tower\\n- **Mobile Switching Center (MSC)**: Call routing\\n- **Home Location Register (HLR)**: User database\\n- **Visitor Location Register (VLR)**: Temporary user info"
+          },
+          {
+            "title": "Mobility Management",
+            "type": "text",
+            "content": "**Mobility Challenges:**\\n- Maintain connectivity while moving\\n- Route packets to mobile nodes\\n- Handle address changes\\n- Minimize handoff delays\\n\\n**Mobile IP:**\\n\\n**Mobile IP Components:**\\n- **Mobile Node (MN)**: Moving device\\n- **Home Agent (HA)**: Router in home network\\n- **Foreign Agent (FA)**: Router in visited network\\n- **Care-of Address (CoA)**: Temporary address\\n\\n**Mobile IP Operation:**\\n1. Mobile node moves to foreign network\\n2. Obtains care-of address\\n3. Registers with home agent\\n4. Home agent tunnels packets to foreign agent\\n5. Foreign agent delivers to mobile node\\n\\n**Handoff Process:**\\n\\n**Hard Handoff:**\\n- Break connection with old base station\\n- Establish connection with new base station\\n- Brief service interruption\\n\\n**Soft Handoff:**\\n- Maintain connection with multiple base stations\\n- Gradual transition\\n- No service interruption\\n\\n**Handoff Types:**\\n- **Horizontal**: Same technology (WiFi to WiFi)\\n- **Vertical**: Different technology (WiFi to cellular)\\n\\n**Location Management:**\\n- **Location Update**: Inform network of current location\\n- **Paging**: Find mobile node for incoming calls\\n- **Location Areas**: Group of cells for efficient management"
+          },
+          {
+            "title": "Wireless Security",
+            "type": "text",
+            "content": "**Wireless Security Challenges:**\\n- Open medium (anyone can intercept)\\n- No physical access control\\n- Jamming and interference\\n- Rogue access points\\n\\n**WiFi Security Evolution:**\\n\\n**WEP (Wired Equivalent Privacy):**\\n- 40-bit or 104-bit keys\\n- RC4 encryption\\n- Serious vulnerabilities\\n- Easily cracked\\n\\n**WPA (WiFi Protected Access):**\\n- Temporal Key Integrity Protocol (TKIP)\\n- Per-packet key mixing\\n- Message Integrity Check (MIC)\\n- Improvement over WEP\\n\\n**WPA2:**\\n- Advanced Encryption Standard (AES)\\n- Counter Mode with CBC-MAC Protocol (CCMP)\\n- Strong security\\n- Current standard\\n\\n**WPA3:**\\n- Simultaneous Authentication of Equals (SAE)\\n- Protection against offline attacks\\n- Enhanced Open for public networks\\n- 192-bit security for enterprise\\n\\n**Authentication Methods:**\\n\\n**Pre-Shared Key (PSK):**\\n- Shared password\\n- Suitable for home networks\\n- Key distribution challenge\\n\\n**802.1X/EAP:**\\n- Enterprise authentication\\n- RADIUS server\\n- Individual user credentials\\n- Certificate-based authentication\\n\\n**Security Best Practices:**\\n- Use WPA2/WPA3\\n- Strong passwords\\n- Regular key rotation\\n- Network monitoring\\n- Disable WPS\\n- Hide SSID (limited effectiveness)"
+          },
+          {
+            "title": "Wireless Network Performance",
+            "type": "text",
+            "content": "**Performance Factors:**\\n\\n**Signal Quality:**\\n- Received Signal Strength Indicator (RSSI)\\n- Signal-to-Noise Ratio (SNR)\\n- Channel quality\\n- Interference levels\\n\\n**Capacity and Throughput:**\\n- Shared medium\\n- Collision avoidance overhead\\n- Distance from access point\\n- Number of active users\\n\\n**Quality of Service (QoS):**\\n\\n**WiFi QoS (802.11e):**\\n- Traffic categories\\n- Enhanced Distributed Channel Access (EDCA)\\n- Priority queues\\n- Admission control\\n\\n**Traffic Categories:**\\n- **Voice**: Highest priority, low latency\\n- **Video**: High priority, bandwidth intensive\\n- **Best Effort**: Normal data traffic\\n- **Background**: Lowest priority\\n\\n**Performance Optimization:**\\n\\n**Channel Selection:**\\n- Avoid interference\\n- Use 5 GHz when possible\\n- Non-overlapping channels (1, 6, 11 in 2.4 GHz)\\n\\n**Power Management:**\\n- Adaptive power control\\n- Sleep modes for battery life\\n- Wake-up scheduling\\n\\n**Load Balancing:**\\n- Band steering (2.4 GHz vs 5 GHz)\\n- Access point selection\\n- User distribution\\n\\n**MIMO Technology:**\\n- Multiple Input Multiple Output\\n- Spatial diversity\\n- Increased throughput\\n- Better reliability"
+          }
+        ]
+      },
+      "resources": [
+        "https://standards.ieee.org/standard/802_11-2020.html",
+        "https://tools.ietf.org/html/rfc5944",
+        "https://www.3gpp.org/"
+      ],
+      "author": "James F. Kurose & Keith W. Ross",
+      "createdAt": "2025-01-06T00:00:00Z"
+    },
+    {
+      "id": "network-security",
+      "title": "Computer Networks - Network Security",
+      "description": "Learn cryptography, authentication, network security protocols, and security threats.",
+      "level": "intermediate",
+      "category": "Computer Networks",
+      "route": "/tutorial/network-security",
+      "estimatedTime": 30,
+      "prerequisites": ["wireless-mobile"],
+      "learningObjectives": [
+        "Understand cryptographic principles",
+        "Learn authentication and digital signatures",
+        "Master network security protocols (TLS, IPSec)",
+        "Understand common security threats",
+        "Learn firewall and intrusion detection systems"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Cryptographic Principles",
+            "type": "text",
+            "content": "**Cryptography Goals:**\\n- **Confidentiality**: Keep data secret\\n- **Integrity**: Detect data modification\\n- **Authentication**: Verify identity\\n- **Non-repudiation**: Prevent denial of actions\\n\\n**Symmetric Key Cryptography:**\\n- Same key for encryption and decryption\\n- Fast and efficient\\n- Key distribution problem\\n- Examples: AES, DES, 3DES\\n\\n**Asymmetric Key Cryptography:**\\n- Different keys for encryption and decryption\\n- Public key and private key pair\\n- Solves key distribution problem\\n- Slower than symmetric encryption\\n- Examples: RSA, Elliptic Curve\\n\\n**Hash Functions:**\\n- One-way functions\\n- Fixed-size output\\n- Collision resistant\\n- Examples: SHA-256, MD5 (deprecated)\\n\\n**Digital Signatures:**\\n- Provide authentication and non-repudiation\\n- Sign with private key\\n- Verify with public key\\n- Often combined with hash functions"
+          },
+          {
+            "title": "Authentication and Key Management",
+            "type": "text",
+            "content": "**Authentication Methods:**\\n\\n**Password-based Authentication:**\\n- Something you know\\n- Vulnerable to attacks\\n- Need strong passwords\\n- Often combined with other factors\\n\\n**Certificate-based Authentication:**\\n- Uses digital certificates\\n- Public Key Infrastructure (PKI)\\n- Certificate Authority (CA)\\n- X.509 standard\\n\\n**Multi-factor Authentication:**\\n- Something you know (password)\\n- Something you have (token)\\n- Something you are (biometric)\\n\\n**Key Management:**\\n\\n**Key Generation:**\\n- Random number generation\\n- Sufficient key length\\n- Secure key storage\\n\\n**Key Distribution:**\\n- Secure channels\\n- Key exchange protocols\\n- Diffie-Hellman key exchange\\n\\n**Key Lifecycle:**\\n- Generation\\n- Distribution\\n- Storage\\n- Usage\\n- Rotation\\n- Destruction\\n\\n**Public Key Infrastructure (PKI):**\\n- Certificate Authority (CA)\\n- Registration Authority (RA)\\n- Certificate Repository\\n- Certificate Revocation List (CRL)"
+          },
+          {
+            "title": "Network Security Protocols",
+            "type": "text",
+            "content": "**TLS/SSL (Transport Layer Security):**\\n\\n**TLS Handshake:**\\n1. Client Hello (supported ciphers)\\n2. Server Hello (chosen cipher)\\n3. Server Certificate\\n4. Key Exchange\\n5. Finished messages\\n\\n**TLS Record Protocol:**\\n- Fragmentation\\n- Compression (optional)\\n- MAC computation\\n- Encryption\\n\\n**TLS Applications:**\\n- HTTPS (HTTP over TLS)\\n- Email security (SMTPS, IMAPS)\\n- VPN connections\\n\\n**IPSec (IP Security):**\\n\\n**IPSec Protocols:**\\n- **Authentication Header (AH)**: Authentication only\\n- **Encapsulating Security Payload (ESP)**: Encryption and authentication\\n\\n**IPSec Modes:**\\n- **Transport Mode**: Protect payload only\\n- **Tunnel Mode**: Protect entire IP packet\\n\\n**IPSec Components:**\\n- Security Association (SA)\\n- Security Policy Database (SPD)\\n- Security Association Database (SAD)\\n\\n**VPN (Virtual Private Network):**\\n- Secure communication over public networks\\n- Site-to-site VPN\\n- Remote access VPN\\n- Uses IPSec or TLS"
+          },
+          {
+            "title": "Network Security Threats",
+            "type": "text",
+            "content": "**Common Network Attacks:**\\n\\n**Eavesdropping:**\\n- Passive attack\\n- Intercept network traffic\\n- Mitigation: Encryption\\n\\n**Man-in-the-Middle (MITM):**\\n- Intercept and modify communication\\n- Impersonate both parties\\n- Mitigation: Authentication, certificates\\n\\n**Denial of Service (DoS):**\\n- Overwhelm target with traffic\\n- Make service unavailable\\n- Distributed DoS (DDoS)\\n- Mitigation: Rate limiting, filtering\\n\\n**Packet Sniffing:**\\n- Capture network packets\\n- Analyze sensitive information\\n- Mitigation: Encryption, switched networks\\n\\n**IP Spoofing:**\\n- Forge source IP address\\n- Impersonate trusted host\\n- Mitigation: Ingress filtering, authentication\\n\\n**DNS Attacks:**\\n- DNS spoofing/poisoning\\n- DNS amplification\\n- Mitigation: DNSSEC, filtering\\n\\n**Malware:**\\n- Viruses, worms, trojans\\n- Botnet formation\\n- Data theft and system damage\\n- Mitigation: Antivirus, firewalls, updates"
+          },
+          {
+            "title": "Security Infrastructure",
+            "type": "text",
+            "content": "**Firewalls:**\\n\\n**Firewall Types:**\\n- **Packet Filter**: Examine packet headers\\n- **Stateful**: Track connection state\\n- **Application Gateway**: Deep packet inspection\\n- **Next-Generation**: Advanced threat detection\\n\\n**Firewall Rules:**\\n- Source/destination IP\\n- Port numbers\\n- Protocol type\\n- Action (allow/deny)\\n\\n**Intrusion Detection Systems (IDS):**\\n\\n**IDS Types:**\\n- **Network-based (NIDS)**: Monitor network traffic\\n- **Host-based (HIDS)**: Monitor single host\\n\\n**Detection Methods:**\\n- **Signature-based**: Known attack patterns\\n- **Anomaly-based**: Unusual behavior\\n- **Hybrid**: Combination approach\\n\\n**Intrusion Prevention Systems (IPS):**\\n- Active response to threats\\n- Block malicious traffic\\n- Real-time protection\\n\\n**Security Information and Event Management (SIEM):**\\n- Centralized log management\\n- Correlation of security events\\n- Incident response\\n- Compliance reporting\\n\\n**Network Segmentation:**\\n- Divide network into segments\\n- Limit attack spread\\n- DMZ (Demilitarized Zone)\\n- VLANs for isolation\\n\\n**Security Best Practices:**\\n- Defense in depth\\n- Principle of least privilege\\n- Regular security updates\\n- Security awareness training\\n- Incident response planning\\n- Regular security audits"
+          }
+        ]
+      },
+      "resources": [
+        "https://tools.ietf.org/html/rfc8446",
+        "https://tools.ietf.org/html/rfc4301",
+        "https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-57pt1r5.pdf"
+      ],
+      "author": "James F. Kurose & Keith W. Ross",
+      "createdAt": "2025-01-06T00:00:00Z"
+    }
+,
+    {
+      "id": "security-fundamentals-intro",
+      "title": "Cybersecurity Fundamentals - Introduction to Security",
+      "description": "Understand core security concepts, the CIA triad, security principles, and the cybersecurity landscape.",
+      "level": "beginner",
+      "category": "Cybersecurity Fundamentals",
+      "route": "/tutorial/security-fundamentals-intro",
+      "estimatedTime": 30,
+      "prerequisites": [],
+      "learningObjectives": [
+        "Understand the CIA triad (Confidentiality, Integrity, Availability)",
+        "Learn fundamental security principles and concepts",
+        "Understand the threat landscape and attack vectors",
+        "Learn about security frameworks and compliance",
+        "Understand risk management basics"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "The CIA Triad",
+            "type": "text",
+            "content": "The CIA triad is the foundation of information security, representing three core principles:\\n\\n**Confidentiality:**\\n- Ensuring information is accessible only to authorized individuals\\n- Protection against unauthorized disclosure\\n- Methods: Encryption, access controls, authentication\\n- Example: Password-protected files, encrypted communications\\n\\n**Integrity:**\\n- Ensuring information remains accurate and unmodified\\n- Protection against unauthorized alteration\\n- Methods: Hashing, digital signatures, checksums\\n- Example: File integrity monitoring, version control\\n\\n**Availability:**\\n- Ensuring information and systems are accessible when needed\\n- Protection against disruption of service\\n- Methods: Redundancy, backups, disaster recovery\\n- Example: Load balancing, failover systems, DDoS protection\\n\\n**Additional Security Concepts:**\\n- **Non-repudiation**: Proof of action (digital signatures)\\n- **Authentication**: Verifying identity\\n- **Authorization**: Granting appropriate access\\n- **Accounting**: Tracking user activities (audit logs)"
+          },
+          {
+            "title": "Security Principles and Concepts",
+            "type": "text",
+            "content": "**Defense in Depth:**\\n- Multiple layers of security controls\\n- If one layer fails, others provide protection\\n- Example: Firewall + IDS + Antivirus + Access Controls\\n\\n**Least Privilege:**\\n- Users get minimum access needed for their job\\n- Reduces potential damage from compromised accounts\\n- Apply to users, processes, and systems\\n\\n**Separation of Duties:**\\n- Critical tasks divided among multiple people\\n- Prevents fraud and errors\\n- Example: Different people approve and execute transactions\\n\\n**Security by Obscurity (Avoid):**\\n- Hiding system details as sole security measure\\n- Not a reliable security strategy\\n- Should complement, not replace, real security\\n\\n**Fail Secure vs Fail Open:**\\n- **Fail Secure**: System denies access when failure occurs\\n- **Fail Open**: System allows access when failure occurs\\n- Choose based on security vs availability priorities\\n\\n**Zero Trust Model:**\\n- Never trust, always verify\\n- Verify every access request\\n- Assume breach mentality\\n- Micro-segmentation and least privilege"
+          },
+          {
+            "title": "Threat Landscape",
+            "type": "text",
+            "content": "**Threat Actors:**\\n\\n**Script Kiddies:**\\n- Low skill level\\n- Use existing tools and scripts\\n- Opportunistic attacks\\n- Limited resources\\n\\n**Hacktivists:**\\n- Politically or socially motivated\\n- Target organizations for ideological reasons\\n- Examples: Anonymous, WikiLeaks\\n\\n**Organized Crime:**\\n- Financial motivation\\n- Sophisticated attacks\\n- Ransomware, fraud, data theft\\n\\n**Nation-State Actors:**\\n- Government-sponsored\\n- Advanced Persistent Threats (APTs)\\n- Espionage, sabotage, warfare\\n- Significant resources and expertise\\n\\n**Insider Threats:**\\n- Current or former employees\\n- Authorized access to systems\\n- Intentional or unintentional harm\\n- Difficult to detect and prevent\\n\\n**Attack Vectors:**\\n- Email (phishing, malware attachments)\\n- Web applications (SQL injection, XSS)\\n- Network (man-in-the-middle, sniffing)\\n- Physical (USB drops, tailgating)\\n- Social engineering (pretexting, baiting)\\n- Supply chain (compromised vendors)"
+          },
+          {
+            "title": "Security Frameworks and Compliance",
+            "type": "text",
+            "content": "**Security Frameworks:**\\n\\n**NIST Cybersecurity Framework:**\\n- Identify: Asset management, risk assessment\\n- Protect: Access control, training, data security\\n- Detect: Monitoring, detection processes\\n- Respond: Incident response planning\\n- Recover: Recovery planning, improvements\\n\\n**ISO 27001/27002:**\\n- International standard for information security\\n- Information Security Management System (ISMS)\\n- Risk-based approach\\n- Continuous improvement\\n\\n**CIS Controls:**\\n- 18 critical security controls\\n- Prioritized and actionable\\n- Implementation groups (IG1, IG2, IG3)\\n\\n**Compliance Requirements:**\\n\\n**GDPR (General Data Protection Regulation):**\\n- EU data protection law\\n- Personal data rights\\n- Breach notification requirements\\n- Heavy penalties for non-compliance\\n\\n**HIPAA (Health Insurance Portability and Accountability Act):**\\n- US healthcare data protection\\n- Protected Health Information (PHI)\\n- Privacy and security rules\\n\\n**PCI DSS (Payment Card Industry Data Security Standard):**\\n- Credit card data protection\\n- 12 requirements for merchants\\n- Regular security assessments\\n\\n**SOX (Sarbanes-Oxley Act):**\\n- Financial reporting accuracy\\n- Internal controls\\n- IT general controls"
+          },
+          {
+            "title": "Risk Management",
+            "type": "text",
+            "content": "**Risk Management Process:**\\n\\n**1. Risk Identification:**\\n- Identify assets (data, systems, people)\\n- Identify threats (malware, hackers, disasters)\\n- Identify vulnerabilities (unpatched systems, weak passwords)\\n\\n**2. Risk Assessment:**\\n- **Qualitative**: Low, Medium, High ratings\\n- **Quantitative**: Numerical values and calculations\\n- **Risk = Threat × Vulnerability × Impact**\\n\\n**3. Risk Response:**\\n- **Accept**: Acknowledge and monitor\\n- **Avoid**: Eliminate the activity\\n- **Transfer**: Insurance, outsourcing\\n- **Mitigate**: Implement controls to reduce risk\\n\\n**4. Risk Monitoring:**\\n- Continuous monitoring\\n- Regular reassessment\\n- Update risk register\\n\\n**Key Risk Metrics:**\\n\\n**ALE (Annualized Loss Expectancy):**\\n```\\nALE = SLE × ARO\\nSLE = Asset Value × Exposure Factor\\nARO = Annual Rate of Occurrence\\n```\\n\\n**Example Calculation:**\\n- Asset Value: $100,000\\n- Exposure Factor: 30% (damage if incident occurs)\\n- SLE = $100,000 × 0.30 = $30,000\\n- ARO = 0.1 (once every 10 years)\\n- ALE = $30,000 × 0.1 = $3,000/year\\n\\n**Risk Register:**\\n- Document all identified risks\\n- Risk owner, likelihood, impact\\n- Mitigation strategies\\n- Current status"
+          }
+        ]
+      },
+      "resources": [
+        "https://www.nist.gov/cyberframework",
+        "https://www.iso.org/isoiec-27001-information-security.html",
+        "https://www.cisecurity.org/controls"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-02-26T00:00:00Z"
+    }
+,
+    {
+      "id": "security-threats-attacks",
+      "title": "Cybersecurity Fundamentals - Threats and Attacks",
+      "description": "Learn about malware types, social engineering, application attacks, and network-based threats.",
+      "level": "beginner",
+      "category": "Cybersecurity Fundamentals",
+      "route": "/tutorial/security-threats-attacks",
+      "estimatedTime": 45,
+      "prerequisites": ["security-fundamentals-intro"],
+      "learningObjectives": [
+        "Identify different types of malware and their characteristics",
+        "Understand social engineering techniques and defenses",
+        "Learn about application-based attacks (SQL injection, XSS)",
+        "Understand network attacks and wireless security threats",
+        "Learn about physical security threats"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Malware Types",
+            "type": "text",
+            "content": "**Virus:**\\n- Attaches to legitimate files\\n- Requires user action to execute\\n- Replicates by infecting other files\\n- Types: Boot sector, macro, polymorphic\\n\\n**Worm:**\\n- Self-replicating malware\\n- Spreads without user interaction\\n- Exploits network vulnerabilities\\n- Can cause network congestion\\n- Example: WannaCry, Conficker\\n\\n**Trojan:**\\n- Disguised as legitimate software\\n- Does not self-replicate\\n- Creates backdoors for attackers\\n- Types: Remote Access Trojan (RAT), banking trojans\\n\\n**Ransomware:**\\n- Encrypts victim's files\\n- Demands payment for decryption key\\n- Crypto-ransomware vs locker ransomware\\n- Examples: CryptoLocker, Ryuk, REvil\\n\\n**Spyware:**\\n- Monitors user activity\\n- Steals sensitive information\\n- Keyloggers, screen capture\\n- Often bundled with free software\\n\\n**Rootkit:**\\n- Hides malware presence\\n- Operates at kernel level\\n- Difficult to detect and remove\\n- Modifies operating system\\n\\n**Botnet:**\\n- Network of infected computers\\n- Controlled by command and control (C2) server\\n- Used for DDoS, spam, crypto mining\\n- Zombie computers\\n\\n**Fileless Malware:**\\n- Operates in memory only\\n- No files written to disk\\n- Difficult to detect\\n- Uses legitimate system tools (PowerShell, WMI)"
+          },
+          {
+            "title": "Social Engineering",
+            "type": "text",
+            "content": "**Phishing:**\\n- Fraudulent emails appearing legitimate\\n- Steal credentials or install malware\\n- Spear phishing: Targeted attacks\\n- Whaling: Targeting executives\\n- Vishing: Voice phishing (phone calls)\\n- Smishing: SMS phishing\\n\\n**Pretexting:**\\n- Creating fabricated scenario\\n- Impersonating authority figures\\n- Building trust to extract information\\n- Example: Fake IT support calls\\n\\n**Baiting:**\\n- Offering something enticing\\n- Infected USB drives in parking lot\\n- Free software downloads\\n- Exploits curiosity or greed\\n\\n**Quid Pro Quo:**\\n- Offering service in exchange for information\\n- Fake tech support offering help\\n- Surveys with prizes\\n\\n**Tailgating/Piggybacking:**\\n- Following authorized person through secure door\\n- Physical security breach\\n- Exploits politeness\\n\\n**Shoulder Surfing:**\\n- Observing sensitive information\\n- Passwords, PINs, documents\\n- In public places, offices\\n\\n**Dumpster Diving:**\\n- Searching trash for sensitive information\\n- Unshredded documents\\n- Old hard drives, USB drives\\n\\n**Defense Against Social Engineering:**\\n- Security awareness training\\n- Verify requests through official channels\\n- Be skeptical of unsolicited communications\\n- Use multi-factor authentication\\n- Report suspicious activities\\n- Implement clear security policies"
+          },
+          {
+            "title": "Application Attacks",
+            "type": "text",
+            "content": "**SQL Injection:**\\n- Inserting malicious SQL code\\n- Bypass authentication\\n- Extract, modify, or delete database data\\n- Example:\\n```\\nSELECT * FROM users WHERE username='admin' OR '1'='1'--' AND password='x'\\n```\\n- Prevention: Prepared statements, input validation\\n\\n**Cross-Site Scripting (XSS):**\\n- Injecting malicious scripts into web pages\\n- Steal cookies, session tokens\\n- Deface websites, redirect users\\n- Types: Stored, Reflected, DOM-based\\n- Prevention: Input sanitization, output encoding, CSP\\n\\n**Cross-Site Request Forgery (CSRF):**\\n- Trick user into executing unwanted actions\\n- Exploits authenticated sessions\\n- Example: Unauthorized fund transfers\\n- Prevention: CSRF tokens, SameSite cookies\\n\\n**Buffer Overflow:**\\n- Writing data beyond buffer boundaries\\n- Overwrite adjacent memory\\n- Execute arbitrary code\\n- Prevention: Bounds checking, safe functions, ASLR\\n\\n**Directory Traversal:**\\n- Access files outside web root\\n- Using ../ sequences\\n- Access sensitive system files\\n- Prevention: Input validation, chroot jails\\n\\n**XML External Entity (XXE):**\\n- Exploiting XML parsers\\n- Read local files, SSRF attacks\\n- Denial of service\\n- Prevention: Disable external entities\\n\\n**Server-Side Request Forgery (SSRF):**\\n- Force server to make requests\\n- Access internal resources\\n- Port scanning, data exfiltration\\n- Prevention: Whitelist allowed destinations\\n\\n**Insecure Deserialization:**\\n- Manipulating serialized objects\\n- Remote code execution\\n- Privilege escalation\\n- Prevention: Integrity checks, avoid native deserialization"
+          },
+          {
+            "title": "Network Attacks",
+            "type": "text",
+            "content": "**Man-in-the-Middle (MITM):**\\n- Intercepting communication between parties\\n- Eavesdropping, data modification\\n- ARP spoofing, DNS spoofing\\n- Prevention: Encryption (TLS), certificate pinning\\n\\n**Denial of Service (DoS):**\\n- Overwhelming target with traffic\\n- Make services unavailable\\n- Types:\\n  - SYN flood\\n  - UDP flood\\n  - HTTP flood\\n  - Ping of death\\n- Prevention: Rate limiting, traffic filtering\\n\\n**Distributed Denial of Service (DDoS):**\\n- DoS attack from multiple sources\\n- Botnet-powered attacks\\n- Amplification attacks (DNS, NTP)\\n- Difficult to mitigate\\n- Prevention: CDN, DDoS protection services\\n\\n**DNS Attacks:**\\n- **DNS Poisoning**: Corrupt DNS cache\\n- **DNS Tunneling**: Exfiltrate data via DNS\\n- **Domain Hijacking**: Take control of domain\\n- Prevention: DNSSEC, monitoring\\n\\n**ARP Spoofing:**\\n- Send fake ARP messages\\n- Associate attacker's MAC with victim's IP\\n- MITM attacks on local network\\n- Prevention: Static ARP entries, DAI\\n\\n**Session Hijacking:**\\n- Stealing session tokens/cookies\\n- Impersonate authenticated user\\n- Methods: XSS, packet sniffing, session fixation\\n- Prevention: Secure cookies, HTTPS, session timeout\\n\\n**Replay Attack:**\\n- Capturing and retransmitting data\\n- Bypass authentication\\n- Prevention: Timestamps, nonces, sequence numbers\\n\\n**Password Attacks:**\\n- **Brute Force**: Try all combinations\\n- **Dictionary**: Try common passwords\\n- **Rainbow Tables**: Precomputed hashes\\n- **Credential Stuffing**: Reuse leaked credentials\\n- **Password Spraying**: Try common passwords across many accounts\\n- Prevention: Strong passwords, account lockout, MFA"
+          },
+          {
+            "title": "Wireless and Physical Security Threats",
+            "type": "text",
+            "content": "**Wireless Attacks:**\\n\\n**Evil Twin:**\\n- Fake access point mimicking legitimate one\\n- Intercept user traffic\\n- Steal credentials\\n- Prevention: VPN, verify network certificates\\n\\n**Rogue Access Point:**\\n- Unauthorized AP on network\\n- Bypass security controls\\n- Create backdoor\\n- Detection: Wireless IDS, regular scans\\n\\n**WPS Attack:**\\n- Exploit Wi-Fi Protected Setup\\n- Brute force PIN\\n- Gain network access\\n- Prevention: Disable WPS\\n\\n**Deauthentication Attack:**\\n- Force clients to disconnect\\n- Capture handshake for cracking\\n- Denial of service\\n- Prevention: 802.11w (management frame protection)\\n\\n**Bluetooth Attacks:**\\n- **Bluejacking**: Send unsolicited messages\\n- **Bluesnarfing**: Steal data from device\\n- **Bluebugging**: Take control of device\\n- Prevention: Disable when not in use, non-discoverable mode\\n\\n**RFID/NFC Attacks:**\\n- Skimming: Read cards without contact\\n- Cloning: Duplicate access cards\\n- Eavesdropping: Intercept communication\\n- Prevention: RFID-blocking wallets, encryption\\n\\n**Physical Security Threats:**\\n\\n**Unauthorized Access:**\\n- Tailgating through secure doors\\n- Lock picking\\n- Badge cloning\\n- Prevention: Mantraps, security guards, cameras\\n\\n**Data Theft:**\\n- Stealing devices (laptops, phones, USB drives)\\n- Dumpster diving\\n- Shoulder surfing\\n- Prevention: Encryption, cable locks, clean desk policy\\n\\n**Environmental Threats:**\\n- Fire, flood, earthquake\\n- Power outages\\n- HVAC failures\\n- Prevention: Fire suppression, UPS, redundancy\\n\\n**Supply Chain Attacks:**\\n- Compromised hardware/software\\n- Malicious insiders at vendors\\n- Counterfeit components\\n- Prevention: Vendor assessment, secure supply chain"
+          }
+        ]
+      },
+      "resources": [
+        "https://owasp.org/www-project-top-ten/",
+        "https://attack.mitre.org/",
+        "https://www.cisa.gov/known-exploited-vulnerabilities"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-02-26T00:00:00Z"
+    }
+,
+    {
+      "id": "security-cryptography",
+      "title": "Cybersecurity Fundamentals - Cryptography",
+      "description": "Master encryption algorithms, hashing, digital signatures, PKI, and cryptographic protocols.",
+      "level": "beginner",
+      "category": "Cybersecurity Fundamentals",
+      "route": "/tutorial/security-cryptography",
+      "estimatedTime": 40,
+      "prerequisites": ["security-threats-attacks"],
+      "learningObjectives": [
+        "Understand symmetric and asymmetric encryption",
+        "Learn about hashing and digital signatures",
+        "Master Public Key Infrastructure (PKI)",
+        "Understand cryptographic protocols (TLS/SSL)",
+        "Learn about key management and best practices"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Symmetric Encryption",
+            "type": "text",
+            "content": "**Symmetric Encryption Basics:**\\n- Same key for encryption and decryption\\n- Fast and efficient for large data\\n- Key distribution challenge\\n- Shared secret between parties\\n\\n**Block Ciphers:**\\n\\n**AES (Advanced Encryption Standard):**\\n- Current standard (replaced DES)\\n- Key sizes: 128, 192, 256 bits\\n- Block size: 128 bits\\n- Used in: VPNs, disk encryption, Wi-Fi (WPA2/3)\\n- Modes: ECB, CBC, CTR, GCM\\n\\n**DES/3DES (Data Encryption Standard):**\\n- DES: 56-bit key (deprecated, insecure)\\n- 3DES: Apply DES three times\\n- Being phased out\\n- Legacy systems only\\n\\n**Blowfish/Twofish:**\\n- Blowfish: 32-448 bit keys\\n- Twofish: AES finalist\\n- Fast and flexible\\n\\n**Stream Ciphers:**\\n\\n**RC4:**\\n- Variable key size (40-2048 bits)\\n- Deprecated due to vulnerabilities\\n- Was used in WEP, early TLS\\n\\n**ChaCha20:**\\n- Modern stream cipher\\n- Used in TLS 1.3\\n- Mobile-friendly (better than AES on devices without hardware acceleration)\\n\\n**Block Cipher Modes:**\\n- **ECB (Electronic Codebook)**: Insecure, patterns visible\\n- **CBC (Cipher Block Chaining)**: Each block depends on previous\\n- **CTR (Counter)**: Turns block cipher into stream cipher\\n- **GCM (Galois/Counter Mode)**: Provides authentication\\n\\n**Use Cases:**\\n- File encryption\\n- Disk encryption (BitLocker, FileVault)\\n- Database encryption\\n- VPN tunnels"
+          },
+          {
+            "title": "Asymmetric Encryption",
+            "type": "text",
+            "content": "**Asymmetric Encryption Basics:**\\n- Public key and private key pair\\n- Encrypt with public key, decrypt with private key\\n- Slower than symmetric encryption\\n- Solves key distribution problem\\n- Used for key exchange and digital signatures\\n\\n**RSA (Rivest-Shamir-Adleman):**\\n- Most widely used asymmetric algorithm\\n- Key sizes: 2048, 3072, 4096 bits\\n- Based on factoring large prime numbers\\n- Uses:\\n  - Digital signatures\\n  - Key exchange\\n  - Certificate authentication\\n- Slower than symmetric encryption\\n\\n**ECC (Elliptic Curve Cryptography):**\\n- Smaller keys, same security as RSA\\n- 256-bit ECC ≈ 3072-bit RSA\\n- More efficient (mobile devices, IoT)\\n- Algorithms:\\n  - ECDSA (Digital Signature Algorithm)\\n  - ECDH (Diffie-Hellman key exchange)\\n  - EdDSA (Edwards-curve signatures)\\n\\n**Diffie-Hellman:**\\n- Key exchange protocol\\n- Establish shared secret over insecure channel\\n- Does not provide authentication\\n- Vulnerable to MITM without authentication\\n- Used in TLS, IPSec, SSH\\n\\n**ElGamal:**\\n- Based on Diffie-Hellman\\n- Used for encryption and signatures\\n- Larger ciphertext than RSA\\n\\n**Hybrid Encryption:**\\n- Combine symmetric and asymmetric\\n- Use asymmetric to exchange symmetric key\\n- Use symmetric for bulk data encryption\\n- Example: TLS/SSL, PGP\\n\\n**Key Exchange Process:**\\n1. Generate asymmetric key pair\\n2. Share public key\\n3. Encrypt symmetric key with public key\\n4. Decrypt with private key\\n5. Use symmetric key for data encryption"
+          },
+          {
+            "title": "Hashing and Digital Signatures",
+            "type": "text",
+            "content": "**Cryptographic Hash Functions:**\\n\\n**Properties:**\\n- One-way function (cannot reverse)\\n- Fixed-size output\\n- Deterministic (same input = same output)\\n- Collision resistant\\n- Avalanche effect (small change = completely different hash)\\n\\n**Common Hash Algorithms:**\\n\\n**SHA-2 Family:**\\n- SHA-256: 256-bit output (most common)\\n- SHA-384: 384-bit output\\n- SHA-512: 512-bit output\\n- Current standard\\n- Used in: Bitcoin, TLS, code signing\\n\\n**SHA-3:**\\n- Latest SHA standard\\n- Different internal structure than SHA-2\\n- Not widely adopted yet\\n\\n**MD5 (Message Digest 5):**\\n- 128-bit output\\n- DEPRECATED - collision attacks exist\\n- Still used for checksums (non-security)\\n\\n**SHA-1:**\\n- 160-bit output\\n- DEPRECATED - collision attacks demonstrated\\n- Being phased out\\n\\n**Hash Use Cases:**\\n- Password storage (with salt)\\n- File integrity verification\\n- Digital signatures\\n- Blockchain\\n- HMAC (authentication)\\n\\n**Digital Signatures:**\\n\\n**How Digital Signatures Work:**\\n1. Hash the message\\n2. Encrypt hash with private key (sign)\\n3. Send message + signature\\n4. Recipient decrypts signature with public key\\n5. Recipient hashes message\\n6. Compare hashes to verify\\n\\n**Benefits:**\\n- Authentication (verify sender)\\n- Integrity (detect tampering)\\n- Non-repudiation (cannot deny)\\n\\n**Digital Signature Algorithms:**\\n- RSA signatures\\n- DSA (Digital Signature Algorithm)\\n- ECDSA (Elliptic Curve DSA)\\n- EdDSA (Edwards-curve)\\n\\n**HMAC (Hash-based Message Authentication Code):**\\n- Combines hash with secret key\\n- Verify integrity and authenticity\\n- Used in: API authentication, JWT tokens"
+          },
+          {
+            "title": "Public Key Infrastructure (PKI)",
+            "type": "text",
+            "content": "**PKI Components:**\\n\\n**Certificate Authority (CA):**\\n- Issues digital certificates\\n- Trusted third party\\n- Verifies identity before issuing\\n- Examples: DigiCert, Let's Encrypt, Comodo\\n\\n**Registration Authority (RA):**\\n- Verifies certificate requests\\n- Acts as intermediary to CA\\n- Identity verification\\n\\n**Certificate Repository:**\\n- Stores issued certificates\\n- Publicly accessible\\n- LDAP directory\\n\\n**Certificate Revocation List (CRL):**\\n- List of revoked certificates\\n- Published by CA\\n- Checked before trusting certificate\\n\\n**OCSP (Online Certificate Status Protocol):**\\n- Real-time certificate validation\\n- Alternative to CRL\\n- Faster and more efficient\\n\\n**Digital Certificates:**\\n\\n**X.509 Certificate Contents:**\\n- Version number\\n- Serial number\\n- Signature algorithm\\n- Issuer (CA name)\\n- Validity period (not before/after)\\n- Subject (certificate owner)\\n- Public key\\n- Extensions\\n- CA digital signature\\n\\n**Certificate Types:**\\n- **Domain Validation (DV)**: Basic, domain ownership only\\n- **Organization Validation (OV)**: Verify organization identity\\n- **Extended Validation (EV)**: Highest validation, green bar\\n- **Wildcard**: Covers subdomains (*.example.com)\\n- **SAN (Subject Alternative Name)**: Multiple domains\\n\\n**Certificate Chain:**\\n- Root CA (self-signed, trusted)\\n- Intermediate CA\\n- End-entity certificate\\n- Chain of trust\\n\\n**Certificate Lifecycle:**\\n1. **Generation**: Create key pair\\n2. **Enrollment**: Request certificate (CSR)\\n3. **Validation**: CA verifies identity\\n4. **Issuance**: CA signs and issues certificate\\n5. **Usage**: Deploy certificate\\n6. **Renewal**: Before expiration\\n7. **Revocation**: If compromised\\n\\n**Certificate Pinning:**\\n- Hard-code expected certificate\\n- Prevent MITM with rogue certificates\\n- Used in mobile apps"
+          },
+          {
+            "title": "Cryptographic Protocols and Best Practices",
+            "type": "text",
+            "content": "**TLS/SSL (Transport Layer Security):**\\n\\n**TLS Versions:**\\n- SSL 2.0/3.0: DEPRECATED (insecure)\\n- TLS 1.0/1.1: DEPRECATED\\n- TLS 1.2: Current standard\\n- TLS 1.3: Latest, faster and more secure\\n\\n**TLS Handshake (Simplified):**\\n1. Client Hello (supported ciphers)\\n2. Server Hello (chosen cipher)\\n3. Server Certificate\\n4. Key Exchange\\n5. Change Cipher Spec\\n6. Finished\\n\\n**Cipher Suites:**\\n- Format: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384\\n- Key exchange: ECDHE\\n- Authentication: RSA\\n- Encryption: AES-256-GCM\\n- MAC: SHA384\\n\\n**Perfect Forward Secrecy (PFS):**\\n- Each session has unique key\\n- Compromised key doesn't affect past sessions\\n- Use ephemeral key exchange (DHE, ECDHE)\\n\\n**IPSec:**\\n- Network layer security\\n- VPN protocol\\n- Two modes: Transport and Tunnel\\n- Protocols: AH (authentication), ESP (encryption)\\n\\n**SSH (Secure Shell):**\\n- Secure remote access\\n- Port 22\\n- Key-based authentication\\n- Encrypted terminal sessions\\n\\n**PGP/GPG (Pretty Good Privacy):**\\n- Email encryption\\n- File encryption\\n- Web of trust model\\n- Asymmetric + symmetric encryption\\n\\n**Cryptographic Best Practices:**\\n\\n**Key Management:**\\n- Use strong random number generators\\n- Minimum key lengths:\\n  - AES: 256 bits\\n  - RSA: 2048 bits (prefer 3072+)\\n  - ECC: 256 bits\\n- Rotate keys regularly\\n- Secure key storage (HSM, key vault)\\n- Separate encryption and signing keys\\n\\n**Algorithm Selection:**\\n- Use modern, vetted algorithms\\n- Avoid deprecated: MD5, SHA-1, DES, RC4\\n- Prefer: AES-256, SHA-256, RSA-2048+, ECC\\n\\n**Implementation:**\\n- Don't roll your own crypto\\n- Use established libraries (OpenSSL, libsodium)\\n- Keep libraries updated\\n- Use authenticated encryption (GCM)\\n- Implement proper error handling\\n\\n**Common Mistakes:**\\n- Hardcoded keys in code\\n- Weak random number generation\\n- ECB mode for block ciphers\\n- No salt for password hashing\\n- Ignoring certificate validation\\n- Using deprecated algorithms"
+          }
+        ]
+      },
+      "resources": [
+        "https://www.nist.gov/cryptography",
+        "https://csrc.nist.gov/publications/fips",
+        "https://www.ssl.com/guide/"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-02-26T00:00:00Z"
+    }
+,
+    {
+      "id": "security-identity-access",
+      "title": "Cybersecurity Fundamentals - Identity and Access Management",
+      "description": "Master authentication methods, access control models, identity management, and account security.",
+      "level": "beginner",
+      "category": "Cybersecurity Fundamentals",
+      "route": "/tutorial/security-identity-access",
+      "estimatedTime": 35,
+      "prerequisites": ["security-cryptography"],
+      "learningObjectives": [
+        "Understand authentication factors and methods",
+        "Learn access control models (DAC, MAC, RBAC)",
+        "Master identity and access management concepts",
+        "Understand single sign-on and federation",
+        "Learn about privileged access management"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Authentication Methods",
+            "type": "text",
+            "content": "**Authentication Factors:**\\n\\n**Something You Know:**\\n- Passwords and passphrases\\n- PINs\\n- Security questions\\n- Most common but weakest alone\\n\\n**Something You Have:**\\n- Smart cards\\n- Hardware tokens (RSA SecurID)\\n- Mobile devices (SMS, authenticator apps)\\n- USB security keys (YubiKey)\\n\\n**Something You Are:**\\n- Fingerprint\\n- Facial recognition\\n- Iris scan\\n- Voice recognition\\n- Behavioral biometrics (typing patterns)\\n\\n**Somewhere You Are:**\\n- Geolocation\\n- IP address\\n- Network location\\n\\n**Something You Do:**\\n- Signature\\n- Gesture patterns\\n- Typing rhythm\\n\\n**Multi-Factor Authentication (MFA):**\\n- Combines two or more factors\\n- Significantly more secure than single factor\\n- Types:\\n  - Two-Factor Authentication (2FA)\\n  - Three-Factor Authentication\\n- Examples:\\n  - Password + SMS code\\n  - Password + authenticator app\\n  - Smart card + PIN\\n\\n**Password Best Practices:**\\n- Minimum 12-16 characters\\n- Mix of uppercase, lowercase, numbers, symbols\\n- Avoid dictionary words\\n- Unique per account\\n- Use password manager\\n- Enable MFA wherever possible\\n- Regular password changes for sensitive accounts\\n\\n**Password Storage:**\\n- Never store plaintext passwords\\n- Use strong hashing (bcrypt, Argon2, PBKDF2)\\n- Add salt (unique per password)\\n- Use pepper (application-wide secret)\\n- Implement rate limiting on login attempts"
+          },
+          {
+            "title": "Access Control Models",
+            "type": "text",
+            "content": "**Discretionary Access Control (DAC):**\\n- Owner controls access to resources\\n- Flexible and user-friendly\\n- Used in: Windows, Linux file permissions\\n- Weakness: Users can grant access inappropriately\\n- Example: File owner sets read/write permissions\\n\\n**Mandatory Access Control (MAC):**\\n- System enforces access based on classifications\\n- Labels: Top Secret, Secret, Confidential, Unclassified\\n- Users cannot change permissions\\n- Used in: Military, government systems\\n- Example: SELinux, classified document systems\\n\\n**Role-Based Access Control (RBAC):**\\n- Access based on user roles\\n- Roles assigned permissions\\n- Users assigned to roles\\n- Easier to manage than individual permissions\\n- Example: Admin, Manager, Employee roles\\n- Benefits:\\n  - Simplified administration\\n  - Principle of least privilege\\n  - Separation of duties\\n\\n**Attribute-Based Access Control (ABAC):**\\n- Access based on attributes\\n- User attributes (department, clearance)\\n- Resource attributes (classification, type)\\n- Environmental attributes (time, location)\\n- Most flexible and granular\\n- Example: Allow access if user.department == 'Finance' AND time.hour < 18\\n\\n**Rule-Based Access Control:**\\n- Access based on predefined rules\\n- Often time or location-based\\n- Example: Firewall rules, network ACLs\\n\\n**Access Control Lists (ACLs):**\\n- List of permissions attached to resource\\n- Specifies which users/groups can access\\n- Used in: Filesystems, networks, firewalls\\n- Example:\\n```\\nUser: Alice - Read, Write\\nUser: Bob - Read\\nGroup: Admins - Full Control\\n```"
+          },
+          {
+            "title": "Identity Management",
+            "type": "text",
+            "content": "**Identity Lifecycle:**\\n\\n**1. Provisioning:**\\n- Create user accounts\\n- Assign initial access rights\\n- Onboarding process\\n- Automated vs manual\\n\\n**2. Management:**\\n- Modify permissions as roles change\\n- Password resets\\n- Account updates\\n- Access reviews\\n\\n**3. Deprovisioning:**\\n- Disable/delete accounts\\n- Revoke access rights\\n- Offboarding process\\n- Critical for security\\n\\n**Directory Services:**\\n\\n**Active Directory (AD):**\\n- Microsoft's directory service\\n- Centralized user management\\n- Group Policy for configuration\\n- LDAP protocol\\n- Kerberos authentication\\n\\n**LDAP (Lightweight Directory Access Protocol):**\\n- Protocol for accessing directories\\n- Hierarchical structure\\n- Used by many systems\\n- Port 389 (636 for LDAPS)\\n\\n**Identity Providers (IdP):**\\n- Centralized authentication service\\n- Examples: Okta, Azure AD, Auth0\\n- Manage user identities\\n- Provide authentication services\\n\\n**Account Types:**\\n\\n**User Accounts:**\\n- Standard user privileges\\n- Limited access\\n- Daily work activities\\n\\n**Privileged Accounts:**\\n- Administrator/root access\\n- High-risk if compromised\\n- Require extra protection\\n- Should be used sparingly\\n\\n**Service Accounts:**\\n- Used by applications/services\\n- Often have elevated privileges\\n- Should use strong passwords\\n- Regular auditing required\\n\\n**Guest Accounts:**\\n- Temporary access\\n- Limited privileges\\n- Should be disabled when not needed\\n\\n**Account Policies:**\\n- Password complexity requirements\\n- Account lockout thresholds\\n- Password expiration\\n- Login hour restrictions\\n- Concurrent login limits"
+          },
+          {
+            "title": "Single Sign-On and Federation",
+            "type": "text",
+            "content": "**Single Sign-On (SSO):**\\n\\n**Benefits:**\\n- One set of credentials for multiple applications\\n- Improved user experience\\n- Reduced password fatigue\\n- Centralized access control\\n- Easier to enforce security policies\\n\\n**Risks:**\\n- Single point of failure\\n- If compromised, access to all systems\\n- Mitigation: Strong MFA, monitoring\\n\\n**SSO Protocols:**\\n\\n**SAML (Security Assertion Markup Language):**\\n- XML-based standard\\n- Enterprise SSO\\n- Three parties:\\n  - User (Principal)\\n  - Identity Provider (IdP)\\n  - Service Provider (SP)\\n- SAML assertions contain authentication info\\n\\n**OAuth 2.0:**\\n- Authorization framework\\n- Delegated access\\n- Access tokens\\n- Common for API access\\n- Used by: Google, Facebook, GitHub\\n- Flow: Authorization Code, Implicit, Client Credentials\\n\\n**OpenID Connect (OIDC):**\\n- Built on OAuth 2.0\\n- Adds authentication layer\\n- ID tokens (JWT format)\\n- User info endpoint\\n- Modern standard for SSO\\n\\n**Kerberos:**\\n- Network authentication protocol\\n- Ticket-based system\\n- Used in Active Directory\\n- Components:\\n  - Key Distribution Center (KDC)\\n  - Ticket Granting Server (TGS)\\n  - Authentication Server (AS)\\n\\n**Federation:**\\n\\n**Identity Federation:**\\n- Trust relationship between organizations\\n- Share identity information\\n- Cross-organization SSO\\n- Example: University login works at partner institutions\\n\\n**Federation Standards:**\\n- SAML 2.0\\n- WS-Federation\\n- OpenID Connect\\n\\n**Trust Models:**\\n- One-way trust\\n- Two-way trust\\n- Transitive trust\\n- Forest trust (Active Directory)"
+          },
+          {
+            "title": "Privileged Access Management",
+            "type": "text",
+            "content": "**Privileged Access Management (PAM):**\\n\\n**Why PAM is Critical:**\\n- Privileged accounts are high-value targets\\n- Compromise leads to full system control\\n- Insider threats\\n- Compliance requirements\\n\\n**PAM Components:**\\n\\n**Password Vaulting:**\\n- Secure storage for privileged passwords\\n- Encrypted vault\\n- Check-out/check-in process\\n- Automatic password rotation\\n- Audit logging\\n\\n**Session Management:**\\n- Monitor privileged sessions\\n- Record sessions for audit\\n- Real-time alerts\\n- Session termination capability\\n\\n**Just-in-Time (JIT) Access:**\\n- Temporary privilege elevation\\n- Time-limited access\\n- Automatic revocation\\n- Reduces standing privileges\\n\\n**Privilege Elevation:**\\n- Request-approval workflow\\n- Temporary admin rights\\n- Automatic de-escalation\\n- Audit trail\\n\\n**PAM Best Practices:**\\n\\n**Principle of Least Privilege:**\\n- Minimum access needed\\n- Regular access reviews\\n- Remove unnecessary privileges\\n\\n**Separation of Duties:**\\n- No single person has complete control\\n- Divide critical tasks\\n- Prevent fraud and errors\\n\\n**Privileged Account Security:**\\n- Strong, unique passwords\\n- MFA required\\n- Regular password rotation\\n- Separate from regular accounts\\n- No shared accounts\\n\\n**Monitoring and Auditing:**\\n- Log all privileged activities\\n- Real-time alerting\\n- Regular access reviews\\n- Anomaly detection\\n- Compliance reporting\\n\\n**Break-Glass Procedures:**\\n- Emergency access process\\n- When normal access fails\\n- Heavily audited\\n- Temporary and monitored\\n\\n**Service Account Management:**\\n- Inventory all service accounts\\n- Strong passwords\\n- Regular rotation\\n- Minimal privileges\\n- Monitor for misuse\\n\\n**Common PAM Solutions:**\\n- CyberArk\\n- BeyondTrust\\n- Thycotic\\n- HashiCorp Vault\\n- AWS Secrets Manager"
+          }
+        ]
+      },
+      "resources": [
+        "https://www.nist.gov/identity-access-management",
+        "https://oauth.net/2/",
+        "https://openid.net/connect/"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-02-26T00:00:00Z"
+    }
+,
+    {
+      "id": "security-network-defense",
+      "title": "Cybersecurity Fundamentals - Network Security and Defense",
+      "description": "Learn network security devices, secure network design, VPNs, wireless security, and network monitoring.",
+      "level": "beginner",
+      "category": "Cybersecurity Fundamentals",
+      "route": "/tutorial/security-network-defense",
+      "estimatedTime": 40,
+      "prerequisites": ["security-identity-access"],
+      "learningObjectives": [
+        "Understand firewalls, IDS/IPS, and security devices",
+        "Learn secure network architecture and segmentation",
+        "Master VPN technologies and implementations",
+        "Understand wireless security (WPA2/WPA3)",
+        "Learn network monitoring and traffic analysis"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Network Security Devices",
+            "type": "text",
+            "content": "**Firewalls:**\\n\\n**Packet Filtering Firewall:**\\n- Examines packet headers\\n- Source/destination IP and port\\n- Stateless (each packet independent)\\n- Fast but limited\\n- Example: ACLs on routers\\n\\n**Stateful Firewall:**\\n- Tracks connection state\\n- Remembers previous packets\\n- More intelligent decisions\\n- Most common type\\n- Example: iptables, Windows Firewall\\n\\n**Next-Generation Firewall (NGFW):**\\n- Deep packet inspection\\n- Application awareness\\n- Intrusion prevention\\n- SSL/TLS inspection\\n- Threat intelligence integration\\n- Example: Palo Alto, Fortinet, Cisco Firepower\\n\\n**Web Application Firewall (WAF):**\\n- Protects web applications\\n- Filters HTTP/HTTPS traffic\\n- Prevents: SQL injection, XSS, CSRF\\n- Example: ModSecurity, Cloudflare WAF\\n\\n**Intrusion Detection System (IDS):**\\n\\n**Network-Based IDS (NIDS):**\\n- Monitors network traffic\\n- Passive monitoring (doesn't block)\\n- Alerts on suspicious activity\\n- Example: Snort, Suricata, Zeek\\n\\n**Host-Based IDS (HIDS):**\\n- Monitors single host\\n- File integrity monitoring\\n- Log analysis\\n- Example: OSSEC, Tripwire\\n\\n**Detection Methods:**\\n- **Signature-Based**: Known attack patterns\\n- **Anomaly-Based**: Unusual behavior\\n- **Heuristic**: Behavioral analysis\\n\\n**Intrusion Prevention System (IPS):**\\n- Active defense (blocks threats)\\n- Inline deployment\\n- Can drop malicious packets\\n- Risk of false positives blocking legitimate traffic\\n- Example: Snort (IPS mode), Suricata\\n\\n**Proxy Servers:**\\n\\n**Forward Proxy:**\\n- Client-side proxy\\n- Hides client identity\\n- Content filtering\\n- Caching\\n\\n**Reverse Proxy:**\\n- Server-side proxy\\n- Load balancing\\n- SSL termination\\n- Protects backend servers\\n- Example: Nginx, HAProxy\\n\\n**Network Access Control (NAC):**\\n- Controls device access to network\\n- Checks device compliance\\n- Quarantine non-compliant devices\\n- Example: Cisco ISE, Aruba ClearPass"
+          },
+          {
+            "title": "Secure Network Architecture",
+            "type": "text",
+            "content": "**Network Segmentation:**\\n\\n**Benefits:**\\n- Limit attack spread\\n- Contain breaches\\n- Improve performance\\n- Easier compliance\\n- Granular access control\\n\\n**Segmentation Methods:**\\n\\n**VLANs (Virtual LANs):**\\n- Logical network separation\\n- Layer 2 segmentation\\n- Reduces broadcast domains\\n- Requires VLAN-aware switches\\n\\n**Subnets:**\\n- Layer 3 segmentation\\n- Different IP ranges\\n- Routers control traffic between subnets\\n\\n**DMZ (Demilitarized Zone):**\\n- Buffer zone between internal and external networks\\n- Hosts public-facing services\\n- Web servers, email servers, DNS\\n- Two firewalls (screened subnet)\\n\\n**Network Zones:**\\n\\n**Internet Zone:**\\n- Untrusted, public network\\n- Highest risk\\n\\n**DMZ/Perimeter Zone:**\\n- Semi-trusted\\n- Public-facing services\\n- Restricted access to internal network\\n\\n**Internal Zone:**\\n- Trusted network\\n- Corporate resources\\n- User workstations\\n\\n**Management Zone:**\\n- Network device management\\n- Out-of-band management\\n- Highly restricted access\\n\\n**Secure Network Design Principles:**\\n\\n**Defense in Depth:**\\n- Multiple security layers\\n- Firewall + IDS + Endpoint protection\\n\\n**Least Privilege:**\\n- Minimum necessary network access\\n- Deny by default\\n\\n**Zero Trust:**\\n- Never trust, always verify\\n- Micro-segmentation\\n- Continuous authentication\\n\\n**Network Hardening:**\\n- Disable unused services\\n- Change default credentials\\n- Apply security patches\\n- Use secure protocols (SSH not Telnet)\\n- Implement port security\\n- Disable unused ports\\n\\n**Secure Network Protocols:**\\n- SSH (port 22) instead of Telnet (23)\\n- HTTPS (443) instead of HTTP (80)\\n- SFTP/SCP instead of FTP\\n- SNMPv3 instead of SNMPv1/v2\\n- LDAPS (636) instead of LDAP (389)"
+          },
+          {
+            "title": "VPN Technologies",
+            "type": "text",
+            "content": "**Virtual Private Network (VPN):**\\n\\n**VPN Benefits:**\\n- Secure remote access\\n- Encrypt traffic over public networks\\n- Hide IP address\\n- Bypass geographic restrictions\\n- Protect on public Wi-Fi\\n\\n**VPN Types:**\\n\\n**Site-to-Site VPN:**\\n- Connect entire networks\\n- Office to office\\n- Always-on connection\\n- Transparent to users\\n- Example: Branch office to headquarters\\n\\n**Remote Access VPN:**\\n- Individual user to network\\n- On-demand connection\\n- VPN client software\\n- Example: Employee working from home\\n\\n**VPN Protocols:**\\n\\n**IPSec (IP Security):**\\n- Network layer VPN\\n- Two modes:\\n  - **Transport Mode**: Encrypt payload only\\n  - **Tunnel Mode**: Encrypt entire packet\\n- Protocols:\\n  - **AH (Authentication Header)**: Authentication\\n  - **ESP (Encapsulating Security Payload)**: Encryption + Authentication\\n- Port: UDP 500 (IKE), IP protocols 50 (ESP) and 51 (AH)\\n\\n**SSL/TLS VPN:**\\n- Application layer VPN\\n- Browser-based (clientless)\\n- Or VPN client\\n- Easier to deploy\\n- Port: TCP 443\\n- Example: OpenVPN, Cisco AnyConnect\\n\\n**L2TP/IPSec:**\\n- Layer 2 Tunneling Protocol\\n- Combined with IPSec for encryption\\n- Good compatibility\\n- Port: UDP 1701, 500, 4500\\n\\n**WireGuard:**\\n- Modern VPN protocol\\n- Faster and simpler than IPSec\\n- Strong cryptography\\n- Smaller codebase\\n\\n**PPTP (Point-to-Point Tunneling Protocol):**\\n- DEPRECATED - insecure\\n- Weak encryption\\n- Should not be used\\n\\n**VPN Security Considerations:**\\n- Strong encryption (AES-256)\\n- Perfect Forward Secrecy\\n- No logging policy\\n- Kill switch (block traffic if VPN drops)\\n- DNS leak protection\\n- Multi-factor authentication\\n- Split tunneling considerations"
+          },
+          {
+            "title": "Wireless Security",
+            "type": "text",
+            "content": "**Wireless Security Protocols:**\\n\\n**WEP (Wired Equivalent Privacy):**\\n- DEPRECATED - completely broken\\n- 40 or 104-bit keys\\n- RC4 encryption\\n- Can be cracked in minutes\\n- Never use\\n\\n**WPA (Wi-Fi Protected Access):**\\n- Replacement for WEP\\n- TKIP encryption\\n- Still vulnerable\\n- Deprecated\\n\\n**WPA2:**\\n- Current standard (since 2004)\\n- AES encryption (CCMP)\\n- Two modes:\\n  - **Personal (PSK)**: Pre-shared key\\n  - **Enterprise**: 802.1X authentication\\n- Vulnerable to KRACK attack (patched)\\n\\n**WPA3:**\\n- Latest standard (since 2018)\\n- Stronger encryption\\n- Protection against offline dictionary attacks\\n- Forward secrecy\\n- Individualized data encryption\\n- 192-bit security suite (Enterprise)\\n- SAE (Simultaneous Authentication of Equals)\\n\\n**Wireless Authentication:**\\n\\n**802.1X (Port-Based NAC):**\\n- Enterprise authentication\\n- Three components:\\n  - **Supplicant**: Client device\\n  - **Authenticator**: Access point\\n  - **Authentication Server**: RADIUS\\n\\n**EAP (Extensible Authentication Protocol):**\\n- Framework for authentication\\n- Multiple methods:\\n  - **EAP-TLS**: Certificate-based (most secure)\\n  - **EAP-TTLS**: Tunneled TLS\\n  - **PEAP**: Protected EAP\\n  - **EAP-FAST**: Flexible Authentication via Secure Tunneling\\n\\n**Wireless Security Best Practices:**\\n- Use WPA3 (or WPA2 if WPA3 unavailable)\\n- Strong, unique passphrase (20+ characters)\\n- Change default SSID\\n- Change default admin password\\n- Disable WPS (vulnerable to brute force)\\n- Enable MAC filtering (limited effectiveness)\\n- Disable SSID broadcast (security by obscurity)\\n- Use separate guest network\\n- Regular firmware updates\\n- Position APs to minimize signal leakage\\n- Use VPN on public Wi-Fi\\n\\n**Wireless Attacks:**\\n- Evil twin (rogue AP)\\n- Deauthentication attack\\n- WPS PIN brute force\\n- Packet sniffing\\n- Man-in-the-middle\\n- Jamming (DoS)"
+          },
+          {
+            "title": "Network Monitoring and Analysis",
+            "type": "text",
+            "content": "**Network Monitoring Tools:**\\n\\n**Packet Analyzers:**\\n\\n**Wireshark:**\\n- GUI packet analyzer\\n- Capture and analyze traffic\\n- Protocol dissection\\n- Filters and statistics\\n- Essential for troubleshooting\\n\\n**tcpdump:**\\n- Command-line packet capture\\n- Lightweight\\n- Powerful filtering\\n- Save to pcap files\\n\\n**NetFlow/sFlow:**\\n- Network traffic flow data\\n- Summarized traffic information\\n- Bandwidth monitoring\\n- Anomaly detection\\n- Tools: nfdump, SolarWinds\\n\\n**Network Monitoring:**\\n\\n**SNMP (Simple Network Management Protocol):**\\n- Monitor network devices\\n- Collect metrics\\n- Versions: v1, v2c, v3 (secure)\\n- MIB (Management Information Base)\\n- Tools: Nagios, PRTG, Zabbix\\n\\n**Syslog:**\\n- Centralized logging\\n- Network device logs\\n- Standard protocol\\n- Port: UDP 514\\n- Severity levels: 0-7\\n\\n**SIEM (Security Information and Event Management):**\\n- Centralized log management\\n- Correlation of events\\n- Real-time analysis\\n- Alerting and reporting\\n- Compliance\\n- Examples: Splunk, ELK Stack, QRadar\\n\\n**Traffic Analysis:**\\n\\n**Baseline Normal Traffic:**\\n- Understand normal patterns\\n- Bandwidth usage\\n- Protocol distribution\\n- Peak times\\n\\n**Anomaly Detection:**\\n- Unusual traffic patterns\\n- Unexpected protocols\\n- Large data transfers\\n- Connections to suspicious IPs\\n- Port scanning activity\\n\\n**Indicators of Compromise (IoCs):**\\n- Known malicious IPs\\n- Suspicious domains\\n- Unusual user agent strings\\n- Beaconing behavior\\n- Data exfiltration patterns\\n\\n**Network Security Monitoring (NSM):**\\n- Continuous monitoring\\n- Threat hunting\\n- Incident detection\\n- Forensic analysis\\n- Tools: Security Onion, OSSEC\\n\\n**Key Metrics to Monitor:**\\n- Bandwidth utilization\\n- Packet loss\\n- Latency\\n- Failed login attempts\\n- Firewall denies\\n- IDS/IPS alerts\\n- DNS queries\\n- Outbound connections\\n- Certificate errors\\n\\n**Log Analysis:**\\n- Centralize logs\\n- Retention policies\\n- Regular review\\n- Automated alerting\\n- Correlation across sources\\n- Compliance requirements"
+          }
+        ]
+      },
+      "resources": [
+        "https://www.wireshark.org/",
+        "https://www.cisco.com/c/en/us/products/security/firewalls/index.html",
+        "https://www.wi-fi.org/discover-wi-fi/security"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-02-26T00:00:00Z"
+    }
+,
+    {
+      "id": "security-incident-response",
+      "title": "Cybersecurity Fundamentals - Incident Response and Security Operations",
+      "description": "Learn incident response procedures, digital forensics, disaster recovery, and security operations best practices.",
+      "level": "beginner",
+      "category": "Cybersecurity Fundamentals",
+      "route": "/tutorial/security-incident-response",
+      "estimatedTime": 45,
+      "prerequisites": ["security-network-defense"],
+      "learningObjectives": [
+        "Understand incident response lifecycle and procedures",
+        "Learn digital forensics and evidence handling",
+        "Master disaster recovery and business continuity",
+        "Understand security operations center (SOC) functions",
+        "Learn vulnerability management and patch management"
+      ],
+      "content": {
+        "sections": [
+          {
+            "title": "Incident Response Lifecycle",
+            "type": "text",
+            "content": "**NIST Incident Response Process:**\\n\\n**1. Preparation:**\\n- Develop incident response plan\\n- Create incident response team (IRT/CSIRT)\\n- Define roles and responsibilities\\n- Establish communication procedures\\n- Deploy monitoring tools\\n- Conduct training and drills\\n- Maintain contact lists\\n- Prepare jump bags/kits\\n\\n**2. Detection and Analysis:**\\n- Monitor for indicators of compromise\\n- Analyze alerts from SIEM, IDS/IPS\\n- Determine incident scope and severity\\n- Document initial findings\\n- Classify incident type:\\n  - Malware infection\\n  - Unauthorized access\\n  - Data breach\\n  - DDoS attack\\n  - Insider threat\\n\\n**Incident Severity Levels:**\\n- **Critical**: Major business impact, data breach\\n- **High**: Significant impact, multiple systems\\n- **Medium**: Limited impact, single system\\n- **Low**: Minimal impact, informational\\n\\n**3. Containment:**\\n\\n**Short-term Containment:**\\n- Isolate affected systems\\n- Block malicious IPs/domains\\n- Disable compromised accounts\\n- Segment network\\n- Preserve evidence\\n\\n**Long-term Containment:**\\n- Apply temporary fixes\\n- Implement additional monitoring\\n- Prepare for recovery\\n- Maintain business operations\\n\\n**4. Eradication:**\\n- Remove malware\\n- Close vulnerabilities\\n- Delete backdoors\\n- Patch systems\\n- Reset compromised credentials\\n- Verify threat removal\\n\\n**5. Recovery:**\\n- Restore systems from clean backups\\n- Rebuild compromised systems\\n- Verify system integrity\\n- Monitor for reinfection\\n- Gradual return to normal operations\\n- Enhanced monitoring period\\n\\n**6. Lessons Learned:**\\n- Post-incident review meeting\\n- Document what happened\\n- Identify what worked/didn't work\\n- Update incident response plan\\n- Implement improvements\\n- Share knowledge with team\\n- Update security controls"
+          },
+          {
+            "title": "Digital Forensics",
+            "type": "text",
+            "content": "**Digital Forensics Principles:**\\n\\n**Order of Volatility:**\\n1. CPU registers, cache\\n2. RAM (memory)\\n3. Network connections\\n4. Running processes\\n5. Disk storage\\n6. Remote logging\\n7. Physical configuration\\n8. Archival media\\n\\n**Evidence Handling:**\\n\\n**Chain of Custody:**\\n- Document who handled evidence\\n- When and where\\n- What was done\\n- Maintain integrity\\n- Legal admissibility\\n\\n**Evidence Collection:**\\n- Use write blockers\\n- Create forensic images\\n- Hash verification (MD5, SHA-256)\\n- Document everything\\n- Photograph scene\\n- Label and tag evidence\\n\\n**Forensic Imaging:**\\n- Bit-by-bit copy\\n- Preserve original evidence\\n- Work on copies\\n- Tools: dd, FTK Imager, EnCase\\n\\n**Memory Forensics:**\\n- Capture RAM contents\\n- Find running processes\\n- Extract encryption keys\\n- Identify malware\\n- Tools: Volatility, Rekall\\n\\n**Disk Forensics:**\\n- File system analysis\\n- Deleted file recovery\\n- Timeline analysis\\n- Artifact examination\\n- Tools: Autopsy, Sleuth Kit\\n\\n**Network Forensics:**\\n- Packet capture analysis\\n- Flow data examination\\n- Protocol analysis\\n- Reconstruct sessions\\n- Tools: Wireshark, NetworkMiner\\n\\n**Log Analysis:**\\n- System logs\\n- Application logs\\n- Security logs\\n- Web server logs\\n- Firewall logs\\n- Correlation across sources\\n\\n**Common Artifacts:**\\n- Browser history\\n- Email\\n- Registry (Windows)\\n- Prefetch files\\n- Recent documents\\n- USB device history\\n- Timestamps (MAC times)\\n\\n**Anti-Forensics:**\\n- Data wiping\\n- Encryption\\n- Steganography\\n- Log deletion\\n- Timestamp manipulation\\n- Awareness helps investigation"
+          },
+          {
+            "title": "Disaster Recovery and Business Continuity",
+            "type": "text",
+            "content": "**Business Continuity Planning (BCP):**\\n\\n**Business Impact Analysis (BIA):**\\n- Identify critical business functions\\n- Determine maximum tolerable downtime\\n- Assess financial impact\\n- Identify dependencies\\n- Prioritize recovery\\n\\n**Key Metrics:**\\n\\n**RTO (Recovery Time Objective):**\\n- Maximum acceptable downtime\\n- How quickly to restore\\n- Example: 4 hours\\n\\n**RPO (Recovery Point Objective):**\\n- Maximum acceptable data loss\\n- How much data can be lost\\n- Example: 1 hour of data\\n\\n**MTTR (Mean Time To Repair):**\\n- Average time to fix\\n- Measure of efficiency\\n\\n**MTBF (Mean Time Between Failures):**\\n- Average time between failures\\n- Reliability metric\\n\\n**Disaster Recovery Planning:**\\n\\n**Backup Strategies:**\\n\\n**Backup Types:**\\n- **Full Backup**: Complete copy of all data\\n- **Incremental**: Changes since last backup\\n- **Differential**: Changes since last full backup\\n\\n**Backup Schedule:**\\n- Daily incremental\\n- Weekly full\\n- Monthly archive\\n\\n**3-2-1 Backup Rule:**\\n- 3 copies of data\\n- 2 different media types\\n- 1 offsite copy\\n\\n**Backup Testing:**\\n- Regular restore tests\\n- Verify backup integrity\\n- Document procedures\\n- Test recovery time\\n\\n**High Availability:**\\n\\n**Redundancy:**\\n- **RAID**: Disk redundancy\\n- **Clustering**: Server redundancy\\n- **Load Balancing**: Distribute traffic\\n- **Failover**: Automatic switchover\\n\\n**Geographic Redundancy:**\\n- Multiple data centers\\n- Different geographic locations\\n- Protect against regional disasters\\n\\n**Site Types:**\\n\\n**Hot Site:**\\n- Fully operational duplicate\\n- Real-time data replication\\n- Immediate failover\\n- Most expensive\\n\\n**Warm Site:**\\n- Partially equipped\\n- Some delay to activate\\n- Moderate cost\\n\\n**Cold Site:**\\n- Basic infrastructure only\\n- Significant setup time\\n- Least expensive\\n\\n**Cloud-Based DR:**\\n- Disaster Recovery as a Service (DRaaS)\\n- Scalable and flexible\\n- Pay-as-you-go\\n- Geographic distribution\\n\\n**Testing and Maintenance:**\\n- Tabletop exercises\\n- Walkthrough tests\\n- Simulation tests\\n- Full interruption tests\\n- Annual plan reviews\\n- Update contact information"
+          },
+          {
+            "title": "Security Operations Center (SOC)",
+            "type": "text",
+            "content": "**SOC Functions:**\\n\\n**Monitoring and Detection:**\\n- 24/7 security monitoring\\n- SIEM analysis\\n- Alert triage\\n- Threat detection\\n- Anomaly identification\\n\\n**Incident Response:**\\n- Initial response\\n- Escalation procedures\\n- Coordination with teams\\n- Documentation\\n\\n**Threat Intelligence:**\\n- Collect threat data\\n- Analyze indicators\\n- Share intelligence\\n- Update defenses\\n\\n**Vulnerability Management:**\\n- Scan for vulnerabilities\\n- Prioritize remediation\\n- Track patching\\n- Verify fixes\\n\\n**SOC Roles:**\\n\\n**SOC Analyst (Tier 1):**\\n- Monitor alerts\\n- Initial triage\\n- Basic investigation\\n- Escalate incidents\\n\\n**Incident Responder (Tier 2):**\\n- Deep investigation\\n- Containment actions\\n- Forensic analysis\\n- Remediation\\n\\n**Threat Hunter (Tier 3):**\\n- Proactive threat hunting\\n- Advanced analysis\\n- Develop detection rules\\n- Research threats\\n\\n**SOC Manager:**\\n- Team leadership\\n- Process improvement\\n- Metrics and reporting\\n- Stakeholder communication\\n\\n**SOC Tools:**\\n\\n**SIEM (Security Information and Event Management):**\\n- Centralized logging\\n- Correlation engine\\n- Alerting\\n- Dashboards\\n- Examples: Splunk, QRadar, ArcSight\\n\\n**SOAR (Security Orchestration, Automation, and Response):**\\n- Automate repetitive tasks\\n- Orchestrate workflows\\n- Integrate tools\\n- Playbooks\\n- Examples: Phantom, Demisto, Swimlane\\n\\n**Threat Intelligence Platforms:**\\n- Aggregate threat data\\n- IoC management\\n- Threat feeds\\n- Examples: ThreatConnect, MISP\\n\\n**Endpoint Detection and Response (EDR):**\\n- Endpoint monitoring\\n- Behavioral analysis\\n- Threat hunting\\n- Examples: CrowdStrike, Carbon Black\\n\\n**SOC Metrics:**\\n- Mean Time to Detect (MTTD)\\n- Mean Time to Respond (MTTR)\\n- Number of incidents\\n- False positive rate\\n- Alert volume\\n- Coverage percentage"
+          },
+          {
+            "title": "Vulnerability and Patch Management",
+            "type": "text",
+            "content": "**Vulnerability Management Process:**\\n\\n**1. Asset Discovery:**\\n- Inventory all assets\\n- Identify systems and applications\\n- Track software versions\\n- Maintain asset database\\n\\n**2. Vulnerability Scanning:**\\n\\n**Scan Types:**\\n- **Authenticated**: With credentials, more thorough\\n- **Unauthenticated**: Without credentials, external view\\n- **Agent-based**: Software on endpoints\\n- **Network-based**: Remote scanning\\n\\n**Scan Frequency:**\\n- Critical systems: Weekly\\n- Standard systems: Monthly\\n- After major changes\\n- Continuous monitoring\\n\\n**Scanning Tools:**\\n- Nessus\\n- Qualys\\n- OpenVAS\\n- Rapid7 Nexpose\\n\\n**3. Vulnerability Assessment:**\\n\\n**Severity Ratings:**\\n- **CVSS (Common Vulnerability Scoring System)**\\n- Score 0.0 - 10.0\\n- Factors: Exploitability, Impact, Scope\\n\\n**Severity Levels:**\\n- **Critical (9.0-10.0)**: Immediate action\\n- **High (7.0-8.9)**: Urgent\\n- **Medium (4.0-6.9)**: Important\\n- **Low (0.1-3.9)**: Informational\\n\\n**Prioritization Factors:**\\n- CVSS score\\n- Asset criticality\\n- Exploit availability\\n- Threat intelligence\\n- Business impact\\n- Compensating controls\\n\\n**4. Remediation:**\\n\\n**Remediation Options:**\\n- **Patch**: Apply vendor update\\n- **Workaround**: Temporary fix\\n- **Mitigation**: Reduce risk (firewall rule)\\n- **Accept**: Document and accept risk\\n\\n**Patch Management:**\\n\\n**Patch Testing:**\\n- Test in lab environment\\n- Verify compatibility\\n- Check for issues\\n- Document results\\n\\n**Patch Deployment:**\\n- Prioritize critical patches\\n- Schedule maintenance windows\\n- Use patch management tools\\n- Staged rollout\\n- Emergency patches for critical vulnerabilities\\n\\n**Patch Management Tools:**\\n- WSUS (Windows)\\n- SCCM (Microsoft)\\n- Ansible\\n- Puppet\\n- Chef\\n\\n**5. Verification:**\\n- Rescan after patching\\n- Verify vulnerability closed\\n- Document remediation\\n- Update asset inventory\\n\\n**6. Reporting:**\\n- Executive dashboards\\n- Trend analysis\\n- Compliance reports\\n- Risk metrics\\n- SLA tracking\\n\\n**Best Practices:**\\n- Maintain accurate asset inventory\\n- Regular scanning schedule\\n- Risk-based prioritization\\n- Test before deploying\\n- Automate where possible\\n- Track metrics\\n- Continuous improvement\\n- Coordinate with change management"
+          }
+        ]
+      },
+      "resources": [
+        "https://www.nist.gov/cyberframework",
+        "https://www.first.org/cvss/",
+        "https://www.sans.org/reading-room/whitepapers/incident/"
+      ],
+      "author": "CyTutor Team",
+      "createdAt": "2025-02-26T00:00:00Z"
+    }
+  ]
+}

@@ -1,0 +1,128 @@
+[
+  {
+    "id": "bookmarklet",
+    "name": "Bookmarklet",
+    "image": "cytutor/bookmarklet",
+    "internalPort": 5000,
+    "description": "Flask web application vulnerable to directory traversal via bookmarklet.",
+    "category": "Web Exploitation",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "dos-challenge",
+    "name": "DoS Challenge",
+    "image": "cytutor/dos1",
+    "internalPort": 8080,
+    "description": "Overwhelm the service with concurrent TCP connections to reveal the flag.",
+    "category": "Network Security",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "hidden-pages",
+    "name": "Hidden",
+    "image": "cytutor/hidden-pages",
+    "internalPort": 80,
+    "description": "Find hidden pages through web reconnaissance and source inspection.",
+    "category": "Web Exploitation",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "path-traversal",
+    "name": "Path Traversal",
+    "image": "Cytutor/path-traversal",
+    "internalPort": 5000,
+    "description": "Exploit path traversal vulnerability using double URL encoding.",
+    "category": "Web Exploitation",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "power-cookie",
+    "name": "Power Cookie Challenge",
+    "image": "cytutor/power-cookie",
+    "internalPort": 80,
+    "description": "Bypass authorization by manipulating client-side cookies.",
+    "category": "Web Exploitation",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "old_system",
+    "name": "Old System",
+    "image": "cytutor/old_system",
+    "internalPort": 22,
+    "description": "Something new emerges whenever the old reveals its cracks. Username:ctfuser;password:ctfuser@123",
+    "category": "Privilege Escalation",
+    "difficulty": "Hard"
+  },
+  {
+    "id": "ssti",
+    "name": "SSTI",
+    "image": "cytutor/ssti",
+    "internalPort": 5000,
+    "description": "Exploit server-side template injection to read internal variables and retrieve the flag.",
+    "category": "Web Exploitation",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "logfile-challenge",
+    "name": "Logfile",
+    "image": "cytutor/logfile-challenge",
+    "internalPort": 5000,
+    "description": "Sensitive data leaked through improper logging.",
+    "category": "Web Exploitation",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "jwt",
+    "name": "JWT Forgery",
+    "image": "cytutor/jwt",
+    "internalPort": 3000,
+    "description": "Manipulate JWT claims to gain unauthorized access.",
+    "category": "Web Exploitation",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "ref-xss",
+    "name": "Reflected XSS",
+    "image": "cytutor/ref-xss",
+    "internalPort": 5000,
+    "description": "A simple reflected XSS vulnerability where user input is rendered directly into the response without sanitization.",
+    "category": "Web Exploitation",
+    "difficulty": "Easy"
+  },
+  {
+    "id": "ssrf",
+    "name": "SSRF",
+    "image": "cytutor/ssrf",
+    "internalPort": 5000,
+    "description": "Exploit server-side request forgery to access internal services.",
+    "category": "Web Exploitation",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "python-compiler",
+    "name": "Python Compiler",
+    "image": "cytutor/python_compiler",
+    "internalPort": 5000,
+    "description": "Some things are not found the usual way",
+    "category": "Web Exploitation",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "git-challenge",
+    "name": "StreamFlix",
+    "image": "cytutor/git_challenge",
+    "internalPort": 3000,
+    "description": "Exploit exposed .git directory to recover deleted files from commit history.",
+    "category": "Web Exploitation",
+    "difficulty": "Medium"
+  },
+  {
+    "id": "secret-jwt",
+    "name": "Secret",
+    "image": "cytutor/secret",
+    "internalPort": 3000,
+    "description": "Crack the weak JWT secret and forge an admin token to retrieve the flag.",
+    "category": "Web Exploitation",
+    "difficulty": "Hard"
+  }
+]

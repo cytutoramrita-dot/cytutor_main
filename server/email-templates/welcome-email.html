@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to CyTutor</title>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #000000;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #000000; padding: 40px 20px;">
+        <tr>
+            <td align="center">
+                <table width="600" cellpadding="0" cellspacing="0" style="background-color: #0a0a0a; border: 1px solid rgba(34, 197, 94, 0.2); border-radius: 16px; overflow: hidden;">
+                    
+                    <!-- Header -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, rgba(34, 197, 94, 0.3) 0%, rgba(16, 185, 129, 0.2) 100%); padding: 40px 40px 60px; text-align: center;">
+                            <h1 style="margin: 0; color: #22c55e; font-size: 32px; font-weight: 700;">
+                                🛡️ CyTutor
+                            </h1>
+                        </td>
+                    </tr>
+
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 40px;">
+                            <h2 style="color: #22c55e; font-size: 24px; margin: 0 0 20px; font-weight: 600;">
+                                Welcome to CyTutor, {{name}}! 🎉
+                            </h2>
+                            
+                            <p style="color: #e5e5e5; font-size: 16px; line-height: 1.6; margin: 0 0 20px;">
+                                We're excited to have you join our cybersecurity learning community! Your account has been successfully created and you're ready to start your journey.
+                            </p>
+
+                            <div style="background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(34, 197, 94, 0.2); border-radius: 12px; padding: 20px; margin: 30px 0;">
+                                <h3 style="color: #22c55e; font-size: 18px; margin: 0 0 15px;">
+                                    📋 Your Account Details
+                                </h3>
+                                <table width="100%" cellpadding="8" cellspacing="0">
+                                    <tr>
+                                        <td style="color: #aaa; font-size: 14px;">Username:</td>
+                                        <td style="color: #e5e5e5; font-size: 14px; font-weight: 600; text-align: right;">{{username}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #aaa; font-size: 14px;">Email:</td>
+                                        <td style="color: #e5e5e5; font-size: 14px; font-weight: 600; text-align: right;">{{email}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #aaa; font-size: 14px;">Member Since:</td>
+                                        <td style="color: #e5e5e5; font-size: 14px; font-weight: 600; text-align: right;">{{joinDate}}</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <h3 style="color: #22c55e; font-size: 18px; margin: 30px 0 15px;">
+                                🚀 Get Started
+                            </h3>
+                            
+                            <table width="100%" cellpadding="0" cellspacing="0" style="margin: 20px 0;">
+                                <tr>
+                                    <td style="padding: 12px 0;">
+                                        <div style="display: flex; align-items: start;">
+                                            <span style="color: #22c55e; font-size: 20px; margin-right: 12px;">✓</span>
+                                            <div>
+                                                <strong style="color: #e5e5e5; font-size: 15px; display: block; margin-bottom: 4px;">Explore Learning Domains</strong>
+                                                <span style="color: #aaa; font-size: 14px;">Choose from Web Security, Cryptography, Forensics, and more</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px 0;">
+                                        <div style="display: flex; align-items: start;">
+                                            <span style="color: #22c55e; font-size: 20px; margin-right: 12px;">✓</span>
+                                            <div>
+                                                <strong style="color: #e5e5e5; font-size: 15px; display: block; margin-bottom: 4px;">Solve Your First Challenge</strong>
+                                                <span style="color: #aaa; font-size: 14px;">Start with beginner-friendly challenges and earn points</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 12px 0;">
+                                        <div style="display: flex; align-items: start;">
+                                            <span style="color: #22c55e; font-size: 20px; margin-right: 12px;">✓</span>
+                                            <div>
+                                                <strong style="color: #e5e5e5; font-size: 15px; display: block; margin-bottom: 4px;">Track Your Progress</strong>
+                                                <span style="color: #aaa; font-size: 14px;">Monitor your learning journey and earn achievements</span>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <table width="100%" cellpadding="0" cellspacing="0" style="margin: 30px 0;">
+                                <tr>
+                                    <td align="center">
+                                        <a href="{{dashboardUrl}}" style="display: inline-block; background: linear-gradient(135deg, #22c55e, #16a34a); color: #000; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 16px;">
+                                            Go to Dashboard →
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <div style="background: rgba(34, 197, 94, 0.1); border-left: 4px solid #22c55e; padding: 16px; margin: 30px 0; border-radius: 4px;">
+                                <p style="color: #e5e5e5; font-size: 14px; margin: 0; line-height: 1.6;">
+                                    <strong>💡 Pro Tip:</strong> Start with the "Beginner" challenges to build your foundation, then progress to more advanced topics as you gain confidence.
+                                </p>
+                            </div>
+
+                            <h3 style="color: #22c55e; font-size: 18px; margin: 30px 0 15px;">
+                                📚 Recommended First Steps
+                            </h3>
+                            
+                            <ul style="color: #aaa; font-size: 14px; line-height: 1.8; padding-left: 20px;">
+                                <li style="margin-bottom: 8px;">Complete your profile with a bio and learning goals</li>
+                                <li style="margin-bottom: 8px;">Browse the Materials section for learning resources</li>
+                                <li style="margin-bottom: 8px;">Join a domain that interests you most</li>
+                                <li style="margin-bottom: 8px;">Attempt your first challenge and earn points</li>
+                            </ul>
+
+                            <p style="color: #e5e5e5; font-size: 16px; line-height: 1.6; margin: 30px 0 0;">
+                                If you have any questions, feel free to reach out to our support team.
+                            </p>
+
+                            <p style="color: #e5e5e5; font-size: 16px; line-height: 1.6; margin: 20px 0 0;">
+                                Happy learning!<br>
+                                <strong style="color: #22c55e;">The CyTutor Team</strong>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td style="background: rgba(0, 0, 0, 0.6); padding: 30px 40px; border-top: 1px solid rgba(34, 197, 94, 0.2);">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="center">
+                                        <p style="color: #666; font-size: 12px; margin: 0 0 10px;">
+                                            © 2025 CyTutor. All rights reserved.
+                                        </p>
+                                        <p style="color: #666; font-size: 12px; margin: 0;">
+                                            <a href="{{unsubscribeUrl}}" style="color: #22c55e; text-decoration: none;">Unsubscribe</a> | 
+                                            <a href="{{privacyUrl}}" style="color: #22c55e; text-decoration: none;">Privacy Policy</a> | 
+                                            <a href="{{termsUrl}}" style="color: #22c55e; text-decoration: none;">Terms of Service</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

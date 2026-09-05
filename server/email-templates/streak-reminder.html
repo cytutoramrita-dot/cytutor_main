@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keep Your Streak Alive!</title>
+</head>
+
+<body
+    style="margin: 0; padding: 0; font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background-color: #000000;">
+    <table width="100%" cellpadding="0" cellspacing="0" style="background-color: #000000; padding: 40px 20px;">
+        <tr>
+            <td align="center">
+                <table width="600" cellpadding="0" cellspacing="0"
+                    style="background-color: #0a0a0a; border: 1px solid rgba(251, 146, 60, 0.3); border-radius: 16px; overflow: hidden;">
+
+                    <!-- Header -->
+                    <tr>
+                        <td
+                            style="background: linear-gradient(135deg, rgba(251, 146, 60, 0.3) 0%, rgba(249, 115, 22, 0.2) 100%); padding: 40px 40px 60px; text-align: center;">
+                            <h1 style="margin: 0; color: #fb923c; font-size: 32px; font-weight: 700;">
+                                🔥 Keep Your Streak Alive!
+                            </h1>
+                        </td>
+                    </tr>
+
+                    <!-- Content -->
+                    <tr>
+                        <td style="padding: 40px;">
+                            <h2 style="color: #fb923c; font-size: 24px; margin: 0 0 20px; font-weight: 600;">
+                                Hey {{name}}! 👋
+                            </h2>
+
+                            <p style="color: #e5e5e5; font-size: 16px; line-height: 1.6; margin: 0 0 20px;">
+                                Your <strong style="color: #fb923c;">{{currentStreak}}-day streak</strong> is on fire!
+                                Don't let it end today. Complete a challenge to keep the momentum going.
+                            </p>
+
+                            <div
+                                style="background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(251, 146, 60, 0.3); border-radius: 12px; padding: 20px; margin: 30px 0;">
+                                <h3 style="color: #fb923c; font-size: 18px; margin: 0 0 15px;">
+                                    📊 Your Streak Stats
+                                </h3>
+                                <table width="100%" cellpadding="8" cellspacing="0">
+                                    <tr>
+                                        <td style="color: #aaa; font-size: 14px;">Current Streak:</td>
+                                        <td
+                                            style="color: #fb923c; font-size: 18px; font-weight: 700; text-align: right;">
+                                            🔥 {{currentStreak}} days</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #aaa; font-size: 14px;">Personal Best:</td>
+                                        <td
+                                            style="color: #e5e5e5; font-size: 14px; font-weight: 600; text-align: right;">
+                                            {{maxStreak}} days</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="color: #aaa; font-size: 14px;">Streak Freezes:</td>
+                                        <td
+                                            style="color: #e5e5e5; font-size: 14px; font-weight: 600; text-align: right;">
+                                            ❄️ {{freezesAvailable}} available</td>
+                                    </tr>
+                                </table>
+                            </div>
+
+                            <div
+                                style="background: rgba(251, 146, 60, 0.1); border-left: 4px solid #fb923c; padding: 16px; margin: 30px 0; border-radius: 4px;">
+                                <p style="color: #e5e5e5; font-size: 14px; margin: 0; line-height: 1.6;">
+                                    <strong>⏰ Time is ticking!</strong> Complete any challenge today to extend your
+                                    streak. Even the easiest challenge counts!
+                                </p>
+                            </div>
+
+                            <table width="100%" cellpadding="0" cellspacing="0" style="margin: 30px 0;">
+                                <tr>
+                                    <td align="center">
+                                        <a href="{{challengesUrl}}"
+                                            style="display: inline-block; background: linear-gradient(135deg, #fb923c, #f97316); color: #000; text-decoration: none; padding: 14px 32px; border-radius: 8px; font-weight: 600; font-size: 16px;">
+                                            Start a Challenge →
+                                        </a>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <p
+                                style="color: #aaa; font-size: 14px; line-height: 1.6; margin: 30px 0 0; text-align: center;">
+                                Not ready yet? You have <strong style="color: #fb923c;">{{freezesAvailable}} streak
+                                    freeze(s)</strong> available if you need a day off.
+                            </p>
+
+                            <p style="color: #e5e5e5; font-size: 16px; line-height: 1.6; margin: 30px 0 0;">
+                                Keep learning!<br>
+                                <strong style="color: #fb923c;">The CyTutor Team</strong>
+                            </p>
+                        </td>
+                    </tr>
+
+                    <!-- Footer -->
+                    <tr>
+                        <td
+                            style="background: rgba(0, 0, 0, 0.6); padding: 30px 40px; border-top: 1px solid rgba(251, 146, 60, 0.3);">
+                            <table width="100%" cellpadding="0" cellspacing="0">
+                                <tr>
+                                    <td align="center">
+                                        <p style="color: #666; font-size: 12px; margin: 0 0 10px;">
+                                            © 2025 CyTutor. All rights reserved.
+                                        </p>
+                                        <p style="color: #666; font-size: 12px; margin: 0;">
+                                            <a href="{{dashboardUrl}}"
+                                                style="color: #fb923c; text-decoration: none;">Dashboard</a> |
+                                            <a href="{{dashboardUrl}}"
+                                                style="color: #fb923c; text-decoration: none;">Settings</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Template Playground</title>
+</head>
+<body>
+  <h2>Template Playground</h2>
+  <p>Enter a Jinja2 template to be rendered server-side.</p>
+
+  <form action="/render" method="POST">
+    <textarea name="template" cols="70" rows="10">{{ 2 + 2 }}</textarea><br><br>
+    <button type="submit">Render</button>
+  </form>
+
+  <p>Hint: This uses server-side template rendering.</p>
+</body>
+</html>

@@ -1,0 +1,24 @@
+/* Course component styles to ensure dynamic colors work */
+
+/* Green theme colors */
+.course-green-bg { @apply bg-green-400/10; }
+.course-green-border { @apply border-green-400/30; }
+.course-green-text { @apply text-green-400; }
+.course-green-module-bg { @apply bg-green-400/20; }
+
+/* Purple theme colors */
+.course-purple-bg { @apply bg-purple-400/10; }
+.course-purple-border { @apply border-purple-400/30; }
+.course-purple-text { @apply text-purple-400; }
+.course-purple-module-bg { @apply bg-purple-400/20; }
+
+/* Yellow theme colors */
+.course-yellow-bg { @apply bg-yellow-400/10; }
+.course-yellow-border { @apply border-yellow-400/30; }
+.course-yellow-text { @apply text-yellow-400; }
+.course-yellow-module-bg { @apply bg-yellow-400/20; }
+
+/* Progress bar colors */
+.progress-green { @apply bg-green-500; }
+.progress-yellow { @apply bg-yellow-500; }
+.progress-complete { @apply bg-green-500; }

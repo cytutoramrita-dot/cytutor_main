@@ -1,0 +1,579 @@
+{
+  "challenges": [
+    {
+      "id": "bookmarklet",
+      "title": "Bookmarklet",
+      "category": "Web Exploitation",
+      "difficulty": "Easy",
+      "points": 25,
+      "description": "Flask web application vulnerable to directory traversal via bookmarklet.",
+      "flag": "Cytutor{bookmarklet_reads_files_2025}",
+      "type": "web",
+      "hints": [
+        "Look for bookmarklet functionality in the page source",
+        "Try using path traversal techniques with the bookmarklet"
+      ],
+      "docker": {
+        "image": "cytutor/bookmarklet",
+        "port": 5000
+      }
+    },
+    {
+      "id": "dos-challenge",
+      "title": "DoS Challenge",
+      "category": "Network Security",
+      "difficulty": "Medium",
+      "points": 45,
+      "description": "Overwhelm the service with concurrent TCP connections to reveal the flag.",
+      "flag": "Cytutor{DoS_me_if_you_can}",
+      "type": "web",
+      "hints": [
+        "Use tools like slowloris or custom scripts to create multiple connections",
+        "The flag appears when the server reaches its connection limit"
+      ],
+      "docker": {
+        "image": "cytutor/dos1",
+        "port": 8080
+      }
+    },
+    {
+      "id": "hidden-pages",
+      "title": "Hidden",
+      "category": "Web Exploitation",
+      "difficulty": "Medium",
+      "points": 55,
+      "description": "Find hidden pages through web reconnaissance and source inspection.",
+      "flag": "Cytutor{find_hidden_pages_and_read_the_source}",
+      "type": "web",
+      "hints": [
+        "Check the HTML source code for hidden links or comments",
+        "Try common directory names and file extensions"
+      ],
+      "docker": {
+        "image": "cytutor/hidden-pages",
+        "port": 80
+      }
+    },
+    {
+      "id": "path-traversal",
+      "title": "Path Traversal",
+      "category": "Web Exploitation",
+      "difficulty": "Medium",
+      "points": 40,
+      "description": "Exploit path traversal vulnerability using double URL encoding.",
+      "flag": "Cytutor{advanced_path_traversal}",
+      "type": "web",
+      "hints": [
+        "Standard path traversal might be filtered, try encoding techniques",
+        "Double URL encoding can bypass basic filters"
+      ],
+      "docker": {
+        "image": "Cytutor/path-traversal",
+        "port": 5000
+      }
+    },
+    {
+      "id": "power-cookie",
+      "title": "Power Cookie Challenge",
+      "category": "Web Exploitation",
+      "difficulty": "Easy",
+      "points": 30,
+      "description": "Bypass authorization by manipulating client-side cookies.",
+      "flag": "Cytutor{ADMIN_ACC33S}",
+      "type": "web",
+      "hints": [
+        "Check your browser's cookie storage after logging in",
+        "Try modifying cookie values to escalate privileges"
+      ],
+      "docker": {
+        "image": "cytutor/power-cookie",
+        "port": 80
+      }
+    },
+    {
+      "id": "old_system",
+      "title": "Old System",
+      "category": "Privilege Escalation",
+      "difficulty": "Hard",
+      "points": 75,
+      "description": "Something new emerges whenever the old reveals its cracks. Username:ctfuser;password:ctfuser@123",
+      "flag": "Cytutor{F1nd_M3}",
+      "type": "terminal",
+      "hints": [
+        "Check sudo permissions and version vulnerabilities",
+        "Look for exploitable sudo configurations or outdated binaries"
+      ],
+      "docker": {
+        "image": "cytutor/old_system",
+        "port": 22
+      }
+    },
+    {
+  "id": "ssti",
+  "title": "SSTI",
+  "category": "Web Exploitation",
+  "difficulty": "Medium",
+  "points": 55,
+  "description": "Exploit server-side template injection to read internal variables and retrieve the flag.",
+  "flag": "Cytutor{template_playground_flag}",
+  "type": "web",
+  "hints": [
+    "Test template rendering with arithmetic payloads",
+    "Try accessing template globals and internal objects"
+  ],
+  "docker": {
+    "image": "cytutor/ssti",
+    "port": 5000
+  }
+},
+    {
+  "id": "logfile-challenge",
+  "title": "Logfile",
+  "category": "Web Exploitation",
+  "difficulty": "Medium",
+  "points": 40,
+  "description": "Sensitive data leaked through improper logging.",
+  "flag": "Cytutor{log_leaked}",
+  "type": "web",
+  "hints": [
+    "Logs often store more than intended",
+    "Look for endpoints exposing log files"
+  ],
+  "docker": {
+    "image": "cytutor/logfile-challenge",
+    "port": 5000
+  }
+},
+    {
+  "id": "jwt",
+  "title": "JWT Forgery",
+  "category": "Web Exploitation",
+  "difficulty": "Medium",
+  "points": 50,
+  "description": "Manipulate JWT claims to gain unauthorized access.",
+  "flag": "Cytutor{jwt_internal_trust_chain_broken}",
+  "type": "web",
+  "hints": [
+    "Inspect token payload and signature algorithm",
+    "Try forging or modifying claims"
+  ],
+  "docker": {
+    "image": "cytutor/jwt",
+    "port": 3000
+  }
+},
+    {
+  "id": "ref-xss",
+  "title": "Reflected XSS",
+  "category": "Web Exploitation",
+  "difficulty": "Easy",
+  "points": 20,
+  "description": "A simple reflected XSS vulnerability where user input is rendered directly into the response without sanitization.",
+  "flag": "Cytutor{reflected_xss_win}",
+  "type": "web",
+  "hints": [
+    "User input from the URL is reflected in the response",
+    "Try injecting basic script payloads through query parameters"
+  ],
+  "docker": {
+    "image": "cytutor/ref-xss",
+    "port": 5000
+  }
+},
+    {
+  "id": "ssrf",
+  "title": "SSRF",
+  "category": "Web Exploitation",
+  "difficulty": "Medium",
+  "points": 60,
+  "description": "Exploit server-side request forgery to access internal services.",
+  "flag": "Cytutor{jwt_internal_trust_chain_broken}",
+  "type": "web",
+  "hints": [
+    "Try accessing internal endpoints",
+    "Not all URLs point to the internet"
+  ],
+  "docker": {
+    "image": "cytutor/ssrf",
+    "port": 5000
+  }
+},
+
+    {
+      "id": "python-compiler",
+      "title": "Python Compiler",
+      "category": "Web Exploitation",
+      "difficulty": "Medium",
+      "points": 50,
+      "description": "Some things are not found the usual way",
+      "flag": "Cytutor{py7h0n_s4ndb0x_3sc4p3}",
+      "type": "web",
+      "hints": [
+        "The sandbox might block common functions, try alternative methods",
+        "Look for ways to access the filesystem or execute commands indirectly"
+      ],
+      "docker": {
+        "image": "cytutor/python_compiler",
+        "port": 5000
+      }
+    },
+    {
+      "id": "git-challenge",
+      "title": "StreamFlix",
+      "category": "Web Exploitation",
+      "difficulty": "Medium",
+      "points": 60,
+      "description": "Exploit exposed .git directory to recover deleted files from commit history.",
+      "flag": "Cytutor{Git_3xp0$ed}",
+      "type": "web",
+      "hints": [
+        "Check if the .git directory is accessible via the web",
+        "Use git-dumper or similar tools to download the repository"
+      ],
+      "docker": {
+        "image": "cytutor/git_challenge",
+        "port": 3000
+      }
+    },
+    {
+      "id": "secret-jwt",
+      "title": "Secret",
+      "category": "Web Exploitation",
+      "difficulty": "Hard",
+      "points": 75,
+      "description": "Crack the weak JWT secret and forge an admin token to retrieve the flag.",
+      "flag": "Cytutor{JWT_w34k_s3cr3t_pwn3d}",
+      "type": "web",
+      "hints": [
+        "Decode the JWT token and analyze its structure",
+        "Use tools like jwt_tool or hashcat to crack the weak secret"
+      ],
+      "docker": {
+        "image": "cytutor/secret",
+        "port": 3000
+      }
+    },
+	  {
+      "id": "last_call",
+      "title": "Last_call",
+      "category": "Forensics",
+      "difficulty": "Medium",
+      "points":55,
+      "description": "Download and analyze the image file to find the hidden flag.",
+      "flag": "Cytutor{DTMF_X0R_5T3R30_1S_N0T_4UD10_3V3RY0N3}",
+      "type": "downloadable",
+      "hints": [
+        "The tones may resemble telephone signals, but decoding them directly might mislead you.",
+        "Inspect the audio channels and focus on tone duration, not frequency."
+      ],
+      "fileAttachments": [
+        "/challenge-files/Last_Call/mystery_call.zip"
+      ]
+    },
+	  {
+      "id": "layers of trust",
+      "title": "Layers_of_trust",
+      "category": "Forensics",
+      "difficulty": "Medium",
+      "points": 40,
+      "description": "A suspicious email hides a secret across nested messages, metadata, and cryptography—trace the layers of trust to uncover the hidden flag.",
+      "flag": "Cytutor{m41l_ch41n_pgp_4rg0n2_kdf_png_st3g0_m4st3ry}",
+      "type": "downloadable",
+      "hints": [
+        "Don’t just read the email body—inspect the full MIME structure and attachments.",
+        "Image metadata and email headers together reveal the parameters needed to derive the decryption key."
+      ],
+      "fileAttachments": [
+        "/challenge-files/Layers_of_trust/mysterious_mail.eml"
+      ]
+    },
+    {
+      "id": "crypto-basics",
+      "title": "Crypto Basics",
+      "category": "Cryptography",
+      "difficulty": "Easy",
+      "points": 20,
+      "description": "Decode the following Base64 encoded message to find the flag: Q3l0dXRvcnt0aDFzXzFzX2Jhc2U2NF9lbmMwZDFuZ30=",
+      "flag": "Cytutor{th1s_1s_base64_enc0d1ng}",
+      "type": "description",
+      "hints": [
+        "This is a simple Base64 encoding challenge",
+        "Use online tools or command line: echo '<string>' | base64 -d"
+      ]
+    },
+     {
+       "id": "c1",
+    "title": "Caesar Salad (ROT?)",
+      "category": "Cryptography",
+      "difficulty": "Easy",
+      "points": 20,
+    "description": "We intercepted a message encrypted with a Caesar cipher. Decrypt it to find the flag.\n\nCiphertext:\n\n`svaq gur synt: Plghgbe{whfg_n_fvzcyr_fuvsg}`",
+      "flag": "Cytutor{just_a_simple_shift}",
+      "type": "description",
+      "hints": [
+        "Caesar shifts wrap A..Z; ROT13 is a special case."
+      ]
+    },
+     {
+     "id": "c2",
+    "title": "ASCII Artifacts 🖋️",
+      "category": "Cryptography",
+      "difficulty": "Easy",
+      "points": 20,
+    "description": "The flag is hidden as ASCII codes. Convert the following integers to their corresponding ASCII characters to reveal the flag.\n\n  [67,121,116,117,116,111,114, 123, 65, 83, 67, 73, 73, 95, 112, 114, 49, 110, 116, 52, 98, 108, 51, 125]",
+      "flag": "Cytutor{ASCII_pr1nt4bl3}",
+      "type": "description",
+      "hints": [
+   "Use Python's `chr()` function or any ASCII table to convert numbers to characters."
+      ]
+    },
+     {
+    "id": "c3",
+    "title": "Diffie-Hellman",
+      "category": "Cryptography",
+      "difficulty": "Easy",
+      "points": 40,
+    "description":  "Alice and Bob are setting up a simple cryptosystem for secure communication. They agree on a large prime modulus p = 991 and choose a generator-like element g = 209.\n\nDuring the key exchange, Alice sends Bob the value g. Bob needs to compute the modular inverse of g modulo p to complete the protocol. However, Bob got stuck and needs your help.\n\nYour task is to find the integer d such that:\n\ng × d ≡ 1 (mod p)\n\nThat means:\n\n(209 × d) mod 991 = 1.The flag fomrat is Cytutor{generator:answer}",
+      "flag": "Cytutor{inverse:569}",
+      "type": "description",
+      "hints": [
+             "Use the Extended Euclidean Algorithm or Python’s pow(g, -1, p)."
+
+      ]
+    },
+     {
+      "id": "c3-1",
+        "title": "Generators of a Group",
+        "artifact": null,
+      "category": "Cryptography",
+      "difficulty": "Medium",
+      "points": 55,
+        "description": "Alice and Bob are experimenting with a Diffie–Hellman key exchange over a prime field. They agree on a large prime modulus:\n\np = 28151\n\nBefore starting the exchange, they need to choose a generator g of the multiplicative group Z_p^*. Alice wants the smallest possible generator to keep things efficient. But Bob forgot how to find one!\n\nYour task is to find the **smallest primitive root modulo p**.\n\nA number g is a primitive root modulo p if it generates the entire group under multiplication, meaning:\n\nord(g) = p - 1\n\nTo verify that g is a generator, it must satisfy:\n\ng^((p-1)/q) mod p != 1 for every prime factor q of (p-1).\n\nInput:\np = 28151\n\nOutput:\nFind the smallest g > 1 such that the above condition holds.The flag format is Cytutor{inverse:answer}",
+      "flag": "Cytutor{generator:7}",
+      "type": "description",
+      "hints": [
+	"Factorize p-1 = 28150. A primitive root g must satisfy pow(g, (p-1)//q, p) != 1 for every prime factor q of p-1."
+      ]
+    },
+     {
+      "id": "c5",
+ "title": "JSON Web Token",
+      "category": "Cryptography",
+      "difficulty": "Easy",
+      "points": 20,
+    "description": "JWTs are commonly used for secure data exchange, but they are not encrypted by default base64url-encoded JSON, making their contents easy to read. \n\n eyJmbGFnIjoiQ3l0dXRvcntqd3RfY29udGVudHNfY2FuX2Vhc2lseV92aWV3ZWR9In0",
+      "flag": "Cytutor{jwt_contents_can_be_easily_viewed}",
+      "type": "description",
+      "hints": [
+  "JWT ≠ encryption. It’s just base64url-encoded JSON with a signature."
+      ]
+    },
+     {
+  "id": "c6",
+    "title": "RSA",
+      "category": "Cryptography",
+      "difficulty": "Medium",
+      "points": 55,
+"description": "We intercepted the following RSA parameters and ciphertext. Recover the message.\n\ne: 65537\n\np:152933908726088000025981821717328900253841375038873501148415965946834656401640031351528841350980891403699057384028031438869081577476655254545307973436745130347696405243778481262922512227444915738801835842194123487258255790292004204412236314558718035967575479232723997430178018130995420315759809636522091902529\n\nq:173403581892981708663967289381727914513043623656015065332774927693090954681172215632003125824638611519248812013286298011144213434368768979531792528759533473573346156338400142951284462417074992959330154930806611253683603690442142765076944118447174491399811297223146324861971722035746276165056022562961558299229\n\nct:21957570335213248522358708617999048649424415516240861683954760240928100002929540956390861198788731735410129566994036925956107169980245643648032450446959493875473437787133804445806132871939149599192762228733013533909086304806772957669964025103304882498896933280440871173852171524164162752249819569012811227188677057699862635569785311695685803298726301693231850042313674714054461506998836784968705543508202689717037371988882275850304457778134607057155799793856569735117093946623182762376463879758780090960026389398871977563089842732150326451588903327028454292463274568067786120183654858066996320934727278704131392405176\n",
+       "flag": "Cytutor{361862d}",
+      "type": "description",
+      "hints": [
+    "Compute d = e^{-1} mod φ(n) where φ(n) = (p-1)(q-1), then m = ct^d mod n and convert to bytes."
+      ]
+    },
+     {
+      "id": "c6-1",
+    "title": "Low Exponent",
+      "category": "Cryptography",
+      "difficulty": "Medium",
+      "points": 55,
+    "description": "We intercepted an RSA ciphertext encrypted with a low public exponent. Recover the message.\n\ne: 3\n\nn:17832697294201997154036617011957221780954165482288666773904510458098283881743910060438108775052144170769164876758249100567442926826366952851643073820832317493086415304740069439166953466125367940677570548218324219386987869433677168670642103353927101790341856159406926994785020050276564014860180970395749578442970075496442876475883003906961049702649859496118324912885388643549649071478725024867410660900848046927547400320456993982744075508818567475254504481562096763749301743619222457897353143558783627148704136084952125284873914605708215421331001883445600583624655438154001230490220705092656548338632165583188199066759\n\nct:16089240785971428837566169913018675628594914106937525206266580995275565431731276400925399052518491775052358125774452516908437905242423440073842602043259698789\n",
+      "flag": "Cytutor{054e2a9abe41c}",
+      "type": "description",
+      "hints": [
+   "If m^3 < n, then the plaintext is the integer cube root of ct."
+      ]
+    },
+     {     
+       "id": "c6-2",
+"title": "Tiny RSA",
+    "artifact": null,
+      "category": "Cryptography",
+      "difficulty": "Medium",
+      "points": 55,
+    "description": "The message was split into 4 small chunks and each chunk encrypted with RSA using a tiny modulus. Recover the message chunks and assemble the flag.\n\ne: 65537\nn: 107710970774233\nct = [105405073630916, 74928653109306, 78722598066525, 10705744036504]\n",
+      "flag": "Cytutor{c315517cfa31}",
+      "type": "description",
+      "hints": [
+"Factor the small modulus n (try FactorDB), compute d, then decrypt each chunk and concatenate."      ]
+    },
+     {
+     "id": "c7",
+    "title": "AES-ECB Weak Key",
+      "category": "Cryptography",
+      "difficulty": "Medium",
+      "points": 60,
+    "description": "We found an encrypted file, but the developer used AES in ECB mode with a weak passphrase-based key.\n\nDownload the file: `enc.txt`\n\nCan you recover the flag?",
+      "flag": "Cytutor{AES_can_tricky}",
+      "type": "downloadable",
+      "hints": [
+  "Try deriving the AES key from common passphrases2 using MD5. ECB mode is deterministic, so dictionary attacks work."
+      ],
+      "fileAttachments": [
+       "/challenge-files/AES"
+      ]
+
+    },
+     {
+
+        "id": "c10",
+    "title": "Shamir's Secret Sharing",
+      "category": "Cryptography",
+      "difficulty": "Medium",
+      "points": 65,
+    "description": "A secret has been split into multiple pieces using Shamir's Secret Sharing.\n\nThreshold = 3, prime modulus p = 104729.\n\nShares intercepted:\nShare 1: (1, 23456)\nShare 2: (2, 56789)\nShare 3: (3, 12345)\nShare 4: (4, 67890)\nShare 5: (5, 13579)\n\nUse any 3 shares to reconstruct the secret and submit as Cytutor{secret} format.",
+      "flag": "Cytutor{17075}",
+      "type": "description",
+      "hints": [
+        "The secret is the constant term of the polynomial. Use Lagrange interpolation modulo 104729."
+
+      ]
+    },
+    {
+        "id": "c11",
+    "title": "Signed or Not?",
+  "category": "Cryptography",
+      "difficulty": "Hard",
+      "points": 75,
+    "description": "You are given two software updates and a digital signature. Only one update is authentic.\n\nFiles provided:\n- public.pem\n- update1.txt\n- update2.txt\n- signature.sig\n- encrypted_flag.bin\n\nYour task is to verify the signature with the given public key. If the signature is valid for an update, derive the shared key from (signature || message) using SHA256, and use it to decrypt the encrypted_flag.bin (AES-GCM). The decrypted content will reveal the flag.\n\nFlag format: Cytutor{...}",
+      "flag": "Cytutor{signature_verified}",
+      "type": "description",
+      "hints": [
+    "Use the public key to verify the signature.Only one update will pass. Then derive the AES key as SHA256(signature || message) and decrypt encrypted_flag.bin."
+      ],
+        "fileAttachments": [
+        "/challenge-files/Signed_or_not"
+      ]
+    },
+     {
+    "id": "c13",
+    "title": "Knapsack Mystery",
+      "category": "Cryptography",
+      "difficulty": "Medium",
+      "points": 55,
+    "description":  "We intercepted a message encrypted using an old knapsack-based cryptosystem.\n\nYou are given a file `challenge.txt` which contains:\n- Line 1 → The knapsack public key (comma-separated integers)\n- Line 2 → The ciphertext (a single integer)\n\nRecover the hidden flag from this knapsack ciphertext.\n\n",
+      "flag": "Cytutor{superincr_win!!}",
+      "type": "downloadable",
+      "hints": [
+   "Look into how the greedy algorithm solves superincreasing subset-sum.Each ciphertext is just a weighted sum of the public key with the flag bits."
+      ]
+      ,
+        "fileAttachments": [
+        "/challenge-files/Knapsack_Mystery"
+      ]
+    },
+    {
+        "id": "c14",
+    "title": "Hash Hunt",
+      "category": "Cryptography",
+      "difficulty": "Easy",
+      "points": 30,
+    "description": "We hashed the flag with SHA-256 as `sha256('flag:' + FLAG) = ca054ac3bf4d5da1e589ce2e4091a959f07612a003546c051a516182cf9c0a6f`.\n\nThe FLAG matches `Cytutor{hash_<word>}` for some word in this list: ['alpha', 'bravo', 'charlie', 'delta', 'echo', 'foxtrot', 'golf', 'hotel', 'india']",
+      "flag": "Cytutor{hash_charlie}",
+      "type": "description",
+      "hints": [
+  "Brute force the list."
+      ]
+    },
+     {
+      "id": "Death_note",
+      "title": "Death Note",
+      "category": "Cryptography",
+      "difficulty": "Hard",
+      "points": 85,
+      "description": "Ryuk got hungry and ate the top 22 bits of my note. Fix it before Light notices.",
+      "flag": "Cytutor{1_7hink_1_W4nt3d_Y0u_to_B3_K1r4!!!}",
+      "type": "downloadable",
+      "hints": ["Let (S = p+q). Reduce the leaked note **mod (N)** — the big unknown term vanishes."
+      ]
+       ,
+        "fileAttachments": [
+        "/challenge-files/Death_Note/deathnote.py",
+        "/challenge-files/Death_Note/output.txt"
+      ]
+    },
+     {
+      "id": "BabyRSA",
+      "title": "Baby RSA",
+      "category": "Cryptography",
+      "difficulty": "Easy",
+      "points": 40,
+      "description": "A tiny RSA setup with a suspiciously small exponent… surely nothing could go wrong, right? Recover the hidden flag from the given public values.",
+      "flag": "Cytutor{5h0rt_t3xt_&_5h0rt_e*pon3n7?_y0u'r3_cr4zyy!!}",
+      "type": "downloadable",
+      "hints": [
+"idk bro, it's easy"
+      ]
+      ,
+        "fileAttachments": [
+        "/challenge-files/Baby_RSA"
+      ]
+    },
+     {
+      "id": "SecretStrand",
+      "title": "Secret Strand",
+      "category": "Cryptography",
+      "difficulty": "Easy",
+      "points": 40,
+      "description": "A strange sequence was recovered. It means nothing on its own, unless you know how partners work. \n\n CAATCTGCCTCACTCCCTCACGTTCTAGCTGTCCGCCGTTCTCCCCTTCACGCGTTCTCCCGTGCGCACCTTCCGCCGTTCTCCCTAGCCTTCCAACGACCTAGCTCACGTGCGCCCTAGCCTTCAGCCGTGCCTTCACACATGCAACCTTC",
+      "flag": "Cytutor{You_Found_Your_Partner_In_DNA}",
+      "type": "description",
+      "hints": [
+"Brute force the list."      ]
+    }
+,
+ {
+      "id": "Historic_Site",
+      "title": "Historic Site",
+      "category": "OSINT",
+      "difficulty": "Easy",
+      "points": 35,
+      "description": "A traveler documented a visit to a historic religious site during a journey. The image was taken at the entrance of the site, but the exact location was never recorded. Identify where this photo was taken.",
+      "flag": "Cytutor{choub_poul_temple}",
+      "type": "downloadable",
+      "hints": null,
+        "fileAttachments": [
+        "/challenge-files/Historic_Site"
+      ]
+    },
+     {
+      "id": "Skating",
+      "title": "Skating",
+      "category": "OSINT",
+      "difficulty": "Medium",
+      "points": 55,
+      "description": "I went out to skateboard, when I suddenly heard loud cheers echoing from a nearby stadium. Curious, I took a photo from outside the complex but forgot to note the location.Identify the stadium where this photo was taken.",
+      "flag": "Cytutor{Pampeloponnisiako_Stadium}",
+      "type": "downloadable",
+      "hints":null,
+    "fileAttachments":[
+        "/challenge-files/Skating"
+
+    ]    
+    },
+     {
+      "id": "beautifulDate",
+      "title": "Beautiful Date",
+      "category": "OSINT",
+      "difficulty": "Easy",
+      "points": 35,
+      "description": "I took this photo while exploring a developed precinct in a city during sports season. But I  forgot to save the location as I was on date with my wife. Can you help me remember our moments?",
+      "flag": "Cytutor{Marvel_Stadium}",
+      "type": "downloadable",
+      "hints":null,
+    "fileAttachments":[
+        "/challenge-files/Beautiful_Date"
+      ]
+    }
+  ]
+}
